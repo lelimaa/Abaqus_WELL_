@@ -118,10 +118,13 @@ def Assign_Section(modelName, partName, sectionName, setName=None, isSolid=True)
     if setName in part.sets:
         region = part.sets[setName]
     else:
-        if isSolid is True:
-            region = part.Set(name=setName, cells=part.cells[:])
-        elif isSolid is False:
+        if part.space in (TWO_D_PLANAR, AXISYMMETRIC):
             region = part.Set(name=setName, faces=part.faces[:])
+        elif part.space == THREE_D:
+            region = part.Set(name=setName, cells=part.cells[:])
+        # if isSolid is True:
+        #     region = part.Set(name=setName, cells=part.cells[:])
+        # elif isSolid is False:
         else:
             raise ValueError("No valid entities to assign section in %s" % partName)
 
