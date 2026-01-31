@@ -56,4 +56,4 @@ def Assembly(modelName, partsNames, top_depth=3200, base_depth=3600):
     a.regenerate()
     print("Assembly completed with active sets:", a.sets.keys())
 
-Assembly('MyFirstModel', ['FLUID', 'PIPE', 'ROCK'])
+# Assembly('MyFirstModel', ['FLUID', 'PIPE', 'ROCK'])
