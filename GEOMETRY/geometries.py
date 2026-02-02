@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
-# from abaqus import *
-# from abaqusConstants import *
+from abaqus import *
+from abaqusConstants import *
 
 import section
 import regionToolset
