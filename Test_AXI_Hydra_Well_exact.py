@@ -23,7 +23,6 @@ import displayGroupOdbToolset as dgo
 import connectorBehavior
 
 
-
 # Creation of the part
 s = mdb.models['Model-1'].ConstrainedSketch(name='__profile__', 
     sheetSize=200.0)
