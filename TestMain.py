@@ -34,7 +34,6 @@ mdb.models.changeKey(fromName='Model-1', toName='MyFirstModel')
 # base_depth = 3600
 # top_depth = 3200
 
-
 # Pipe('MyFirstModel', 'PIPE', inner_radius_pipe, base_depth, top_depth, thickness_pipe)
 # Fluid('MyFirstModel', 'FLUID', inner_radius_annular, base_depth, top_depth, thickness_annular)
 # Rock('MyFirstModel', 'ROCK', inner_radius_wellbore, base_depth, top_depth, thickness_wellbore)
