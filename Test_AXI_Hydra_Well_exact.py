@@ -22,6 +22,8 @@ import xyPlot
 import displayGroupOdbToolset as dgo
 import connectorBehavior
 
+import numpy as np
+
 
 # Creation of the part
 s = mdb.models['Model-1'].ConstrainedSketch(name='__profile__', 
@@ -581,19 +583,38 @@ mdb.models['Model-1'].fieldOutputRequests['ROCK_OUTPUT'].setValuesInStep(
     stepName='Transition', timePoint='timePoint')
 mdb.models['Model-1'].StaticStep(name='TempDefine', previous='Transition', 
     timePeriod=3.0, initialInc=1.0, minInc=3e-05, maxInc=3.0)
+
+
+delta_T = 3.2e-4
+v1 = 1.06404
+
+# Create dict with keys from -2500 to -3500 with -2.5 intervals
+gridPointData1 = {}
+for index, depth in enumerate(np.arange(-2500, -3502.5, -2.5)):
+    val = v1+(index)*delta_T
+    gridPointData1[str(depth)] = (
+        (1.79769313486232e+308, 0.0, 100.0),
+        (0.0, val, val),
+        (100.0, val, val)
+    )
 mdb.models['Model-1'].MappedField(name='Geotermico', description='', 
     regionType=POINT, partLevelData=False, localCsys=None, 
     pointDataFormat=GRID, fieldDataType=SCALAR, gridPointPlane=PLANE13, 
-    gridPointData={'-2500.0':((1.79769313486232e+308, 0.0, 100.0), (0.0, 
-    1.0, 1.0), (100.0, 1.0, 1.0)), '-2502.5':((1.79769313486232e+308, 0.0, 
-    100.0), (0.0, 1.06436, 1.06436), (100.0, 1.06436, 1.06436)), 
-    '-2505.0': ((1.79769313486232e+308, 0.0, 100.0), (0.0, 1.06469, 
-    1.06469), (100.0, 1.06469, 1.06469)), '-3445.0':((
-    1.79769313486232e+308, 0.0, 100.0), (0.0, 1.18509, 1.18509), (100.0, 
-    1.18509, 1.18509)), '-3500.0':((1.79769313486232e+308, 0.0, 100.0), (
-    0.0, 1.19213, 1.19213), (100.0, 1.19213, 1.19213)), '0':((
-    1.79769313486232e+308, 0.0, 100.0), (0.0, 1.0, 1.0), (100.0, 1.0, 
-    1.0))})
+    gridPointData=gridPointData1)
+
+# mdb.models['Model-1'].MappedField(name='Geotermico', description='', 
+#     regionType=POINT, partLevelData=False, localCsys=None, 
+#     pointDataFormat=GRID, fieldDataType=SCALAR, gridPointPlane=PLANE13, 
+#     gridPointData={'-2500.0':((1.79769313486232e+308, 0.0, 100.0), (0.0, 
+#     1.0, 1.0), (100.0, 1.0, 1.0)), '-2502.5':((1.79769313486232e+308, 0.0, 
+#     100.0), (0.0, 1.06436, 1.06436), (100.0, 1.06436, 1.06436)), 
+#     '-2505.0': ((1.79769313486232e+308, 0.0, 100.0), (0.0, 1.06469, 
+#     1.06469), (100.0, 1.06469, 1.06469)), '-3445.0':((
+#     1.79769313486232e+308, 0.0, 100.0), (0.0, 1.18509, 1.18509), (100.0, 
+#     1.18509, 1.18509)), '-3500.0':((1.79769313486232e+308, 0.0, 100.0), (
+#     0.0, 1.19213, 1.19213), (100.0, 1.19213, 1.19213)), '0':((
+#     1.79769313486232e+308, 0.0, 100.0), (0.0, 1.0, 1.0), (100.0, 1.0, 
+#     1.0))})
 a = mdb.models['Model-1'].rootAssembly
 region = a.instances['Analise-1-1'].sets['FASEI']
 mdb.models['Model-1'].Temperature(name='NT_FASEI', createStepName='TempDefine', 
