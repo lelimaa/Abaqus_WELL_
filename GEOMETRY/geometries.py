@@ -73,6 +73,9 @@ def Fluid(name_model, name_part, inner_radius, base_depth, top_depth, thickness)
 
 def Rock(name_model, name_part, inner_radius, base_depth, top_depth, thickness):
 
+    # base_depth = int(base_depth)
+    # top_depth = int(top_depth)
+
     # depth = base_depth - top_depth
     # Criação do Sketch - Geometria da Rocha
     sketch_name = '__profile__' + name_part
@@ -158,48 +161,3 @@ def CreateGeometry(name_model, name, data):
                          )
     else:
         raise ValueError("Geometry type '%s' is not recognized." % name)
-      
-# if __name__ == "__main__":
-#     example = {
-#         "pipe_inner_radius": 0.11,
-#         "annular_radius": 0.13,
-#         "rock_radius": 0.14,
-#         "base_depth": 3600,
-#         "top_depth": 3200,
-#         "pipe_wt": 0.02,
-#         "fluid_wt": 0.01,
-#         "rock_wt": 14.87
-#     }
-
-#     layers_depths = [3300, 3400, 3500]
-
-#     data = {
-#         "ROCK": {"inner_radius": example["rock_radius"],
-#                  "top_depth": example["top_depth"],
-#                  "base_depth": example["base_depth"],
-#                  "thickness": example["rock_wt"],
-#                  "layer_depths": layers_depths
-#                  },
-
-#         "FLUID": {"inner_radius": example["annular_radius"],
-#                   "top_depth": example["top_depth"],
-#                   "base_depth": example["base_depth"],
-#                   "thickness": example["fluid_wt"],
-#                   "layer_depths": layers_depths
-#                   },
-#         "PIPE": {"inner_radius": example["pipe_inner_radius"],
-#                  "top_depth": example["top_depth"],
-#                  "base_depth": example["base_depth"],
-#                  "thickness": example["pipe_wt"],
-#                  "layer_depths": layers_depths
-#                  },
-#     }
-    
-#     if 'MyFirstModel' not in mdb.models:
-#         mdb.Model(name='MyFirstModel', modelType=STANDARD_EXPLICIT)
-#     for part_name, part_data in data.items():
-#         CreateGeometry('MyFirstModel', part_name, part_data)
-#         PartitionLayersByDepth("MyFirstModel", part_name=part_name, layer_depths=part_data["layer_depths"])
-
-# print('Geometria criada em:', mdb.models['MyFirstModel'])
-# mdb.saveAs(pathName='FEM_AXYS_WELL_SHIELD.cae')

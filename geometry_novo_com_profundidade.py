@@ -194,4 +194,4 @@ if __name__ == "__main__":
         PartitionLayersByDepth("MyFirstModel", part_name=part_name, layer_depths=part_data["layer_depths"])
 
 print('Geometria criada em:', mdb.models['MyFirstModel'])
-mdb.saveAs(pathName='FEM_AXYS_WELL_SHIELD.cae')
+# mdb.saveAs(pathName='FEM_AXYS_WELL_SHIELD.cae')
