@@ -26,15 +26,17 @@ if 'MyFirstModel' not in mdb.models:
 
 # variables that have to be changed ####################################################
 
-inner_radius_pipe = 14.5  # Updated by script
-thickness_pipe = 0.01
+inner_radius_pipe = 0.36829999999999996  # Updated by script
+thickness_pipe = 0.00032258  # Updated by script
 inner_radius_annular = inner_radius_pipe + thickness_pipe
-thickness_annular = 0.02
-inner_radius_wellbore = inner_radius_annular + thickness_annular
-thickness_wellbore = 0.5
+# thickness_annular = 0.02
+# inner_radius_wellbore = inner_radius_annular + thickness_annular
+inner_radius_wellbore = 0.011612879999999999  # Updated by script
+thickness_annular = inner_radius_wellbore - inner_radius_annular
+thickness_wellbore = 12.0
 
-base_depth = 3600
-top_depth = 3200
+base_depth = 4250.0  # Updated by script
+top_depth = 3200.0  # Updated by script
 
 ########################################################################################
 
