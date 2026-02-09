@@ -16,8 +16,8 @@ if path_project not in sys.path:
 from GEOMETRY.geometries import * 
 from GEOMETRY.materials import *
 from GEOMETRY.assembly import *
+from MATERIALS.materials import *
 # from materials_novo import ElasticMaterial
-
 
 mdb.models.changeKey(fromName='Model-1', toName='MyFirstModel')
 
@@ -90,7 +90,7 @@ for part_name, part_data in data.items():
 
 Assembly('MyFirstModel', ['FLUID', 'PIPE', 'ROCK'])
 
-# Definition of materials 
+# Definition of materials ###############################################################
 
 if __name__ == "__main__":
     examples = {
