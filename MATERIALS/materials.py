@@ -102,7 +102,7 @@ def CreateMaterial(modelName, name, data, sectionLength=1.):
         raise ValueError("Behavior '%s' not recognized." % behavior)
 
 
-def Assign_Section(modelName, partName, sectionName, setName=None, isSolid=True):
+def Assign_Section(modelName, partName, sectionName, setName=None, isSolid=True, rock_rules=None):
     model = mdb.models[modelName]
     if partName not in model.parts:
         raise ValueError("Part '%s' not found in model '%s'." %
@@ -113,20 +113,75 @@ def Assign_Section(modelName, partName, sectionName, setName=None, isSolid=True)
         raise ValueError("Section '%s' not found in model '%s'. Available sections are: %s" % (
             sectionName, modelName, list(model.sections.keys())))
 
+    # Creating a set if not provided
     if setName is None:
         setName = partName + '_Set'
-    if setName in part.sets:
+
+    # If a named set already exists, assign the section to it
+    if setName in part.sets and rock_rules is None:
         region = part.sets[setName]
-    else:
-        if part.space in (TWO_D_PLANAR, AXISYMMETRIC):
-            region = part.Set(name=setName, faces=part.faces[:])
-        elif part.space == THREE_D:
-            region = part.Set(name=setName, cells=part.cells[:])
-        # if isSolid is True:
-        #     region = part.Set(name=setName, cells=part.cells[:])
-        # elif isSolid is False:
+        part.SectionAssignment(region=region,
+                               sectionName=sectionName,
+                               offset=0.0,
+                               offsetType=MIDDLE_SURFACE,
+                               offsetField='',
+                               thicknessAssignment=FROM_SECTION)
+        return
+
+    # Handle 2D/axisymmetric parts by faces
+    if part.space in (TWO_D_PLANAR, AXISYMMETRIC):
+        # If rock_rules provided, assign sections per-face based on depth ranges
+        if rock_rules:
+            # Aggregate faces for each rock rule so we create one set per rock type
+            rule_face_map = []
+            for rule in rock_rules:
+                rule_face_map.append({
+                    'rule': rule,
+                    'faces': []
+                })
+
+            for face in part.faces[:]:
+                y_center = face.pointOn[0][1]
+                depth = -y_center
+
+                for entry in rule_face_map:
+                    rule = entry['rule']
+                    top = rule.get('top_depth')
+                    base = rule.get('base_depth')
+                    if top is None or base is None:
+                        continue
+                    if (depth >= top) and (depth <= base):
+                        entry['faces'].append(face)
+                        break
+
+            # Create named sets and assign their respective sections
+            for entry in rule_face_map:
+                rule = entry['rule']
+                faces = entry['faces']
+                if not faces:
+                    continue
+                set_name = rule.get('set_name') or (rule.get('name', 'rock') + '_set')
+                if set_name in part.sets:
+                    region = part.sets[set_name]
+                else:
+                    region = part.Set(name=set_name, faces=tuple(faces))
+
+                assigned_section = rule.get('section', sectionName)
+                part.SectionAssignment(region=region,
+                                       sectionName=assigned_section,
+                                       offset=0.0,
+                                       offsetType=MIDDLE_SURFACE,
+                                       offsetField='',
+                                       thicknessAssignment=FROM_SECTION)
+            return
         else:
-            raise ValueError("No valid entities to assign section in %s" % partName)
+            # No rock rules: assign the same section to all faces
+            region = part.Set(name=setName, faces=part.faces[:])
+
+    elif part.space == THREE_D:
+        region = part.Set(name=setName, cells=part.cells[:])
+    else:
+        raise ValueError("No valid entities to assign section in %s" % partName)
 
     part.SectionAssignment(region=region,
                            sectionName=sectionName,

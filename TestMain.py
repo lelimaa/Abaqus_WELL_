@@ -4,17 +4,14 @@ from abaqusConstants import *
 # import os
 import sys 
 
-path_project = r'C:\Users\juani\Documents\Github\Abaqus_WELL_'
-# path_project = r'C:\Users\hidalgo\Documents\GitHub\Abaqus_WELL_'
+# path_project = r'C:\Users\juani\Documents\Github\Abaqus_WELL_'
+path_project = r'C:\Users\hidalgo\Documents\GitHub\Abaqus_WELL_'
 
 if path_project not in sys.path:
     sys.path.append(path_project)
 
-# from GEOMETRY.geometries import Pipe
-# from GEOMETRY.geometries import Fluid
-# from GEOMETRY.geometries import Rock
 from GEOMETRY.geometries import * 
-from GEOMETRY.materials import *
+# from GEOMETRY.materials import *
 from GEOMETRY.assembly import *
 from MATERIALS.materials import *
 # from materials_novo import ElasticMaterial
@@ -88,8 +85,6 @@ for part_name, part_data in data.items():
         CreateGeometry('MyFirstModel', part_name, part_data)
         PartitionLayersByDepth("MyFirstModel", part_name=part_name, layer_depths=part_data["layer_depths"])
 
-Assembly('MyFirstModel', ['FLUID', 'PIPE', 'ROCK'])
-
 # Definition of materials ###############################################################
 
 if __name__ == "__main__":
@@ -99,14 +94,16 @@ if __name__ == "__main__":
             'density': 7950,
             'elastic': (206842800000, 0.3),
             'conductivity': 45.3452,
-            'specific_heat': 342.2186813
+            'specific_heat': 342.2186813,
+            "type": "Casing"
         }, 
         "FLUID": {
             "behavior": "Elastic",
             'density': 1.0,
             'elastic': (10000, 0),
             'conductivity': 0.702,
-            'specific_heat': 2060.0
+            'specific_heat': 2060.0,
+            "type": "Fluid"
         }, 
         "SHALE": {
             "behavior": "MohrCoulomb",
@@ -118,7 +115,8 @@ if __name__ == "__main__":
             'friction_angle': 30.0,
             'dilatancy_angle': 10.0,
             'cohesion': 5e6,
-            'lab_data': ((10e6, 0.0), (20e6, 0.01), (30e6, 0.03), (40e6, 0.06))    
+            'lab_data': ((10e6, 0.0), (20e6, 0.01), (30e6, 0.03), (40e6, 0.06)),
+            "type": "Rock"
         },
         "SANDSTONE": {
             "behavior": "MohrCoulomb",
@@ -130,7 +128,8 @@ if __name__ == "__main__":
             'friction_angle': 30.0,
             'dilatancy_angle': 10.0,
             'cohesion': 5e6,
-            'lab_data': ((10e6, 0.0), (20e6, 0.01), (30e6, 0.03), (40e6, 0.06))    
+            'lab_data': ((10e6, 0.0), (20e6, 0.01), (30e6, 0.03), (40e6, 0.06)),    
+            "type": "Rock"
         },
         "HALITE": {
             "behavior": "DoublePowerCreep",
@@ -147,7 +146,8 @@ if __name__ == "__main__":
                 "C1": 5.0,
                 "C2": 6.0,
                 "reference_stress": 100.0
-            }
+            },
+            "type": "Rock"
         }
         # "ELASTIC_MAT": {
         #     "behavior": "Elastic",
@@ -242,3 +242,4 @@ if __name__ == "__main__":
                        sectionName=section_name["sectionName"],
                        isSolid=section_name["isSolid"])
         
+# Assembly('MyFirstModel', ['FLUID', 'PIPE', 'ROCK'])

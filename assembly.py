@@ -19,8 +19,8 @@ import xyPlot
 import displayGroupOdbToolset as dgo
 import connectorBehavior
 
-if 'MyFirstModel' not in mdb.models:
-    mdb.Model(name='MyFirstModel')
+# if 'MyFirstModel' not in mdb.models:
+#     mdb.Model(name='MyFirstModel')
 
 def Assembly(modelName, partsNames, top_depth=3200, base_depth=3600):
     model = mdb.models[modelName]

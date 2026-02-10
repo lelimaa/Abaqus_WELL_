@@ -97,12 +97,12 @@ s1.Line(point1=(-6.8954105, -2500.0), point2=(-6.8954105,
     -4500.0)) # fourth vertical line at the middle of the rock
 
 
-
-
 s1.VerticalConstraint(entity=g[11], addUndoState=False)
 p = mdb.models['Model-1'].parts['Analise-1']
 f = p.faces
 
+
+# Partitioning the faces with the created lines
 pickedFaces = f.getSequenceFromMask(mask=('[#1 ]', ), )
 e1, d2 = p.edges, p.datums
 p.PartitionFaceBySketch(faces=pickedFaces, sketch=s1)
@@ -110,7 +110,7 @@ s1.unsetPrimaryObject()
 del mdb.models['Model-1'].sketches['__profile__']
 
 
-
+# Creating sets for materials and boundary conditions
 p = mdb.models['Model-1'].parts['Analise-1']
 f = p.faces
 faces = f.getSequenceFromMask(mask=('[#fff ]', ), )
@@ -343,7 +343,7 @@ e = p.edges
 edges = e.getSequenceFromMask(mask=('[#40880040 ]', ), )
 p.Set(edges=edges, name='YSYM_TOP')
 
-## CREATING SURFACES AGAIN
+## creating the surfaces for the interaction properties
 
 p = mdb.models['Model-1'].parts['Analise-1']
 s = p.edges

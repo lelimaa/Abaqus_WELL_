@@ -140,7 +140,6 @@ def PartitionLayersByDepth(model_name, part_name, layer_depths):
                                     faces=faces
                                     )
 
-
 def CreateGeometry(name_model, name, data):
     print("Creating Geometry: ", name)
 
