@@ -4,7 +4,7 @@ from abaqusConstants import *
 # import os
 import sys 
 
-path_project = r'C:\Users\hidalgo\Documents\GitHub\Abaqus_WELL_'
+path_project = r'C:\Users\juani\Documents\Github\Abaqus_WELL_'
 # path_project = r'C:\Users\hidalgo\Documents\GitHub\Abaqus_WELL_'
 
 if path_project not in sys.path:
@@ -94,84 +94,42 @@ Assembly('MyFirstModel', ['FLUID', 'PIPE', 'ROCK'])
 
 if __name__ == "__main__":
     examples = {
-        "ELASTIC_MAT": {
+        "STEEL": {
             "behavior": "Elastic",
-            'density': 7800,
-            'elastic': (210000, 0.3),
-            'conductivity': 45,
-            'specific_heat': 500,
+            'density': 7950,
+            'elastic': (206842800000, 0.3),
+            'conductivity': 45.3452,
+            'specific_heat': 342.2186813
+        }, 
+        "FLUID": {
+            "behavior": "Elastic",
+            'density': 1.0,
+            'elastic': (10000, 0),
+            'conductivity': 0.702
+        }, 
+        "SHALE": {
+            "behavior": "Elastic",
+            'density': 2332.73533930301,
+            'elastic': (20001698760, 0.29),
+            'conductivity': 1.592,
+            'specific_heat': 0.209946,
             'expansion': 1.2e-5
-        },
-        "VONMISES_MAT": {
-            "behavior": "vonMises",
-            'density': 7800,
-            'elastic': (210000, 0.3),
-            'conductivity': 45,
-            'specific_heat': 500,
-            'expansion': 1.2e-5,
-            'stress_strain_curve': ((250, 0.0), (300, 0.02), (350, 0.05), (400, 0.1))
-        },
-        "MOHRCOULOMB_MAT": {
-            "behavior": "MohrCoulomb",
-            'density': 2000,
-            'elastic': (15400e6, 0.14),
-            'conductivity': 1.1,
-            'specific_heat': 2100,
-            'expansion': 0.0,
-            'friction_angle': 30.0,
-            'dilatancy_angle': 10.0,
-            'cohesion': 5e6,
-            'lab_data': ((10e6, 0.0), (20e6, 0.01), (30e6, 0.03), (40e6, 0.06))
-        },
-        "DOUBLE_POWER_CREEP_MAT": {
-            "behavior": "DoublePowerCreep",
-            "density": 2170.23,
-            "elastic": (20403e6, 0.36),
-            "conductivity": 5.685,
-            "specific_heat": 880.25,
-            "expansion": 0.0,
-            "creep_parameters": {
-                "A1": 1.0,
-                "A2": 2.0,
-                "B1": 3.0,
-                "B2": 4.0,
-                "C1": 5.0,
-                "C2": 6.0,
-                "reference_stress": 100.0
-            }
-        },
-        "DOUBLE_MECHANISM_CREEP_MAT": {
-            "behavior": "DoubleMechanismCreep",
-            "density": 2170.23,
-            "elastic": (20403e6, 0.36),
-            "conductivity": 5.685,
-            "specific_heat": 880.25,
-            "expansion": 0.0,
-            "creep_parameters": {
-                "reference_strain": 1.0,
-                "reference_stress": 100.0,
-                "reference_temperature": 293.0,
-                "N1": 2.0,
-                "N2": 4.0,
-                "Q": 3.0,
-                "R": 5.0,
-            },
         }
     }
     material_examples = {
         "PIPE": {
             "partName": 'PIPE',
-            "sectionName": 'VONMISES_MAT_Section',
+            "sectionName": 'STEEL_Section',
             "isSolid": True
         },
         "FLUID": {
             "partName": 'FLUID',
-            "sectionName": 'ELASTIC_MAT_Section',
+            "sectionName": 'FLUID_Section',
             "isSolid": True
         },
         "ROCK": {
             "partName": 'ROCK',
-            "sectionName": 'DOUBLE_POWER_CREEP_MAT_Section',
+            "sectionName": 'SHALE_Section',
             "isSolid": True
         }
     }
