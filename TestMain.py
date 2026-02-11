@@ -4,14 +4,13 @@ from abaqusConstants import *
 # import os
 import sys 
 
-# path_project = r'C:\Users\juani\Documents\Github\Abaqus_WELL_'
-path_project = r'C:\Users\hidalgo\Documents\GitHub\Abaqus_WELL_'
+path_project = r'C:\Users\juani\Documents\Github\Abaqus_WELL_'
+# path_project = r'C:\Users\hidalgo\Documents\GitHub\Abaqus_WELL_'
 
 if path_project not in sys.path:
     sys.path.append(path_project)
 
 from GEOMETRY.geometries import * 
-# from GEOMETRY.materials import *
 from GEOMETRY.assembly import *
 from MATERIALS.materials import *
 # from materials_novo import ElasticMaterial
@@ -236,10 +235,14 @@ if __name__ == "__main__":
 
     for mat_name, mat_data in examples.items():
         CreateMaterial('MyFirstModel', mat_name, mat_data, sectionLength=1.)
-    for section_name in material_examples.values():
-        Assign_Section('MyFirstModel',
-                       partName=section_name["partName"],
-                       sectionName=section_name["sectionName"],
-                       isSolid=section_name["isSolid"])
+    # for section_name in material_examples.values():
+    #     Assign_Section('MyFirstModel',
+    #                    partName=section_name["partName"],
+    #                    sectionName=section_name["sectionName"],
+    #                    isSolid=section_name["isSolid"])
+        # AssignRockByDepth('MyFirstModel',
+        #                partName=section_name["partName"],
+        #                sectionName=section_name["sectionName"],
+        #                isSolid=section_name["isSolid"])
         
 # Assembly('MyFirstModel', ['FLUID', 'PIPE', 'ROCK'])

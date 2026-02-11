@@ -102,8 +102,13 @@ def CreateMaterial(modelName, name, data, sectionLength=1.):
         raise ValueError("Behavior '%s' not recognized." % behavior)
 
 
-def Assign_Section(modelName, partName, sectionName, setName=None, isSolid=True, rock_rules=None):
+def Assign_Section(modelName, partName, sectionName, setName=None, isSolid=True):
     model = mdb.models[modelName]
+    # Only allow assignments for specific parts (material examples)
+    allowed_parts = ("PIPE", "FLUID")
+    if partName not in allowed_parts:
+        print("Skipping section assignment for '%s' (not in allowed parts: %s)" % (partName, allowed_parts))
+        return
     if partName not in model.parts:
         raise ValueError("Part '%s' not found in model '%s'." %
                          (partName, modelName))
@@ -113,75 +118,20 @@ def Assign_Section(modelName, partName, sectionName, setName=None, isSolid=True,
         raise ValueError("Section '%s' not found in model '%s'. Available sections are: %s" % (
             sectionName, modelName, list(model.sections.keys())))
 
-    # Creating a set if not provided
     if setName is None:
         setName = partName + '_Set'
-
-    # If a named set already exists, assign the section to it
-    if setName in part.sets and rock_rules is None:
+    if setName in part.sets:
         region = part.sets[setName]
-        part.SectionAssignment(region=region,
-                               sectionName=sectionName,
-                               offset=0.0,
-                               offsetType=MIDDLE_SURFACE,
-                               offsetField='',
-                               thicknessAssignment=FROM_SECTION)
-        return
-
-    # Handle 2D/axisymmetric parts by faces
-    if part.space in (TWO_D_PLANAR, AXISYMMETRIC):
-        # If rock_rules provided, assign sections per-face based on depth ranges
-        if rock_rules:
-            # Aggregate faces for each rock rule so we create one set per rock type
-            rule_face_map = []
-            for rule in rock_rules:
-                rule_face_map.append({
-                    'rule': rule,
-                    'faces': []
-                })
-
-            for face in part.faces[:]:
-                y_center = face.pointOn[0][1]
-                depth = -y_center
-
-                for entry in rule_face_map:
-                    rule = entry['rule']
-                    top = rule.get('top_depth')
-                    base = rule.get('base_depth')
-                    if top is None or base is None:
-                        continue
-                    if (depth >= top) and (depth <= base):
-                        entry['faces'].append(face)
-                        break
-
-            # Create named sets and assign their respective sections
-            for entry in rule_face_map:
-                rule = entry['rule']
-                faces = entry['faces']
-                if not faces:
-                    continue
-                set_name = rule.get('set_name') or (rule.get('name', 'rock') + '_set')
-                if set_name in part.sets:
-                    region = part.sets[set_name]
-                else:
-                    region = part.Set(name=set_name, faces=tuple(faces))
-
-                assigned_section = rule.get('section', sectionName)
-                part.SectionAssignment(region=region,
-                                       sectionName=assigned_section,
-                                       offset=0.0,
-                                       offsetType=MIDDLE_SURFACE,
-                                       offsetField='',
-                                       thicknessAssignment=FROM_SECTION)
-            return
-        else:
-            # No rock rules: assign the same section to all faces
-            region = part.Set(name=setName, faces=part.faces[:])
-
-    elif part.space == THREE_D:
-        region = part.Set(name=setName, cells=part.cells[:])
     else:
-        raise ValueError("No valid entities to assign section in %s" % partName)
+        if part.space in (TWO_D_PLANAR, AXISYMMETRIC):
+            region = part.Set(name=setName, faces=part.faces[:])
+        elif part.space == THREE_D:
+            region = part.Set(name=setName, cells=part.cells[:])
+        # if isSolid is True:
+        #     region = part.Set(name=setName, cells=part.cells[:])
+        # elif isSolid is False:
+        else:
+            raise ValueError("No valid entities to assign section in %s" % partName)
 
     part.SectionAssignment(region=region,
                            sectionName=sectionName,
@@ -190,27 +140,81 @@ def Assign_Section(modelName, partName, sectionName, setName=None, isSolid=True,
                            offsetField='',
                            thicknessAssignment=FROM_SECTION)
     
-    # def AssignRockByDepth(modelName, partName, rock_layers, rock_rules):
-    # model = mdb.models[modelName]
-    # p = model.parts[partName]
- 
-    # for layer in rock_layers:
-    #     top = layer["top_depth"]
-    #     bottom = layer["base_depth"]
-    #     set_name = layer["set_name"]
-       
-    #     assigned = False
-    #     for rule in rock_rules:
-    #         if not (bottom <= rule["top_depth"] or top >= rule["base_depth"]):
-    #             p.SectionAssignment(
-    #                 region=p.sets[set_name],
-    #                 sectionName=rule["section"],
-    #                 offset=0.0,
-    #                 offsetType=MIDDLE_SURFACE,
-    #                 thicknessAssignment=FROM_SECTION
-    #             )
-    #             print("Material %s - %s" % (rule["name"], set_name))
-    #             assigned = True
-    #             break
-    #     if not assigned:
-    #         print("Aviso: camada sem material", set_name)
+# def AssignRockByDepth(modelName, partName, top_depth, base_depth, layer_depths, materials_order=None):
+#     """
+#     Create sets for each partitioned layer (using depths) and assign rock material
+#     sections to them. The function expects the part already partitioned by
+#     horizontal planes at the values in `layer_depths` (see `PartitionLayersByDepth`).
+
+#     Parameters
+#     - modelName: name of the Abaqus model
+#     - partName: name of the Part (e.g. 'ROCK')
+#     - top_depth: top depth (numeric)
+#     - base_depth: base depth (numeric)
+#     - layer_depths: list of intermediate depths (numeric)
+#     - materials_order: list of material names (e.g. ['SHALE','SANDSTONE','HALITE']).
+#       If shorter than number of layers it will be cycled.
+
+#     Example:
+#         AssignRockByDepth('MyFirstModel', 'ROCK', 3200, 4250, [3300,3600,4000],
+#                           materials_order=['SHALE','SANDSTONE','HALITE'])
+#     """
+#     model = mdb.models[modelName]
+#     if partName not in model.parts:
+#         raise ValueError("Part '%s' not found in model '%s'." % (partName, modelName))
+#     p = model.parts[partName]
+
+#     # build full ordered depth list from top -> base
+#     mids = sorted(layer_depths or [])
+#     depths = [top_depth] + mids + [base_depth]
+
+#     if materials_order is None:
+#         materials_order = ['SHALE', 'SANDSTONE', 'HALITE']
+
+#     num_layers = len(depths) - 1
+
+#     for i in range(num_layers):
+#         layer_top = depths[i]
+#         layer_bottom = depths[i + 1]
+#         # name the set for clarity
+#         set_name = '%s_Layer_%d_%d_%d' % (partName, i + 1, int(layer_top), int(layer_bottom))
+
+#         # collect faces whose representative point lies between the two depths
+#         faces_for_layer = []
+#         for f in p.faces[:]:
+#             # face.pointOn is a representative point (x,y,z)
+#             try:
+#                 y = f.pointOn[1]
+#             except Exception:
+#                 # fallback: skip face if we can't get pointOn
+#                 continue
+#             # model uses negative Y for depths (partition used -depth)
+#             if (-layer_bottom) <= y <= (-layer_top):
+#                 faces_for_layer.append(f)
+
+#         if not faces_for_layer:
+#             print("Warning: no faces found for layer %d (%s to %s)" % (i + 1, layer_top, layer_bottom))
+#             continue
+
+#         # create or replace set
+#         if set_name in p.sets:
+#             region = p.sets[set_name]
+#         else:
+#             region = p.Set(name=set_name, faces=faces_for_layer)
+
+#         # pick material for this layer (cycle through materials_order)
+#         mat_name = materials_order[i % len(materials_order)]
+#         section_name = '%s_Section' % mat_name
+#         if section_name not in model.sections:
+#             print("Warning: section '%s' not found in model; skipping assignment for %s" % (section_name, set_name))
+#             continue
+
+#         p.SectionAssignment(
+#             region=region,
+#             sectionName=section_name,
+#             offset=0.0,
+#             offsetType=MIDDLE_SURFACE,
+#             offsetField='',
+#             thicknessAssignment=FROM_SECTION
+#         )
+#         print('Assigned %s to %s (depth %s-%s)' % (mat_name, set_name, layer_top, layer_bottom))
