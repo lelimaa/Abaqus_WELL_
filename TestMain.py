@@ -12,7 +12,7 @@ if path_project not in sys.path:
 
 from GEOMETRY.geometries import * 
 from GEOMETRY.assembly import *
-from MATERIALS.materials import *
+from MATERIALS.materials import *             
 # from materials_novo import ElasticMaterial
 
 mdb.models.changeKey(fromName='Model-1', toName='MyFirstModel')
@@ -56,7 +56,7 @@ if __name__ == "__main__":
         "rock_wt": thickness_wellbore
     }
 
-    layers_depths = [3300, 3600, 4000]
+    layers_depths = [3550, 3900]
 
     data = {
         "ROCK": {"inner_radius": example["rock_radius"],
@@ -222,27 +222,43 @@ if __name__ == "__main__":
             "partName": 'FLUID',
             "sectionName": 'FLUID_Section',
             "isSolid": True
-        },
-        "ROCK": {
-            "partName": 'ROCK',
-            "sectionName": 'SHALE_Section',
-            "isSolid": True
         }
     }
+
+    lythology_examples = [
+        {
+            "set_name": 'SHALE',
+            "top_depth": 3200.0,
+            "base_depth": 3550.0,
+            "partName": 'ROCK',
+            "sectionName": 'SHALE_Section',
+        },
+        {
+            "set_name": 'SANDSTONE',
+            "top_depth": 3550.0,
+            "base_depth": 3900.0,
+            "partName": 'ROCK',
+            "sectionName": 'SANDSTONE_Section',
+        },
+        {
+            "set_name": 'HALITE',
+            "top_depth": 3900.0,
+            "base_depth": 4250.0,
+            "partName": 'ROCK',
+            "sectionName": 'HALITE_Section',
+        }
+    ]
 
     # if 'MyFirstModel' not in mdb.models:
     #     mdb.Model(name='MyFirstModel')
 
     for mat_name, mat_data in examples.items():
         CreateMaterial('MyFirstModel', mat_name, mat_data, sectionLength=1.)
-    # for section_name in material_examples.values():
-    #     Assign_Section('MyFirstModel',
-    #                    partName=section_name["partName"],
-    #                    sectionName=section_name["sectionName"],
-    #                    isSolid=section_name["isSolid"])
-        # AssignRockByDepth('MyFirstModel',
-        #                partName=section_name["partName"],
-        #                sectionName=section_name["sectionName"],
-        #                isSolid=section_name["isSolid"])
-        
-# Assembly('MyFirstModel', ['FLUID', 'PIPE', 'ROCK'])
+    for section_name in material_examples.values():
+        Assign_Section('MyFirstModel',
+                       partName=section_name["partName"],
+                       sectionName=section_name["sectionName"],
+                       isSolid=section_name["isSolid"])
+ 
+    # Assign rock materials by depth layers
+    AssignRockByDepth('MyFirstModel', 'ROCK', lythology_examples)

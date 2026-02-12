@@ -1,6 +1,8 @@
 from abaqus import mdb
 from abaqusConstants import *
 
+from part import *
+
 
 def ElasticMaterial(modelName, name, data, sectionLength=1.):
     m = mdb.models[modelName]
@@ -104,10 +106,10 @@ def CreateMaterial(modelName, name, data, sectionLength=1.):
 
 def Assign_Section(modelName, partName, sectionName, setName=None, isSolid=True):
     model = mdb.models[modelName]
-    # Only allow assignments for specific parts (material examples)
+    # Only work with PIPE and FLUID from material_examples
     allowed_parts = ("PIPE", "FLUID")
     if partName not in allowed_parts:
-        print("Skipping section assignment for '%s' (not in allowed parts: %s)" % (partName, allowed_parts))
+        print("Skipping section assignment for '%s' (use AssignRockByDepth for rock materials)" % partName)
         return
     if partName not in model.parts:
         raise ValueError("Part '%s' not found in model '%s'." %
@@ -140,81 +142,36 @@ def Assign_Section(modelName, partName, sectionName, setName=None, isSolid=True)
                            offsetField='',
                            thicknessAssignment=FROM_SECTION)
     
-# def AssignRockByDepth(modelName, partName, top_depth, base_depth, layer_depths, materials_order=None):
-#     """
-#     Create sets for each partitioned layer (using depths) and assign rock material
-#     sections to them. The function expects the part already partitioned by
-#     horizontal planes at the values in `layer_depths` (see `PartitionLayersByDepth`).
 
-#     Parameters
-#     - modelName: name of the Abaqus model
-#     - partName: name of the Part (e.g. 'ROCK')
-#     - top_depth: top depth (numeric)
-#     - base_depth: base depth (numeric)
-#     - layer_depths: list of intermediate depths (numeric)
-#     - materials_order: list of material names (e.g. ['SHALE','SANDSTONE','HALITE']).
-#       If shorter than number of layers it will be cycled.
+def AssignRockByDepth(modelName, partName, rock_layers):
+    model = mdb.models[modelName]
+    part = model.parts[partName]
+ 
+    for layer in rock_layers:
+        top = -layer["top_depth"]
+        bottom = -layer["base_depth"]
+        sec_name = layer["sectionName"]
+        set_name = layer["set_name"]
 
-#     Example:
-#         AssignRockByDepth('MyFirstModel', 'ROCK', 3200, 4250, [3300,3600,4000],
-#                           materials_order=['SHALE','SANDSTONE','HALITE'])
-#     """
-#     model = mdb.models[modelName]
-#     if partName not in model.parts:
-#         raise ValueError("Part '%s' not found in model '%s'." % (partName, modelName))
-#     p = model.parts[partName]
+        faces_to_assign = []
 
-#     # build full ordered depth list from top -> base
-#     mids = sorted(layer_depths or [])
-#     depths = [top_depth] + mids + [base_depth]
+        for face in part.faces:
+            y_coord = face.pointOn[0][1]  # Get the y-coordinate of a point on the face
+            if bottom <= y_coord <= top:
+                faces_to_assign.append(face)
 
-#     if materials_order is None:
-#         materials_order = ['SHALE', 'SANDSTONE', 'HALITE']
+        if faces_to_assign:
 
-#     num_layers = len(depths) - 1
+            region = part.Set(name=set_name, faces=part.faces.sequenceFromLabels([f.index for f in faces_to_assign]))
 
-#     for i in range(num_layers):
-#         layer_top = depths[i]
-#         layer_bottom = depths[i + 1]
-#         # name the set for clarity
-#         set_name = '%s_Layer_%d_%d_%d' % (partName, i + 1, int(layer_top), int(layer_bottom))
-
-#         # collect faces whose representative point lies between the two depths
-#         faces_for_layer = []
-#         for f in p.faces[:]:
-#             # face.pointOn is a representative point (x,y,z)
-#             try:
-#                 y = f.pointOn[1]
-#             except Exception:
-#                 # fallback: skip face if we can't get pointOn
-#                 continue
-#             # model uses negative Y for depths (partition used -depth)
-#             if (-layer_bottom) <= y <= (-layer_top):
-#                 faces_for_layer.append(f)
-
-#         if not faces_for_layer:
-#             print("Warning: no faces found for layer %d (%s to %s)" % (i + 1, layer_top, layer_bottom))
-#             continue
-
-#         # create or replace set
-#         if set_name in p.sets:
-#             region = p.sets[set_name]
-#         else:
-#             region = p.Set(name=set_name, faces=faces_for_layer)
-
-#         # pick material for this layer (cycle through materials_order)
-#         mat_name = materials_order[i % len(materials_order)]
-#         section_name = '%s_Section' % mat_name
-#         if section_name not in model.sections:
-#             print("Warning: section '%s' not found in model; skipping assignment for %s" % (section_name, set_name))
-#             continue
-
-#         p.SectionAssignment(
-#             region=region,
-#             sectionName=section_name,
-#             offset=0.0,
-#             offsetType=MIDDLE_SURFACE,
-#             offsetField='',
-#             thicknessAssignment=FROM_SECTION
-#         )
-#         print('Assigned %s to %s (depth %s-%s)' % (mat_name, set_name, layer_top, layer_bottom))
+            part.SectionAssignment(
+                region=region,
+                sectionName=sec_name,
+                offset=0.0,
+                offsetType=MIDDLE_SURFACE,
+                offsetField='',
+                thicknessAssignment=FROM_SECTION
+            )
+            print("Assigned section '%s' to faces in layer '%s' (depth range: %s to %s)" % (sec_name, set_name, layer["base_depth"], layer["top_depth"]))
+        else: 
+            print("Warning: No faces found in layer '%s' (depth range: %s to %s)" % (set_name, layer["base_depth"], layer["top_depth"]))
