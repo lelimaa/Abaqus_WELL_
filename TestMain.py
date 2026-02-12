@@ -264,4 +264,6 @@ if __name__ == "__main__":
     Assembly('MyFirstModel', partsNames=['FLUID', 'PIPE', 'ROCK'],
              top_depth=example["top_depth"], base_depth=example["base_depth"])  
     
+    # Defining sets for boundary conditions and interactions
+    
     
