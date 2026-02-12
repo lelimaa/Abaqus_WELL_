@@ -13,7 +13,7 @@ if path_project not in sys.path:
 from GEOMETRY.geometries import * 
 from GEOMETRY.assembly import *
 from MATERIALS.materials import *             
-# from materials_novo import ElasticMaterial
+# from ASSEMBLY.assembly import *
 
 mdb.models.changeKey(fromName='Model-1', toName='MyFirstModel')
 
@@ -27,7 +27,7 @@ thickness_pipe = 0.0127  # Updated by script
 inner_radius_annular = inner_radius_pipe + thickness_pipe
 # thickness_annular = 0.02
 # inner_radius_wellbore = inner_radius_annular + thickness_annular
-inner_radius_wellbore = 0.011612879999999999  # Updated by script
+inner_radius_wellbore = 0.4572  # Updated by script
 thickness_annular = inner_radius_wellbore - inner_radius_annular
 thickness_wellbore = 12.0
 
@@ -249,9 +249,6 @@ if __name__ == "__main__":
         }
     ]
 
-    # if 'MyFirstModel' not in mdb.models:
-    #     mdb.Model(name='MyFirstModel')
-
     for mat_name, mat_data in examples.items():
         CreateMaterial('MyFirstModel', mat_name, mat_data, sectionLength=1.)
     for section_name in material_examples.values():
@@ -262,3 +259,9 @@ if __name__ == "__main__":
  
     # Assign rock materials by depth layers
     AssignRockByDepth('MyFirstModel', 'ROCK', lythology_examples)
+
+    # Create assembly
+    Assembly('MyFirstModel', partsNames=['FLUID', 'PIPE', 'ROCK'],
+             top_depth=example["top_depth"], base_depth=example["base_depth"])  
+    
+    

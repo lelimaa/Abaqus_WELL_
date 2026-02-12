@@ -9,7 +9,7 @@ import regionToolset
 import displayGroupMdbToolset as dgm
 import part
 import material
-import assembly
+import Superados.assembly as assembly
 import step
 import interaction
 import load
@@ -494,12 +494,17 @@ p.SectionAssignment(region=region, sectionName='L3-I-HALITA', offset=0.0,
     thicknessAssignment=FROM_SECTION)
 p = mdb.models['Model-1'].parts['Analise-1']
 
+# Creation of the instance
+
 a = mdb.models['Model-1'].rootAssembly
 a = mdb.models['Model-1'].rootAssembly
 a.DatumCsysByThreePoints(coordSysType=CYLINDRICAL, origin=(0.0, 0.0, 0.0), 
     point1=(1.0, 0.0, 0.0), point2=(0.0, 0.0, -1.0))
 p = mdb.models['Model-1'].parts['Analise-1']
 a.Instance(name='Analise-1-1', part=p, dependent=ON)
+
+
+# Creation of steps and application of boundary conditions
 a = mdb.models['Model-1'].rootAssembly
 region = a.instances['Analise-1-1'].sets['FASEI_WELL_CIMENTO_BASE']
 mdb.models['Model-1'].XsymmBC(name='FIX_FASEI_WELL', createStepName='Initial', 
@@ -741,7 +746,7 @@ mdb.models['Model-1'].ViscoStep(name='Rev_9_875_Creep', previous='Rev_9_875',
     timePeriod=945907000.0, maxNumInc=1000000, initialInc=1.0, 
     minInc=1e-15, maxInc=15552000.0, cetol=0.01)
 
-
+# Mesh seeding
 
 p = mdb.models['Model-1'].parts['Analise-1']
 e = p.edges

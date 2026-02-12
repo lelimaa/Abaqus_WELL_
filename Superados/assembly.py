@@ -6,7 +6,7 @@ import regionToolset
 import displayGroupMdbToolset as dgm
 import part
 import material
-import Superados.assembly as assembly
+import assembly
 import step
 import interaction
 import load
@@ -22,7 +22,7 @@ import connectorBehavior
 # if 'MyFirstModel' not in mdb.models:
 #     mdb.Model(name='MyFirstModel')
 
-def Assembly(modelName, partsNames, top_depth=3200, base_depth=3600):
+def Assembly(modelName, partsNames, top_depth, base_depth):
     model = mdb.models[modelName]
     a = model.rootAssembly
     depth = base_depth - top_depth
@@ -56,4 +56,3 @@ def Assembly(modelName, partsNames, top_depth=3200, base_depth=3600):
     a.regenerate()
     print("Assembly completed with active sets:", a.sets.keys())
 
-# Assembly('MyFirstModel', ['FLUID', 'PIPE', 'ROCK'])
