@@ -367,3 +367,509 @@ def MacroSets():
     cliCommand("""print(set_all.faces)""")
 
 
+def MacroAssembly2():
+    import section
+    import regionToolset
+    import displayGroupMdbToolset as dgm
+    import part
+    import material
+    import assembly
+    import step
+    import interaction
+    import load
+    import mesh
+    import optimization
+    import job
+    import sketch
+    import visualization
+    import xyPlot
+    import displayGroupOdbToolset as dgo
+    import connectorBehavior
+    p1 = mdb.models['MyFirstModel'].parts['PIPE']
+    session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+    session.viewports['Viewport: 1'].view.setValues(session.views['User-1'])
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-10, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-10, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-10, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-10, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-10, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-10, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-10, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    p = mdb.models['MyFirstModel'].parts['ROCK']
+    session.viewports['Viewport: 1'].setValues(displayedObject=p)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-10, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-10, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-10, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-10, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-10, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-10, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-10, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-10, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.setProjection(projection=PARALLEL)
+    session.viewports['Viewport: 1'].view.setValues(nearPlane=1829.51, 
+        farPlane=3211.04, width=938.469, height=300.447, cameraPosition=(
+        -7.26975, -6206.36, 441.208), cameraTarget=(-7.26975, -3724.37, 
+        3.56785))
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-10, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.setValues(nearPlane=1886.1, 
+        farPlane=3153.2, width=48.1457, height=15.4136, cameraPosition=(2.4987, 
+        -6244.65, 0.583685), cameraTarget=(2.4987, -3724.37, 0.585333))
+    session.viewports['Viewport: 1'].view.rotate(xAngle=10, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.setValues(nearPlane=1842.98, 
+        farPlane=3196.52, width=847.259, height=271.246, cameraPosition=(
+        4.48503, -6209.73, 419.062), cameraTarget=(4.48503, -3727.74, 
+        -18.5778))
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-1, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-1, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-1, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-1, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-1, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-1, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-1, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-1, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.1, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.1, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.1, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.1, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.setValues(nearPlane=1880.8, 
+        farPlane=3164.18, width=159.393, height=51.0289, cameraPosition=(
+        -1.76484, -6246.54, 69.298), cameraTarget=(-1.76484, -3727.25, 
+        -1.07066))
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.1, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.1, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.1, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.1, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.1, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.1, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.1, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.1, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.1, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.1, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.setValues(nearPlane=1888.11, 
+        farPlane=3156.91, width=59.2263, height=18.961, cameraPosition=(
+        -0.81714, -6247.36, 27.4238), cameraTarget=(-0.81714, -3727.22, 
+        1.03365))
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.01, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.01, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.01, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.01, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.01, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.01, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.01, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.01, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.01, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.01, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.01, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.01, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.01, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.01, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.01, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.01, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.01, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.01, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.01, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.01, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.01, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.01, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.01, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.01, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.01, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.01, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.01, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.01, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.01, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.01, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.01, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.01, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.01, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.01, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.01, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.01, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.01, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.01, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.01, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.01, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.01, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.01, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.01, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.01, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.01, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.01, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.01, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.01, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.setValues(nearPlane=1891.66, 
+        farPlane=3153.33, width=12.6099, height=4.03699, cameraPosition=(
+        0.71139, -6247.49, 4.80639), cameraTarget=(0.71139, -3727.23, 
+        -0.470494))
+    p = mdb.models['MyFirstModel'].parts['PIPE']
+    session.viewports['Viewport: 1'].setValues(displayedObject=p)
+    p = mdb.models['MyFirstModel'].parts['ROCK']
+    session.viewports['Viewport: 1'].setValues(displayedObject=p)
+    session.viewports['Viewport: 1'].view.setValues(nearPlane=1889.01, 
+        farPlane=3151.55, width=17.0548, height=5.46002, cameraPosition=(
+        0.32291, -6245.27, 4.93576), cameraTarget=(0.32291, -3725, -0.341134))
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.01, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.01, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.01, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.01, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.View(name='User-1', nearPlane=1889, farPlane=3151.5, width=17.055, 
+        height=5.46, projection=PARALLEL, cameraPosition=(0.32291, -6245.3, 
+        3.1763), cameraUpVector=(0, 0.0013964, 1), cameraTarget=(0.32291, 
+        -3725, -0.34113), viewOffsetX=0, viewOffsetY=0, autoFit=OFF)
+    p = mdb.models['MyFirstModel'].parts['PIPE']
+    session.viewports['Viewport: 1'].setValues(displayedObject=p)
+    session.viewports['Viewport: 1'].view.setValues(session.views['User-1'])
+    session.viewports['Viewport: 1'].view.setProjection(projection=PARALLEL)
+    session.viewports['Viewport: 1'].view.setValues(nearPlane=1889.74, 
+        farPlane=3150.86, width=7.62981, height=2.44265, cameraPosition=(
+        0.509158, -6245.3, 3.57949), cameraTarget=(0.509158, -3725, 0.062056))
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.001, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.001, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.001, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.001, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.001, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.001, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.001, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.001, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.001, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.001, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.001, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.001, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.001, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.001, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.001, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.001, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.001, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.001, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.001, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.001, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.001, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.001, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.001, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.001, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.001, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.001, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.001, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.001, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.setValues(nearPlane=1889.98, 
+        farPlane=3150.62, width=4.37184, height=1.39963, cameraPosition=(
+        0.238789, -6245.3, 2.34269), cameraTarget=(0.238789, -3725, 0.0569115))
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.001, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.001, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.001, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.001, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.001, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.001, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.001, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.001, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.001, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.001, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.001, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.001, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.001, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.001, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.001, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.001, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.001, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.001, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.001, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.001, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.001, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.001, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.001, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.001, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.001, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.001, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.001, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.001, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.setValues(nearPlane=1890.14, 
+        farPlane=3150.46, width=2.21346, height=0.708628, cameraPosition=(
+        0.354532, -6245.3, 1.10099), cameraTarget=(0.354532, -3725, 0.0468576))
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.001, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.001, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.viewports['Viewport: 1'].view.rotate(xAngle=-0.001, yAngle=0, zAngle=0, 
+        mode=MODEL)
+    session.View(name='User-2', nearPlane=1890.1, farPlane=3150.5, width=2.2135, 
+        height=0.70863, projection=PARALLEL, cameraPosition=(0.35453, -6245.3, 
+        0.96903), cameraUpVector=(0, 0.00036666, 1), cameraTarget=(0.35453, 
+        -3725, 0.046858), viewOffsetX=0, viewOffsetY=0, autoFit=OFF)
+    p = mdb.models['MyFirstModel'].parts['FLUID']
+    session.viewports['Viewport: 1'].setValues(displayedObject=p)
+    session.viewports['Viewport: 1'].view.setValues(session.views['User-2'])
+    session.viewports['Viewport: 1'].view.setProjection(projection=PARALLEL)
+    p1 = mdb.models['MyFirstModel'].parts['PIPE']
+    session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+    p = mdb.models['MyFirstModel'].parts['PIPE']
+    f = p.faces
+    faces = f.getSequenceFromMask(mask=('[#7 ]', ), )
+    p.Set(faces=faces, name='FASEI_REV')
+    p = mdb.models['MyFirstModel'].parts['PIPE']
+    f = p.faces
+    faces = f.getSequenceFromMask(mask=('[#7 ]', ), )
+    p.Set(faces=faces, name='FASEI_REV_ABOVE_TOC')
+    p = mdb.models['MyFirstModel'].parts['PIPE']
+    e = p.edges
+    edges = e.getSequenceFromMask(mask=('[#4 ]', ), )
+    p.Set(edges=edges, name='FASEI_REV_BASE')
+    p = mdb.models['MyFirstModel'].parts['PIPE']
+    e = p.edges
+    edges = e.getSequenceFromMask(mask=('[#242 ]', ), )
+    p.Set(edges=edges, name='FASEI_REV_ID')
+    p = mdb.models['MyFirstModel'].parts['PIPE']
+    e = p.edges
+    edges = e.getSequenceFromMask(mask=('[#98 ]', ), )
+    p.Set(edges=edges, name='FASEI_REV_OD')
+    p = mdb.models['MyFirstModel'].parts['PIPE']
+    e = p.edges
+    edges = e.getSequenceFromMask(mask=('[#100 ]', ), )
+    p.Set(edges=edges, name='FASEI_REV_TOP')
+    session.viewports['Viewport: 1'].view.setValues(nearPlane=1889.96, 
+        farPlane=3150.04, width=0.581237, height=0.18608, cameraPosition=(
+        0.313568, -6245, 0.795443), cameraTarget=(0.313568, -3725, -0.126615))
+    p = mdb.models['MyFirstModel'].parts['PIPE']
+    e = p.edges
+    edges = e.getSequenceFromMask(mask=('[#125 ]', ), )
+    p.Set(edges=edges, name='FASEI_REV_TT')
+    p = mdb.models['MyFirstModel'].parts['ROCK']
+    session.viewports['Viewport: 1'].setValues(displayedObject=p)
+    session.viewports['Viewport: 1'].view.setValues(nearPlane=1888.44, 
+        farPlane=3152.12, width=24.8391, height=7.95213, cameraPosition=(
+        0.538064, -6245.27, 3.2646), cameraTarget=(0.538064, -3725, -0.252811))
+    p = mdb.models['MyFirstModel'].parts['ROCK']
+    f = p.faces
+    faces = f.getSequenceFromMask(mask=('[#7 ]', ), )
+    p.Set(faces=faces, name='FASEI_SLAVE')
+    p = mdb.models['MyFirstModel'].parts['ROCK']
+    e = p.edges
+    edges = e.getSequenceFromMask(mask=('[#242 ]', ), )
+    p.Set(edges=edges, name='FASEI_WELL')
+    a = mdb.models['MyFirstModel'].rootAssembly
+    a.regenerate()
+    session.viewports['Viewport: 1'].setValues(displayedObject=a)
+    session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+        optimizationTasks=OFF, geometricRestrictions=OFF, stopConditions=OFF)
+    session.viewports['Viewport: 1'].view.setValues(session.views['User-2'])
+    session.viewports['Viewport: 1'].view.setProjection(projection=PARALLEL)
+    a = mdb.models['MyFirstModel'].rootAssembly
+    e1 = a.instances['FLUID_INST'].edges
+    edges1 = e1.getSequenceFromMask(mask=('[#125 ]', ), )
+    a.Set(edges=edges1, name='MESH_TT_ANNULARS')
+    session.viewports['Viewport: 1'].view.setValues(nearPlane=1890.22, 
+        farPlane=3150.38, width=1.05345, height=0.337257, cameraPosition=(
+        0.373484, -6245.3, 0.836782), cameraTarget=(0.373484, -3725, 
+        -0.0853901))
+    a = mdb.models['MyFirstModel'].rootAssembly
+    e1 = a.instances['PIPE_INST'].edges
+    edges1 = e1.getSequenceFromMask(mask=('[#125 ]', ), )
+    a.Set(edges=edges1, name='MESH_TT_PIPES')
+    session.viewports['Viewport: 1'].view.setValues(nearPlane=1890.14, 
+        farPlane=3150.46, width=2.38381, height=0.763165, cameraPosition=(
+        0.457162, -6245.3, 0.848339), cameraTarget=(0.457162, -3725, 
+        -0.0738335))
+    a = mdb.models['MyFirstModel'].rootAssembly
+    e1 = a.instances['ROCK_INST'].edges
+    edges1 = e1.getSequenceFromMask(mask=('[#125 ]', ), )
+    a.Set(edges=edges1, name='MESH_TT_ROCK')
+    session.viewports['Viewport: 1'].view.setValues(nearPlane=1890.13, 
+        farPlane=3150.47, width=2.26832, height=0.726193, cameraPosition=(
+        12.2706, -6245.3, 0.931715), cameraTarget=(12.2706, -3725, 0.00954194))
+    a = mdb.models['MyFirstModel'].rootAssembly
+    e1 = a.instances['PIPE_INST'].edges
+    edges1 = e1.getSequenceFromMask(mask=('[#2da ]', ), )
+    e2 = a.instances['ROCK_INST'].edges
+    edges2 = e2.getSequenceFromMask(mask=('[#2da ]', ), )
+    a.Set(edges=edges1+edges2, name='MESH_VERTICAL')
+    session.viewports['Viewport: 1'].view.setValues(nearPlane=1890.19, 
+        farPlane=3150.4, width=1.3644, height=0.436807, cameraPosition=(
+        0.155108, -6245.3, 1.12248), cameraTarget=(0.155108, -3725, 0.200303))
+    a = mdb.models['MyFirstModel'].rootAssembly
+    r1 = a.instances['ROCK_INST'].referencePoints
+    refPoints1=(r1[2], )
+    a.Set(referencePoints=refPoints1, name='REFPT')
+    session.viewports['Viewport: 1'].view.setValues(nearPlane=1889.87, 
+        farPlane=3150.72, width=5.7391, height=1.83735, cameraPosition=(
+        10.2085, -6245.3, 1.05657), cameraTarget=(10.2085, -3725, 0.134393))
+    a = mdb.models['MyFirstModel'].rootAssembly
+    e1 = a.instances['ROCK_INST'].edges
+    edges1 = e1.getSequenceFromMask(mask=('[#98 ]', ), )
+    a.Set(edges=edges1, name='ROCK_BC')
+    session.viewports['Viewport: 1'].view.setValues(nearPlane=1889.64, 
+        farPlane=3150.95, width=8.85981, height=2.83643, cameraPosition=(
+        2.28987, -6245.3, 1.2209), cameraTarget=(2.28987, -3725, 0.298724))
+    a = mdb.models['MyFirstModel'].rootAssembly
+    f1 = a.instances['ROCK_INST'].faces
+    faces1 = f1.getSequenceFromMask(mask=('[#7 ]', ), )
+    a.Set(faces=faces1, name='ROCK_OUTPUT')
+    session.viewports['Viewport: 1'].view.setValues(nearPlane=1890.2, 
+        farPlane=3150.4, width=1.30133, height=0.416615, cameraPosition=(
+        0.633475, -6245.3, 0.69774), cameraTarget=(0.633475, -3725, -0.224433))
+    a = mdb.models['MyFirstModel'].rootAssembly
+    e1 = a.instances['PIPE_INST'].edges
+    edges1 = e1.getSequenceFromMask(mask=('[#4 ]', ), )
+    e2 = a.instances['FLUID_INST'].edges
+    edges2 = e2.getSequenceFromMask(mask=('[#4 ]', ), )
+    e3 = a.instances['ROCK_INST'].edges
+    edges3 = e3.getSequenceFromMask(mask=('[#4 ]', ), )
+    a.Set(edges=edges1+edges2+edges3, name='YSYM_BASE')
+    session.viewports['Viewport: 1'].view.setValues(nearPlane=1890.24, 
+        farPlane=3150.36, width=0.791405, height=0.253365, cameraPosition=(
+        0.497677, -6245.3, 1.10371), cameraTarget=(0.497677, -3725, 0.181541))
+    a = mdb.models['MyFirstModel'].rootAssembly
+    e1 = a.instances['ROCK_INST'].edges
+    edges1 = e1.getSequenceFromMask(mask=('[#100 ]', ), )
+    e2 = a.instances['FLUID_INST'].edges
+    edges2 = e2.getSequenceFromMask(mask=('[#100 ]', ), )
+    e3 = a.instances['PIPE_INST'].edges
+    edges3 = e3.getSequenceFromMask(mask=('[#100 ]', ), )
+    a.Set(edges=edges1+edges2+edges3, name='YSYM_TOP')
+
+

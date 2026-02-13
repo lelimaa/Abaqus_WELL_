@@ -4,14 +4,15 @@ from abaqusConstants import *
 # import os
 import sys 
 
-path_project = r'C:\Users\juani\Documents\Github\Abaqus_WELL_' 
-# path_project = r'C:\Users\hidalgo\Documents\GitHub\Abaqus_WELL_'
+# path_project = r'C:\Users\juani\Documents\Github\Abaqus_WELL_' 
+path_project = r'C:\Users\hidalgo\Documents\GitHub\Abaqus_WELL_'
 
 if path_project not in sys.path:
     sys.path.append(path_project)
 
 from GEOMETRY.geometries import * 
 from GEOMETRY.assembly import *
+from GEOMETRY.sets import *
 from MATERIALS.materials import *             
 # from ASSEMBLY.assembly import *
 
@@ -265,5 +266,7 @@ if __name__ == "__main__":
              top_depth=example["top_depth"], base_depth=example["base_depth"])  
     
     # Defining sets for boundary conditions and interactions
+
+    create_sets_pipe('MyFirstModel')
     
     

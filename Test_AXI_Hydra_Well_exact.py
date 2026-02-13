@@ -9,7 +9,7 @@ import regionToolset
 import displayGroupMdbToolset as dgm
 import part
 import material
-import Superados.assembly as assembly
+# import Superados.assembly as assembly
 import step
 import interaction
 import load
