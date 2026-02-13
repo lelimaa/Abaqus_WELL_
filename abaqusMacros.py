@@ -260,3 +260,110 @@ def MacroSets():
     e = p.edges
     edges = e.getSequenceFromMask(mask=('[#1 ]', ), )
     p.Set(edges=edges, name='L3-I_TOP')
+    p = mdb.models['MyFirstModel'].parts['FLUID']
+    session.viewports['Viewport: 1'].setValues(displayedObject=p)
+    p = mdb.models['MyFirstModel'].parts['PIPE']
+    session.viewports['Viewport: 1'].setValues(displayedObject=p)
+    a1 = mdb.models['MyFirstModel'].rootAssembly
+    a1.regenerate()
+    a = mdb.models['MyFirstModel'].rootAssembly
+    session.viewports['Viewport: 1'].setValues(displayedObject=a)
+    session.viewports['Viewport: 1'].view.setValues(nearPlane=1888.04, 
+        farPlane=3148.56, width=2.75317, height=1.24326, cameraPosition=(
+        1.13212, -6243.3, 2.15284), cameraTarget=(1.13212, -3723.2, 0.0421889))
+    p1 = mdb.models['MyFirstModel'].parts['ROCK']
+    session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+    session.viewports['Viewport: 1'].view.setValues(nearPlane=1889.18, 
+        farPlane=3151.37, width=11.8645, height=5.35768, cameraPosition=(
+        2.87561, -6245.28, 1.60123), cameraTarget=(2.87561, -3725, -0.50957))
+    p = mdb.models['MyFirstModel'].parts['PIPE']
+    session.viewports['Viewport: 1'].setValues(displayedObject=p)
+    p = mdb.models['MyFirstModel'].parts['ROCK']
+    session.viewports['Viewport: 1'].setValues(displayedObject=p)
+    p = mdb.models['MyFirstModel'].parts['PIPE']
+    session.viewports['Viewport: 1'].setValues(displayedObject=p)
+    session.viewports['Viewport: 1'].view.setValues(session.views['User-1'])
+    session.viewports['Viewport: 1'].view.setValues(nearPlane=1888.01, 
+        farPlane=3148.59, width=2.76833, height=1.2501, cameraPosition=(
+        0.908102, -6243.3, 2.03867), cameraTarget=(0.908102, -3723.2, 
+        -0.071982))
+    p = mdb.models['MyFirstModel'].parts['FLUID']
+    session.viewports['Viewport: 1'].setValues(displayedObject=p)
+    p = mdb.models['MyFirstModel'].parts['PIPE']
+    session.viewports['Viewport: 1'].setValues(displayedObject=p)
+    p1 = mdb.models['MyFirstModel'].parts['ROCK']
+    session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+    p = mdb.models['MyFirstModel'].parts['PIPE']
+    session.viewports['Viewport: 1'].setValues(displayedObject=p)
+    p1 = mdb.models['MyFirstModel'].parts['ROCK']
+    session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+    p = mdb.models['MyFirstModel'].parts['PIPE']
+    session.viewports['Viewport: 1'].setValues(displayedObject=p)
+    a = mdb.models['MyFirstModel'].rootAssembly
+    session.viewports['Viewport: 1'].setValues(displayedObject=a)
+    a = mdb.models['MyFirstModel'].rootAssembly
+    session.viewports['Viewport: 1'].setValues(displayedObject=a)
+    a = mdb.models['MyFirstModel'].rootAssembly
+    f1 = a.instances['FLUID_INST'].faces
+    faces1 = f1.getSequenceFromMask(mask=('[#7 ]', ), )
+    f2 = a.instances['PIPE_INST'].faces
+    faces2 = f2.getSequenceFromMask(mask=('[#7 ]', ), )
+    a.Set(faces=faces1+faces2, name='FASEI')
+    p1 = mdb.models['MyFirstModel'].parts['FLUID']
+    session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+    p = mdb.models['MyFirstModel'].parts['FLUID']
+    f = p.faces
+    faces = f.getSequenceFromMask(mask=('[#7 ]', ), )
+    p.Set(faces=faces, name='FASEI_ANNULAR')
+    p = mdb.models['MyFirstModel'].parts['FLUID']
+    e = p.edges
+    edges = e.getSequenceFromMask(mask=('[#4 ]', ), )
+    p.Set(edges=edges, name='FASEI_ANNULAR_BASE')
+    p = mdb.models['MyFirstModel'].parts['FLUID']
+    e = p.edges
+    edges = e.getSequenceFromMask(mask=('[#242 ]', ), )
+    p.Set(edges=edges, name='FASEI_ANNULAR_ID')
+    p = mdb.models['MyFirstModel'].parts['FLUID']
+    e = p.edges
+    edges = e.getSequenceFromMask(mask=('[#98 ]', ), )
+    p.Set(edges=edges, name='FASEI_ANNULAR_OD')
+    p = mdb.models['MyFirstModel'].parts['FLUID']
+    e = p.edges
+    edges = e.getSequenceFromMask(mask=('[#100 ]', ), )
+    p.Set(edges=edges, name='FASEI_ANNULAR_TOP')
+    p = mdb.models['MyFirstModel'].parts['FLUID']
+    e = p.edges
+    edges = e.getSequenceFromMask(mask=('[#125 ]', ), )
+    p.Set(edges=edges, name='FASEI_ANNULAR_TT')
+    a = mdb.models['MyFirstModel'].rootAssembly
+    a.regenerate()
+    session.viewports['Viewport: 1'].setValues(displayedObject=a)
+    a = mdb.models['MyFirstModel'].rootAssembly
+    e1 = a.instances['PIPE_INST'].edges
+    edges1 = e1.getSequenceFromMask(mask=('[#242 ]', ), )
+    a.Set(edges=edges1, name='FASEI_COMPLETED_WELL')
+    p1 = mdb.models['MyFirstModel'].parts['ROCK']
+    session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+    a = mdb.models['MyFirstModel'].rootAssembly
+    session.viewports['Viewport: 1'].setValues(displayedObject=a)
+    session.viewports['Viewport: 1'].view.setValues(nearPlane=1887.21, 
+        farPlane=3149.38, width=10.3887, height=4.69123, cameraPosition=(
+        3.47742, -6243.3, 2.61765), cameraTarget=(3.47742, -3723.2, 0.506997))
+    a = mdb.models['MyFirstModel'].rootAssembly
+    f1 = a.instances['FLUID_INST'].faces
+    faces1 = f1.getSequenceFromMask(mask=('[#7 ]', ), )
+    f2 = a.instances['PIPE_INST'].faces
+    faces2 = f2.getSequenceFromMask(mask=('[#7 ]', ), )
+    f3 = a.instances['ROCK_INST'].faces
+    faces3 = f3.getSequenceFromMask(mask=('[#7 ]', ), )
+    r3 = a.instances['ROCK_INST'].referencePoints
+    refPoints3=(r3[2], )
+    a.Set(faces=faces1+faces2+faces3, referencePoints=refPoints3, name='ALL')
+    cliCommand("""face_obj = p.sets['ALL']""")
+    cliCommand("""p =mdb.models['MyFirstModel']""")
+    cliCommand("""face_obj = p.sets['ALL']""")
+    cliCommand("""a = mdb.models['MyFirstModel'].rootAssembly""")
+    cliCommand("""set_all = a.sets['ALL']""")
+    cliCommand("""print(set_all.faces)""")
+
+
