@@ -1,7 +1,7 @@
 from abaqus import mdb
 from abaqusConstants import *
 
-def create_sets_pipe(name_model):
+def CreateSetsPipe(name_model):
     m = mdb.models[name_model]
     p = m.parts['PIPE']
     a1 = m.rootAssembly

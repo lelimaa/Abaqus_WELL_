@@ -4,8 +4,8 @@ from abaqusConstants import *
 # import os
 import sys 
 
-# path_project = r'C:\Users\juani\Documents\Github\Abaqus_WELL_' 
-path_project = r'C:\Users\hidalgo\Documents\GitHub\Abaqus_WELL_'
+path_project = r'C:\Users\juani\Documents\Github\Abaqus_WELL_' 
+# path_project = r'C:\Users\hidalgo\Documents\GitHub\Abaqus_WELL_'
 
 if path_project not in sys.path:
     sys.path.append(path_project)
@@ -267,6 +267,6 @@ if __name__ == "__main__":
     
     # Defining sets for boundary conditions and interactions
 
-    create_sets_pipe('MyFirstModel')
+    CreateSetsPipe('MyFirstModel')
     
     
