@@ -4,47 +4,46 @@ from abaqusConstants import *
 def CreateSetsPipe(name_model):
     m = mdb.models[name_model]
     p = m.parts['PIPE']
-    a1 = m.rootAssembly
-    a1.regenerate()
-    e = p.edges
-    # a.regenerate()
-    a = m.rootAssembly
-    e1 = a.instances['PIPE_INST'].edges
-    edges1 = e1.getSequenceFromMask(mask=('[#242 ]', ), )
-    a.Set(edges=edges1, name='FASEI_COMPLETED_WELL')   
-
-    p = m.parts['PIPE']
     f = p.faces
     faces = f.getSequenceFromMask(mask=('[#7 ]', ), )
     p.Set(faces=faces, name='FASEI_REV')
-    p = m.parts['PIPE']
-    f = p.faces
     faces = f.getSequenceFromMask(mask=('[#7 ]', ), )
     p.Set(faces=faces, name='FASEI_REV_ABOVE_TOC')
-    p = m.parts['PIPE']
     e = p.edges
     edges = e.getSequenceFromMask(mask=('[#4 ]', ), )
     p.Set(edges=edges, name='FASEI_REV_BASE')
-    p = m.parts['PIPE']
-    e = p.edges
     edges = e.getSequenceFromMask(mask=('[#242 ]', ), )
     p.Set(edges=edges, name='FASEI_REV_ID')
-    p = m.parts['PIPE']
-    e = p.edges
     edges = e.getSequenceFromMask(mask=('[#98 ]', ), )
     p.Set(edges=edges, name='FASEI_REV_OD')
-    p = m.parts['PIPE']
-    e = p.edges
     edges = e.getSequenceFromMask(mask=('[#100 ]', ), )
     p.Set(edges=edges, name='FASEI_REV_TOP')
-    p = m.parts['PIPE']
-    e = p.edges
     edges = e.getSequenceFromMask(mask=('[#125 ]', ), )
     p.Set(edges=edges, name='FASEI_REV_TT')
-    a = m.rootAssembly
-    e1 = a.instances['PIPE_INST'].edges
     edges1 = e1.getSequenceFromMask(mask=('[#125 ]', ), )
+    a = m.rootAssembly
     a.Set(edges=edges1, name='MESH_TT_PIPES')
+    e1 = a.instances['PIPE_INST'].edges
+    edges1 = e1.getSequenceFromMask(mask=('[#242 ]', ), )
+    a.Set(edges=edges1, name='FASEI_COMPLETED_WELL')   
+    # a1 = m.rootAssembly
+    # a1.regenerate()
+    # a.regenerate()
+    # p = m.parts['PIPE']
+    # p = m.parts['PIPE']
+    # f = p.faces
+    # p = m.parts['PIPE']
+    # e = p.edges
+    # p = m.parts['PIPE']
+    # e = p.edges
+    # p = m.parts['PIPE']
+    # e = p.edges
+    # p = m.parts['PIPE']
+    # e = p.edges
+    # p = m.parts['PIPE']
+    # e = p.edges
+    # a = m.rootAssembly
+    # e1 = a.instances['PIPE_INST'].edges
     
 
 # def create_sets_fluid(name_model):
