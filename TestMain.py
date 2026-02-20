@@ -268,5 +268,6 @@ if __name__ == "__main__":
     # Defining sets for boundary conditions and interactions
 
     CreateSetsPipe('MyFirstModel')
+    CreateSetsFluid('MyFirstModel')
     
     
