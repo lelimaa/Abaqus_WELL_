@@ -1224,3 +1224,52 @@ def MacroView():
         -3724.6, -0.072555), viewOffsetX=0, viewOffsetY=0, autoFit=OFF)
 
 
+def MacroAssembly3():
+    import section
+    import regionToolset
+    import displayGroupMdbToolset as dgm
+    import part
+    import material
+    import assembly
+    import step
+    import interaction
+    import load
+    import mesh
+    import optimization
+    import job
+    import sketch
+    import visualization
+    import xyPlot
+    import displayGroupOdbToolset as dgo
+    import connectorBehavior
+    del mdb.models['MyFirstModel'].rootAssembly.sets['FASEI_OPEN_WELL']
+    a = mdb.models['MyFirstModel'].rootAssembly
+    e1 = a.instances['ROCK_INST'].edges
+    edges1 = e1.getSequenceFromMask(mask=('[#242 ]', ), )
+    a.Set(edges=edges1, name='FASEI_OPEN_WELL')
+
+
+def MacroAssembly4():
+    import section
+    import regionToolset
+    import displayGroupMdbToolset as dgm
+    import part
+    import material
+    import assembly
+    import step
+    import interaction
+    import load
+    import mesh
+    import optimization
+    import job
+    import sketch
+    import visualization
+    import xyPlot
+    import displayGroupOdbToolset as dgo
+    import connectorBehavior
+    a = mdb.models['MyFirstModel'].rootAssembly
+    e1 = a.instances['PIPE_INST'].edges
+    edges1 = e1.getSequenceFromMask(mask=('[#242 ]', ), )
+    a.Set(edges=edges1, name='FASEI_COMPLETED_WELL')
+
+

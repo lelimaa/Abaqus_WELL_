@@ -104,7 +104,6 @@ def CreateSetsFluid(name_model):
     )
     p.Set(edges=base_edges, name='FASEI_FLUIDO_BASE')
 
-
     # edges = e.getSequenceFromMask(mask=('[#242 ]', ), )
     # p.Set(edges=edges, name='FASEI_FLUIDO_ID')
     all_x_coords = [v.pointOn[0][0] for v in p.vertices]
@@ -114,7 +113,6 @@ def CreateSetsFluid(name_model):
         xMax=min_x_global + tol, yMax=1e20, zMax=tol
     )
     p.Set(edges=left_edges, name='FASEI_FLUIDO_ID')
-
 
 
     # edges = e.getSequenceFromMask(mask=('[#98 ]', ), )
@@ -227,15 +225,15 @@ def CreateSetsRock(name_model):
     all_faces = f[0:len(f)]
     p.Set(faces=all_faces, name='ALLROCK')
 
-    # edges = e.getSequenceFromMask(mask=('[#242 ]', ), )
-    # p.Set(edges=edges, name='FASEI_OPEN_WELL')
-    all_x_coords = [v.pointOn[0][0] for v in p.vertices]
-    min_x_global = min(all_x_coords)
-    left_edges = e.getByBoundingBox(
-        xMin=min_x_global - tol, yMin=-1e20, zMin=-tol,
-        xMax=min_x_global + tol, yMax=1e20, zMax=tol
-    )
-    p.Set(edges=left_edges, name='FASEI_OPEN_WELL')
+    # # edges = e.getSequenceFromMask(mask=('[#242 ]', ), )
+    # # p.Set(edges=edges, name='FASEI_OPEN_WELL')
+    # all_x_coords = [v.pointOn[0][0] for v in p.vertices]
+    # min_x_global = min(all_x_coords)
+    # left_edges = e.getByBoundingBox(
+    #     xMin=min_x_global - tol, yMin=-1e20, zMin=-tol,
+    #     xMax=min_x_global + tol, yMax=1e20, zMax=tol
+    # )
+    # p.Set(edges=left_edges, name='FASEI_OPEN_WELL')
 
     # edges = e.getSequenceFromMask(mask=('[#20 ]', ), )
     # p.Set(edges=edges, name='L1-I_BASE')
@@ -358,211 +356,11 @@ def CreateSetsRock(name_model):
             p.Set(faces=face_encontrada, name=nome_set)
             print(f"Set de Face '{nome_set}' criado em X={x_meio_face}, Y={y_meio_camada}")
 
-
-    # faces = f.getSequenceFromMask(mask=('[#7 ]', ), )
-    # p.Set(faces=faces, name='FASEI_FLUIDO')
-    # p = m.parts['FLUID']
-    # e = p.edges
-    # edges = e.getSequenceFromMask(mask=('[#4 ]', ), )
-    # p.Set(edges=edges, name='FASEI_FLUIDO_BASE')
-    # p = m.parts['FLUID']
-    # e = p.edges
-    # edges = e.getSequenceFromMask(mask=('[#242 ]', ), )
-    # p.Set(edges=edges, name='FASEI_FLUIDO_ID')
-    # p = m.parts['FLUID']
-    # e = p.edges
-    # edges = e.getSequenceFromMask(mask=('[#98 ]', ), )
-    # p.Set(edges=edges, name='FASEI_FLUIDO_OD')
-    # p = m.parts['FLUID']
-    # e = p.edges
-    # edges = e.getSequenceFromMask(mask=('[#100 ]', ), )
-    # p.Set(edges=edges, name='FASEI_FLUIDO_TOP')
-    # p = m.parts['PIPE']
-
-    # a1 = m.rootAssembly
-    # a1.regenerate()
-    # a = m.rootAssembly
-
-
-    # p1 = m.parts['ROCK']
-    # p = m.parts['PIPE']
-    # p = m.parts['ROCK']
-    # p = m.parts['PIPE']
-    # p = m.parts['FLUID']
-    # p = m.parts['PIPE']
-    # p1 = m.parts['ROCK']
-    # p = m.parts['PIPE']
-    # p1 = m.parts['ROCK']
-    # p = m.parts['PIPE']
-    # a = m.rootAssembly
-    # a = m.rootAssembly
-    # a = m.rootAssembly
-    # f1 = a.instances['FLUID_INST'].faces
-    # faces1 = f1.getSequenceFromMask(mask=('[#7 ]', ), )
-    # f2 = a.instances['PIPE_INST'].faces
-    # faces2 = f2.getSequenceFromMask(mask=('[#7 ]', ), )
-    # a.Set(faces=faces1+faces2, name='FASEI')
-    # p1 = m.parts['FLUID']
-    # p = m.parts['FLUID']
-    # f = p.faces
-    # faces = f.getSequenceFromMask(mask=('[#7 ]', ), )
-    # p.Set(faces=faces, name='FASEI_ANNULAR')
-    # p = m.parts['FLUID']
-    # e = p.edges
-    # edges = e.getSequenceFromMask(mask=('[#4 ]', ), )
-    # p.Set(edges=edges, name='FASEI_ANNULAR_BASE')
-    # p = m.parts['FLUID']
-    # e = p.edges
-    # edges = e.getSequenceFromMask(mask=('[#242 ]', ), )
-    # p.Set(edges=edges, name='FASEI_ANNULAR_ID')
-    # p = m.parts['FLUID']
-    # e = p.edges
-    # edges = e.getSequenceFromMask(mask=('[#98 ]', ), )
-    # p.Set(edges=edges, name='FASEI_ANNULAR_OD')
-    # p = m.parts['FLUID']
-    # e = p.edges
-    # edges = e.getSequenceFromMask(mask=('[#100 ]', ), )
-    # p.Set(edges=edges, name='FASEI_ANNULAR_TOP')
-    # p = m.parts['FLUID']
-    # e = p.edges
-    # edges = e.getSequenceFromMask(mask=('[#125 ]', ), )
-    # p.Set(edges=edges, name='FASEI_ANNULAR_TT')
-    # a = m.rootAssembly
-    # a.regenerate()
-    # a = m.rootAssembly
-    # e1 = a.instances['PIPE_INST'].edges
-    # edges1 = e1.getSequenceFromMask(mask=('[#242 ]', ), )
-    # a.Set(edges=edges1, name='FASEI_COMPLETED_WELL')
-    # p1 = m.parts['ROCK']
-    # a = m.rootAssembly
+def CreateSetsAssembly(name_model):  
+    m = mdb.models[name_model]  
+    a = m.rootAssembly
     
-
-    # p = m.parts['PIPE']
-    # # f = p.faces
-    # faces = f.getSequenceFromMask(mask=('[#7 ]', ), )
-    # p.Set(faces=faces, name='FASEI_REV')
-    # p = m.parts['PIPE']
-    # f = p.faces
-    # faces = f.getSequenceFromMask(mask=('[#7 ]', ), )
-    # p.Set(faces=faces, name='FASEI_REV_ABOVE_TOC')
-    # p = m.parts['PIPE']
-    # e = p.edges
-    # edges = e.getSequenceFromMask(mask=('[#4 ]', ), )
-    # p.Set(edges=edges, name='FASEI_REV_BASE')
-    # p = m.parts['PIPE']
-    # e = p.edges
-    # edges = e.getSequenceFromMask(mask=('[#242 ]', ), )
-    # p.Set(edges=edges, name='FASEI_REV_ID')
-    # p = m.parts['PIPE']
-    # e = p.edges
-    # edges = e.getSequenceFromMask(mask=('[#98 ]', ), )
-    # p.Set(edges=edges, name='FASEI_REV_OD')
-    # p = m.parts['PIPE']
-    # e = p.edges
-    # edges = e.getSequenceFromMask(mask=('[#100 ]', ), )
-    # p.Set(edges=edges, name='FASEI_REV_TOP')
-    # p = m.parts['PIPE']
-    # e = p.edges
-    # edges = e.getSequenceFromMask(mask=('[#125 ]', ), )
-    # p.Set(edges=edges, name='FASEI_REV_TT')
-    # p = m.parts['ROCK']
-    # p = m.parts['ROCK']
-    # f = p.faces
-
-
-
-    # faces = f.getSequenceFromMask(mask=('[#7 ]', ), )
-    # p.Set(faces=faces, name='FASEI_SLAVE')
-    # # p = m.parts['ROCK']
-    # # e = p.edges
-    # edges = e.getSequenceFromMask(mask=('[#242 ]', ), )
-    # p.Set(edges=edges, name='FASEI_WELL')
-    # a = m.rootAssembly
-    # a.regenerate()
-    # a = m.rootAssembly
-    # e1 = a.instances['FLUID_INST'].edges
-    # edges1 = e1.getSequenceFromMask(mask=('[#125 ]', ), )
-    # a.Set(edges=edges1, name='MESH_TT_ANNULARS')
-    # a = m.rootAssembly
-    # e1 = a.instances['PIPE_INST'].edges
-    # edges1 = e1.getSequenceFromMask(mask=('[#125 ]', ), )
-    # a.Set(edges=edges1, name='MESH_TT_PIPES')
-    # a = m.rootAssembly
-    # e1 = a.instances['ROCK_INST'].edges
-    # edges1 = e1.getSequenceFromMask(mask=('[#125 ]', ), )
-    # a.Set(edges=edges1, name='MESH_TT_ROCK')
-    # a = m.rootAssembly
-    # e1 = a.instances['PIPE_INST'].edges
-    # edges1 = e1.getSequenceFromMask(mask=('[#2da ]', ), )
-    # e2 = a.instances['ROCK_INST'].edges
-    # edges2 = e2.getSequenceFromMask(mask=('[#2da ]', ), )
-    # a.Set(edges=edges1+edges2, name='MESH_VERTICAL')
-    # a = m.rootAssembly
-    # r1 = a.instances['ROCK_INST'].referencePoints
-    # refPoints1=(r1[2], )
-    # a.Set(referencePoints=refPoints1, name='REFPT')
-    # a = m.rootAssembly
-    # e1 = a.instances['ROCK_INST'].edges
-    # edges1 = e1.getSequenceFromMask(mask=('[#98 ]', ), )
-    # a.Set(edges=edges1, name='ROCK_BC')
-    # a = m.rootAssembly
-    # f1 = a.instances['ROCK_INST'].faces
-    # faces1 = f1.getSequenceFromMask(mask=('[#7 ]', ), )
-    # a.Set(faces=faces1, name='ROCK_OUTPUT')
-
-# def create_sets_assembly(name_model):  
-#     m = mdb.models[name_model]  
-#     a = m.rootAssembly
-#     f1 = a.instances['FLUID_INST'].faces
-#     faces1 = f1.getSequenceFromMask(mask=('[#7 ]', ), )
-#     f2 = a.instances['PIPE_INST'].faces
-#     faces2 = f2.getSequenceFromMask(mask=('[#7 ]', ), )
-#     a.Set(faces=faces1+faces2, name='FASEI')
-#     a = m.rootAssembly
-#     f1 = a.instances['FLUID_INST'].faces
-#     faces1 = f1.getSequenceFromMask(mask=('[#7 ]', ), )
-#     f2 = a.instances['PIPE_INST'].faces
-#     faces2 = f2.getSequenceFromMask(mask=('[#7 ]', ), )
-#     f3 = a.instances['ROCK_INST'].faces
-#     faces3 = f3.getSequenceFromMask(mask=('[#7 ]', ), )
-#     r3 = a.instances['ROCK_INST'].referencePoints
-#     refPoints3=(r3[2], )
-#     a.Set(faces=faces1+faces2+faces3, referencePoints=refPoints3, name='ALL')
-
-#     a = m.rootAssembly
-#     e1 = a.instances['PIPE_INST'].edges
-#     edges1 = e1.getSequenceFromMask(mask=('[#2da ]', ), )
-#     e2 = a.instances['ROCK_INST'].edges
-#     edges2 = e2.getSequenceFromMask(mask=('[#2da ]', ), )
-#     a.Set(edges=edges1+edges2, name='MESH_VERTICAL')
-
-#     a = m.rootAssembly
-#     e1 = a.instances['PIPE_INST'].edges
-#     edges1 = e1.getSequenceFromMask(mask=('[#4 ]', ), )
-#     e2 = a.instances['FLUID_INST'].edges
-#     edges2 = e2.getSequenceFromMask(mask=('[#4 ]', ), )
-#     e3 = a.instances['ROCK_INST'].edges
-#     edges3 = e3.getSequenceFromMask(mask=('[#4 ]', ), )
-#     a.Set(edges=edges1+edges2+edges3, name='YSYM_BASE')
-
-    # a = m.rootAssembly
-    # e1 = a.instances['ROCK_INST'].edges
-    # edges1 = e1.getSequenceFromMask(mask=('[#100 ]', ), )
-    # e2 = a.instances['FLUID_INST'].edges
-    # edges2 = e2.getSequenceFromMask(mask=('[#100 ]', ), )
-    # e3 = a.instances['PIPE_INST'].edges
-    # edges3 = e3.getSequenceFromMask(mask=('[#100 ]', ), )
-    # a.Set(edges=edges1+edges2+edges3, name='YSYM_TOP')
-
-    # a = m.rootAssembly
-    # e1 = a.instances['PIPE_INST'].edges
-    # edges1 = e1.getSequenceFromMask(mask=('[#125 ]', ), )
-    # a.Set(edges=edges1, name='MESH_TT_PIPES')
-    # edges1 = e1.getSequenceFromMask(mask=('[#242 ]', ), )
-    # a.Set(edges=edges1, name='FASEI_COMPLETED_WELL')  
-
-    # a = m.rootAssembly
-    # f1 = a.instances['FLUID_INST'].faces
+    # f1 = a.instances['FLUID_INST'].faces    
     # faces1 = f1.getSequenceFromMask(mask=('[#7 ]', ), )
     # f2 = a.instances['PIPE_INST'].faces
     # faces2 = f2.getSequenceFromMask(mask=('[#7 ]', ), )
@@ -571,15 +369,262 @@ def CreateSetsRock(name_model):
     # r3 = a.instances['ROCK_INST'].referencePoints
     # refPoints3=(r3[2], )
     # a.Set(faces=faces1+faces2+faces3, referencePoints=refPoints3, name='ALL')
+    # nomes_instancias = ['FLUID_INST', 'PIPE_INST', 'ROCK_INST']
 
+    # faces_totais = None
+
+    # for nome in nomes_instancias:
+    #     if nome in a.instances.keys():
+    #         inst = a.instances[nome]
+    #         if faces_totais is None:
+    #             faces_totais = inst.faces[:]
+    #         else:
+    #             faces_totais = faces_totais + inst.faces[:]
+
+    # if faces_totais:
+    #     a.Set(faces=faces_totais, name='ALL')
+    #     print("Set 'ALL' criado com todas as faces das 3 instancias.")
+    
+    faces_totais = None
+
+    for inst in a.instances.values():
+        if faces_totais is None:
+            faces_totais = inst.faces[:]
+        else:
+            faces_totais = faces_totais + inst.faces[:]
+
+    a.Set(faces=faces_totais, name='ALL')
+
+    # f1 = a.instances['FLUID_INST'].faces
+    # faces1 = f1.getSequenceFromMask(mask=('[#7 ]', ), )
+    # f2 = a.instances['PIPE_INST'].faces
+    # faces2 = f2.getSequenceFromMask(mask=('[#7 ]', ), )
+    # a.Set(faces=faces1+faces2, name='FASEI')
+    nomes_instancias = ['FLUID_INST', 'PIPE_INST']
+    faces_totais = None
+
+    for nome in nomes_instancias:
+        if nome in a.instances.keys():
+            inst = a.instances[nome]
+            if faces_totais is None:
+                faces_totais = inst.faces[:]
+            else:
+                faces_totais = faces_totais + inst.faces[:]
+
+    if faces_totais:
+        a.Set(faces=faces_totais, name='FASEI')
+        print("Set 'ALL' criado com todas as faces das 2 instancias.")
+
+    # faces_fluido = a.instances['FLUID_INST'].faces[:]
+    # faces_pipe = a.instances['PIPE_INST'].faces[:]
+    # faces_combinadas = faces_fluido + faces_pipe
+    # a.set(faces=faces_combinadas, name='FASEI')
+
+
+    # m = mdb.models[name_model]  
     # a = m.rootAssembly
     # e1 = a.instances['ROCK_INST'].edges
-    # edges1 = e1.getSequenceFromMask(mask=('[#100 ]', ), )
-    # e2 = a.instances['FLUID_INST'].edges
-    # edges2 = e2.getSequenceFromMask(mask=('[#100 ]', ), )
-    # e3 = a.instances['PIPE_INST'].edges
-    # edges3 = e3.getSequenceFromMask(mask=('[#100 ]', ), )
-    # a.Set(edges=edges1+edges2+edges3, name='YSYM_TOP')
+    # edges1 = e1.getSequenceFromMask(mask=('[#242 ]', ), )
+    # a.Set(edges=edges1, name='FASEI_OPEN_WELL')
+    tol =0.001
+
+    inst_f = a.instances['FLUID_INST']
+    x_interface = max([v.pointOn[0][0] for v in inst_f.vertices])
+
+    y_min = min([v.pointOn[0][1] for v in inst_f.vertices])
+    y_max = max([v.pointOn[0][1] for v in inst_f.vertices])
+
+    edges_f = inst_f.edges.getByBoundingBox(
+        xMin=x_interface - tol, yMin=y_min - tol, zMin=-tol,
+        xMax=x_interface + tol, yMax=y_max + tol, zMax=tol
+    )
+
+    inst_r = a.instances['ROCK_INST']
+    edges_r = inst_r.edges.getByBoundingBox(
+        xMin=x_interface - tol, yMin=y_min - tol, zMin=-tol,
+        xMax=x_interface + tol, yMax=y_max + tol, zMax=tol
+    )
+
+    edges_total = edges_f+edges_r
+
+    # a.Set(edges=edges_f, name='FASEI_OPEN_WELL') # if only from fluid
+    a.Set(edges=edges_r, name='FASEI_OPEN_WELL') # if only from rock
+    # a.Set(edges=edges_total, name='FASEI_OPEN_WELL') # if from fluid and rock
+    print(f"Set FASEI_OPEN_WELL criado na interface X = {x_interface}")  
+
+    a.Set(edges=edges_r, name='FASEI_WELL') # if only from rock
+    print(f"Set FASEI_WELL criado na interface X = {x_interface}")  
+
+
+    # e1 = a.instances['PIPE_INST'].edges
+    # edges1 = e1.getSequenceFromMask(mask=('[#242 ]', ), )
+    # a.Set(edges=edges1, name='FASEI_COMPLETED_WELL')
+    inst_p = a.instances['PIPE_INST']
+    x_int_pipe = min([v.pointOn[0][0] for v in inst_p.vertices])
+
+    y_min_p = min([v.pointOn[0][1] for v in inst_p.vertices])
+    y_max_p = max([v.pointOn[0][1] for v in inst_p.vertices])
+
+    edges_completed = inst_p.edges.getByBoundingBox(
+        xMin=x_int_pipe - tol, yMin=y_min_p - tol, zMin=-tol,
+        xMax=x_int_pipe + tol, yMax=y_max_p + tol, zMax=tol
+    )
+
+    if edges_completed:
+        a.Set(edges=edges_completed, name='FASEI_COMPLETED_WELL')
+        print(f"Set 'FASEI_COMPLETED_WELL' criado na face interna do Pipe (X = {x_int_pipe})")
+
+
+    # a = m.rootAssembly
+    # e1 = a.instances['PIPE_INST'].edges
+    # edges1 = e1.getSequenceFromMask(mask=('[#125 ]', ), )
+    # a.Set(edges=edges1, name='MESH_TT_PIPES')
+    inst_p = a.instances['PIPE_INST']
+
+    alturas_pipe = sorted(list(set([v.pointOn[0][1] for v in inst_p.vertices])))
+
+    min_x_p = min([v.pointOn[0][0] for v in inst_p.vertices])
+    max_x_p = max([v.pointOn[0][0] for v in inst_p.vertices])
+
+    edges_tt = None
+
+    for y in alturas_pipe:
+        edges_camada = inst_p.edges.getByBoundingBox(
+            xMin=min_x_p - tol, yMin=y - tol, zMin=-tol,
+            xMax=max_x_p + tol, yMax=y + tol, zMax=tol
+        )
+
+        if edges_camada:
+            if edges_tt is None:
+                edges_tt = edges_camada
+            else:
+                edges_tt = edges_tt + edges_camada
+
+    if edges_tt:
+        a.Set(edges=edges_tt, name='MESH_TT_PIPES')
+        print(f"Set 'MESH_TT_PIPES' criado com {len(edges_tt)} arestas horizontais.")
+
+    inst_f = a.instances['FLUID_INST']
+    alturas_annular = sorted(list(set([v.pointOn[0][1] for v in inst_f.vertices])))
+
+    min_x_a = min([v.pointOn[0][0] for v in inst_f.vertices])
+    max_x_a = max([v.pointOn[0][0] for v in inst_f.vertices])
+
+    edges_tt = None
+
+    for y in alturas_annular:
+        edges_camada = inst_f.edges.getByBoundingBox(
+            xMin=min_x_a - tol, yMin=y - tol, zMin=-tol,
+            xMax=max_x_a + tol, yMax=y + tol, zMax=tol
+        )
+
+        if edges_camada:
+            if edges_tt is None:
+                edges_tt = edges_camada
+            else:
+                edges_tt = edges_tt + edges_camada
+
+    if edges_tt:
+        a.Set(edges=edges_tt, name='MESH_TT_ANNULARS')
+        print(f"Set 'MESH_TT_ANNULARS' criado com {len(edges_tt)} arestas horizontais.")  
+
+
+
+    inst_r = a.instances['ROCK_INST']
+    alturas_rock = sorted(list(set([v.pointOn[0][1] for v in inst_r.vertices])))
+
+    min_x_r = min([v.pointOn[0][0] for v in inst_r.vertices])
+    max_x_r = max([v.pointOn[0][0] for v in inst_r.vertices])
+
+    edges_tt = None
+
+    for y in alturas_rock:
+        edges_camada = inst_r.edges.getByBoundingBox(
+            xMin=min_x_r - tol, yMin=y - tol, zMin=-tol,
+            xMax=max_x_r + tol, yMax=y + tol, zMax=tol
+        )
+
+        if edges_camada:
+            if edges_tt is None:
+                edges_tt = edges_camada
+            else:
+                edges_tt = edges_tt + edges_camada
+
+    if edges_tt:
+        a.Set(edges=edges_tt, name='MESH_TT_ROCK')
+        print(f"Set 'MESH_TT_ROCK' criado com {len(edges_tt)} arestas horizontais.")           
+
+
+    # a = m.rootAssembly
+    # e1 = a.instances['PIPE_INST'].edges
+    # edges1 = e1.getSequenceFromMask(mask=('[#2da ]', ), )
+    # e2 = a.instances['ROCK_INST'].edges
+    # edges2 = e2.getSequenceFromMask(mask=('[#2da ]', ), )
+    # a.Set(edges=edges1+edges2, name='MESH_VERTICAL')
+    instancias = ['FLUID_INST', 'PIPE_INST', 'ROCK_INST']
+
+    edges_verticais_total = None
+
+    for nome in instancias:
+        if nome in a.instances.keys():
+            inst = a.instances[nome]
+            edges_da_instancia = inst.edges
+
+            indices_verticais = []
+
+            for i, edge in enumerate(edges_da_instancia):
+                v1 = inst.vertices[edge.getVertices()[0]]
+                v2 = inst.vertices[edge.getVertices()[1]]
+
+                if abs(v1.pointOn[0][0] - v2.pointOn[0][0]) < tol:
+                    indices_verticais.append(edge)
+
+            if indices_verticais:
+                temp_seq = inst.edges[0:0]
+                for ed in indices_verticais:
+                    temp_seq = temp_seq + inst.edges[ed.index:ed.index+1]
+
+                if edges_verticais_total is None:
+                    edges_verticais_total = temp_seq
+                else:
+                    edges_verticais_total = edges_verticais_total + temp_seq
+
+    if edges_verticais_total:
+        a.Set(edges=edges_verticais_total, name='MESH_VERTICAL')
+        print("Set 'MESH_VERTICAL' criado com sucesso (todas as verticais).")
+
+    inst_r = a.instances['ROCK_INST']
+
+    x_externo_rock = max([v.pointOn[0][0] for v in inst_r.vertices])
+
+    y_min = min([v.pointOn[0][1] for v in inst_r.vertices])
+    y_max = max([v.pointOn[0][1] for v in inst_r.vertices])
+
+    edges_bc = inst_r.edges.getByBoundingBox(
+        xMin=x_externo_rock - tol, yMin=y_min - tol, zMin=-tol,
+        xMax=x_externo_rock + tol, yMax=y_max + tol, zMax=tol
+    )
+
+    if edges_bc:
+        a.Set(edges=edges_bc, name='ROCK_BC')
+        print(f"Set 'ROCK_BC' criado com sucesso na borda X = {x_externo_rock}")
+
+    
+    nome_instancia = ['ROCK_INST']
+    faces_totais = None
+
+    for nome in nome_instancia:
+        if nome in a.instances.keys():
+            inst = a.instances[nome]
+            if faces_totais is None:
+                faces_totais = inst.faces[:]
+            else:
+                faces_totais = faces_totais + inst.faces[:]
+
+    if faces_totais:
+        a.Set(faces=faces_totais, name='ROCK_OUTPUT')
+        print("Set 'ROCK_OUTPUT' criado com todas as faces dessa instancia.")
+
 
     # a = m.rootAssembly
     # e1 = a.instances['PIPE_INST'].edges
@@ -589,3 +634,81 @@ def CreateSetsRock(name_model):
     # e3 = a.instances['ROCK_INST'].edges
     # edges3 = e3.getSequenceFromMask(mask=('[#4 ]', ), )
     # a.Set(edges=edges1+edges2+edges3, name='YSYM_BASE')
+    # 1. Identificar a altura mínima (Y) global do modelo
+    # Procuramos em todas as instâncias para achar o "chão"
+    y_global = []
+    for inst in a.instances.values():
+        y_global.append(min([v.pointOn[0][1] for v in inst.vertices]))
+    y_base = min(y_global)
+
+    # 2. Criar uma lista para acumular as arestas da base de cada instância
+    edges_base_lista = None
+
+    for inst in a.instances.values():
+        # Buscamos as arestas horizontais desta instância específica que estão na cota y_base
+        # Limitamos o X aos limites da própria instância para ser preciso
+        x_min_i = min([v.pointOn[0][0] for v in inst.vertices])
+        x_max_i = max([v.pointOn[0][0] for v in inst.vertices])
+        
+        edges_inst = inst.edges.getByBoundingBox(
+            xMin=x_min_i - tol, yMin=y_base - tol, zMin=-tol,
+            xMax=x_max_i + tol, yMax=y_base + tol, zMax=tol
+        )
+        
+        # Se encontrou arestas na base desta instância, adiciona à "bolsa"
+        if edges_inst:
+            if edges_base_lista is None:
+                edges_base_lista = edges_inst
+            else:
+                edges_base_lista = edges_base_lista + edges_inst
+
+    # 3. Criar o Set no Assembly com o acumulado
+    if edges_base_lista:
+        a.Set(edges=edges_base_lista, name='YSYM_BASE')
+        print("Set 'YSYM_BASE' criado com sucesso unindo todas as instâncias.")
+    else:
+        print("Erro: Nenhuma aresta encontrada na cota Y =", y_base)
+
+
+
+    # a = m.rootAssembly
+    # e1 = a.instances['ROCK_INST'].edges
+    # edges1 = e1.getSequenceFromMask(mask=('[#100 ]', ), )
+    # e2 = a.instances['FLUID_INST'].edges
+    # edges2 = e2.getSequenceFromMask(mask=('[#100 ]', ), )
+    # e3 = a.instances['PIPE_INST'].edges
+    # edges3 = e3.getSequenceFromMask(mask=('[#100 ]', ), )
+    # a.Set(edges=edges1+edges2+edges3, name='YSYM_TOP')
+    # 1. Identificar a altura MÁXIMA (Y) global do modelo
+    y_global_topo = []
+    for inst in a.instances.values():
+        y_global_topo.append(max([v.pointOn[0][1] for v in inst.vertices]))
+    y_topo = max(y_global_topo)
+
+    # 2. Criar uma lista para acumular as arestas do topo de cada instância
+    edges_topo_lista = None
+
+    for inst in a.instances.values():
+        # Buscamos as arestas horizontais desta instância que estão na cota y_topo
+        x_min_i = min([v.pointOn[0][0] for v in inst.vertices])
+        x_max_i = max([v.pointOn[0][0] for v in inst.vertices])
+        
+        edges_inst = inst.edges.getByBoundingBox(
+            xMin=x_min_i - tol, yMin=y_topo - tol, zMin=-tol,
+            xMax=x_max_i + tol, yMax=y_topo + tol, zMax=tol
+        )
+        
+        # Se encontrou arestas no topo desta instância, adiciona à sequência
+        if edges_inst:
+            if edges_topo_lista is None:
+                edges_topo_lista = edges_inst
+            else:
+                edges_topo_lista = edges_topo_lista + edges_inst
+
+    # 3. Criar o Set no Assembly
+    if edges_topo_lista:
+        a.Set(edges=edges_topo_lista, name='YSYM_TOP')
+        print(f"Set 'YSYM_TOP' criado com sucesso na altura Y = {y_topo}")
+    else:
+        print("Erro: Nenhuma aresta encontrada no topo (Y =", y_topo, ")")
+   
