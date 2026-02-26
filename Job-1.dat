@@ -1,0 +1,1513 @@
+1
+
+   Abaqus 2024                                  Date 26-fev-2026   Time 11:12:26
+   For use by PONTIFICIA UNIVERSIDADE CATOLICA DO RIO DE JANEIRO under license from Dassault Systemes or its subsidiary.
+
+
+
+                         The Abaqus Software is a product of:
+
+                           Dassault Systemes SIMULIA Corp.
+                           1301 Atwood Avenue, Suite 101W
+                              Johnston, RI 02919, USA
+ 
+
+
+                   The Abaqus Software is available only under license
+                   from Dassault Systemes or its subsidiary and may be
+                   used or reproduced only in accordance with the terms
+                   of such license.
+ 
+                          On machine ARIES 
+                          you are authorized to run
+                          Abaqus/Standard until 22-Sep-2026
+
+                          Your site id is: 200000000142202 
+
+
+ 
+                    For assistance or any other information you may
+                    obtain contact information for your local office
+                    from the world wide web at:
+
+                      https://www.3ds.com/products-services/simulia/services-support/
+
+ 
+                * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+                *                                                         * 
+                *                   *****************                     * 
+                *                   *  N O T I C E  *                     * 
+                *                   *****************                     * 
+                *                                                         * 
+                *                                                         * 
+                *                       Abaqus 2024                       * 
+                *                                                         * 
+                *       BUILD ID: 2023_09_21-09.55.25 RELr426 190762      * 
+                *                                                         * 
+                *                                                         * 
+                *  Please make sure you are using                         * 
+                *  release Abaqus 2024 manuals                            * 
+                *  plus the notes accompanying this release.              * 
+                *                                                         * 
+                *                                                         * 
+                *                                                         * 
+                *                                                         * 
+                *                                                         * 
+                *   This program may not be used for commercial purposes  * 
+                *           without payment of a commercial fee.          * 
+                *                                                         * 
+                * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+
+
+ 
+
+
+
+     PROCESSING PART, INSTANCE, AND ASSEMBLY INFORMATION
+   *******************************************************
+
+
+     END PROCESSING PART, INSTANCE, AND ASSEMBLY INFORMATION
+   ***********************************************************
+
+
+
+
+     OPTIONS BEING PROCESSED
+   ***************************
+
+
+  *Heading
+  *Element, type=CAX4
+  *Elset, elset=ASSEMBLY_ANALISE-1-1_ALL
+  *Elset, elset=ASSEMBLY_ANALISE-1-1_ALLROCK
+  *Elset, elset=ASSEMBLY_ANALISE-1-1_FASEI
+  *Elset, elset=ASSEMBLY_ANALISE-1-1_FASEI_ANNULAR
+  *Elset, elset=ASSEMBLY_ANALISE-1-1_FASEI_ANNULAR_BASE
+  *Elset, elset=ASSEMBLY_ANALISE-1-1_FASEI_ANNULAR_ID
+  *Elset, elset=ASSEMBLY_ANALISE-1-1_FASEI_ANNULAR_OD
+  *Elset, elset=ASSEMBLY_ANALISE-1-1_FASEI_ANNULAR_TOP
+  *Elset, elset=ASSEMBLY_ANALISE-1-1_FASEI_ANNULAR_TT
+  *Elset, elset=ASSEMBLY_ANALISE-1-1_FASEI_COMPLETED_WELL
+  *Elset, elset=ASSEMBLY_ANALISE-1-1_FASEI_FLUIDO
+  *Elset, elset=ASSEMBLY_ANALISE-1-1_FASEI_FLUIDO_BASE
+  *Elset, elset=ASSEMBLY_ANALISE-1-1_FASEI_FLUIDO_ID
+  *Elset, elset=ASSEMBLY_ANALISE-1-1_FASEI_FLUIDO_OD
+  *Elset, elset=ASSEMBLY_ANALISE-1-1_FASEI_FLUIDO_TOP
+  *Elset, elset=ASSEMBLY_ANALISE-1-1_FASEI_OPEN_WELL
+  *Elset, elset=ASSEMBLY_ANALISE-1-1_FASEI_REV
+  *Elset, elset=ASSEMBLY_ANALISE-1-1_FASEI_REV_ABOVE_TOC
+  *Elset, elset=ASSEMBLY_ANALISE-1-1_FASEI_REV_BASE
+  *Elset, elset=ASSEMBLY_ANALISE-1-1_FASEI_REV_ID
+  *Elset, elset=ASSEMBLY_ANALISE-1-1_FASEI_REV_OD
+  *Elset, elset=ASSEMBLY_ANALISE-1-1_FASEI_REV_TOP
+  *Elset, elset=ASSEMBLY_ANALISE-1-1_FASEI_REV_TT
+  *Elset, elset=ASSEMBLY_ANALISE-1-1_FASEI_SLAVE
+  *Elset, elset=ASSEMBLY_ANALISE-1-1_FASEI_WELL
+  *Elset, elset=ASSEMBLY_ANALISE-1-1_FASEI_WELL_CIMENTO_BASE
+  *Elset, elset=ASSEMBLY_ANALISE-1-1_L1-I
+  *Elset, elset=ASSEMBLY_ANALISE-1-1_L1-I_BASE
+  *Elset, elset=ASSEMBLY_ANALISE-1-1_L1-I_ID
+  *Elset, elset=ASSEMBLY_ANALISE-1-1_L1-I_OD
+  *Elset, elset=ASSEMBLY_ANALISE-1-1_L1-I_TOP
+  *Elset, elset=ASSEMBLY_ANALISE-1-1_L2-I
+  *Elset, elset=ASSEMBLY_ANALISE-1-1_L2-I_BASE
+  *Elset, elset=ASSEMBLY_ANALISE-1-1_L2-I_ID
+  *Elset, elset=ASSEMBLY_ANALISE-1-1_L2-I_OD
+  *Elset, elset=ASSEMBLY_ANALISE-1-1_L2-I_TOP
+  *Elset, elset=ASSEMBLY_ANALISE-1-1_L3-I
+  *Elset, elset=ASSEMBLY_ANALISE-1-1_L3-I_BASE
+  *Elset, elset=ASSEMBLY_ANALISE-1-1_L3-I_ID
+  *Elset, elset=ASSEMBLY_ANALISE-1-1_L3-I_OD
+  *Elset, elset=ASSEMBLY_ANALISE-1-1_L3-I_TOP
+  *Elset, elset=ASSEMBLY_ANALISE-1-1_MESH_TT_ANNULARS
+  *Elset, elset=ASSEMBLY_ANALISE-1-1_MESH_TT_PIPES
+  *Elset, elset=ASSEMBLY_ANALISE-1-1_MESH_TT_ROCK_FAR
+  *Elset, elset=ASSEMBLY_ANALISE-1-1_MESH_TT_ROCK_NEAR
+  *Elset, elset=ASSEMBLY_ANALISE-1-1_MESH_VERTICAL
+  *Elset, elset=ASSEMBLY_ANALISE-1-1_ROCK_BC
+  *Elset, elset=ASSEMBLY_ANALISE-1-1_ROCK_OUTPUT
+  *Elset, elset=ASSEMBLY_ANALISE-1-1_YSYM_BASE
+  *Elset, elset=ASSEMBLY_ANALISE-1-1_YSYM_TOP
+  *Elset, elset=ASSEMBLY_ANALISE-1-1__FASEI_ANNULAR_S1
+  *Elset, elset=ASSEMBLY_ANALISE-1-1__FASEI_ANNULAR_S2
+  *Elset, elset=ASSEMBLY_ANALISE-1-1__FASEI_ANNULAR_S4
+  *Elset, elset=ASSEMBLY_ANALISE-1-1__FASEI_COMPLETED_WELL_S2
+  *Elset, elset=ASSEMBLY_ANALISE-1-1__FASEI_COMPLETED_WELL_S4
+  *Elset, elset=ASSEMBLY_ANALISE-1-1__FASEI_FLUIDO_S1
+  *Elset, elset=ASSEMBLY_ANALISE-1-1__FASEI_FLUIDO_S2
+  *Elset, elset=ASSEMBLY_ANALISE-1-1__FASEI_FLUIDO_S4
+  *Elset, elset=ASSEMBLY_ANALISE-1-1__FASEI_MASTER_S2
+  *Elset, elset=ASSEMBLY_ANALISE-1-1__FASEI_MASTER_S4
+  *Elset, elset=ASSEMBLY_ANALISE-1-1__FASEI_OPEN_WELL_S1
+  *Elset, elset=ASSEMBLY_ANALISE-1-1__FASEI_OPEN_WELL_S2
+  *Elset, elset=ASSEMBLY_ANALISE-1-1__FASEI_REV_S2
+  *Elset, elset=ASSEMBLY_ANALISE-1-1__FASEI_REV_S3
+  *Elset, elset=ASSEMBLY_ANALISE-1-1__FASEI_REV_S4
+  *Elset, elset=ASSEMBLY_ANALISE-1-1__FASEI_WELL_S1
+  *Elset, elset=ASSEMBLY_ANALISE-1-1__FASEI_WELL_S2
+  *material, name=FLUIDO
+  *conductivity
+  *density
+  *elastic
+  *specificheat
+  *material, name=L1-I-FOLHELHO
+  *conductivity
+  *density
+  *elastic
+  *specificheat
+  *mohrcoulomb
+  *mohrcoulombhardening
+  *material, name=L2-I-ARENITO
+  *conductivity
+  *density
+  *elastic
+  *specificheat
+  *mohrcoulomb
+  *mohrcoulombhardening
+  *material, name=L3-I-HALITA
+  *conductivity
+  *creep
+
+ ***WARNING: THE STRAIN HARDENING CREEP LAW WAS SPECIFIED (*CREEP, LAW=STRAIN). 
+             THIS CREEP LAW HAS BEEN SUPERSEDED BY THE POWER LAW STRAIN 
+             HARDENING LAW (*CREEP, LAW=POWER LAW). IT IS RECOMMENDED THAT THE 
+             STRAIN CREEP LAW IN THE MODEL IS REPLACED WITH THE NEW LAW.
+  *density
+  *elastic
+  *specificheat
+  *material, name=VM11013CRSS
+  *conductivity
+  *density
+  *elastic
+  *plastic
+  *specificheat
+  *initialconditions, type=STRESS, geostatic
+  *initialconditions, type=STRESS, geostatic
+  *initialconditions, type=STRESS, geostatic
+  *initialconditions, type=STRESS, geostatic
+  *solidsection, elset=ASSEMBLY_ANALISE-1-1_FASEI_REV, material=VM11013CRSS
+  *solidsection, elset=ASSEMBLY_ANALISE-1-1_L3-I, material=L3-I-HALITA
+  *solidsection, elset=ASSEMBLY_ANALISE-1-1_FASEI_FLUIDO, material=FLUIDO
+  *solidsection, elset=ASSEMBLY_ANALISE-1-1_L1-I, material=L1-I-FOLHELHO
+  *solidsection, elset=ASSEMBLY_ANALISE-1-1_L2-I, material=L2-I-ARENITO
+  *solidsection, elset=ASSEMBLY_ANALISE-1-1_FASEI_REV, material=VM11013CRSS
+  *solidsection, elset=ASSEMBLY_ANALISE-1-1_L3-I, material=L3-I-HALITA
+  *solidsection, elset=ASSEMBLY_ANALISE-1-1_FASEI_FLUIDO, material=FLUIDO
+  *solidsection, elset=ASSEMBLY_ANALISE-1-1_L1-I, material=L1-I-FOLHELHO
+  *solidsection, elset=ASSEMBLY_ANALISE-1-1_L2-I, material=L2-I-ARENITO
+  *contactpair, interaction=C_FASEI, type=SURFACETOSURFACE
+  *contactpair, interaction=C_FASEI, type=SURFACETOSURFACE
+  *surface, type=ELEMENT, name=ASSEMBLY_ANALISE-1-1_FASEI_ANNULAR
+  *surface, type=ELEMENT, name=ASSEMBLY_ANALISE-1-1_FASEI_COMPLETED_WELL
+  *surface, type=ELEMENT, name=ASSEMBLY_ANALISE-1-1_FASEI_FLUIDO
+  *surface, type=ELEMENT, name=ASSEMBLY_ANALISE-1-1_FASEI_MASTER
+  *surface, type=ELEMENT, name=ASSEMBLY_ANALISE-1-1_FASEI_OPEN_WELL
+  *surface, type=ELEMENT, name=ASSEMBLY_ANALISE-1-1_FASEI_REV
+  *surface, type=ELEMENT, name=ASSEMBLY_ANALISE-1-1_FASEI_WELL
+  *surface, type=NODE, name=ASSEMBLY_ANALISE-1-1_FASEI_SLAVE_CNS_
+  *surface, type=ELEMENT, name=ASSEMBLY_ANALISE-1-1_FASEI_ANNULAR
+  *surface, type=ELEMENT, name=ASSEMBLY_ANALISE-1-1_FASEI_COMPLETED_WELL
+  *surface, type=ELEMENT, name=ASSEMBLY_ANALISE-1-1_FASEI_FLUIDO
+  *surface, type=ELEMENT, name=ASSEMBLY_ANALISE-1-1_FASEI_MASTER
+  *surface, type=ELEMENT, name=ASSEMBLY_ANALISE-1-1_FASEI_OPEN_WELL
+  *surface, type=ELEMENT, name=ASSEMBLY_ANALISE-1-1_FASEI_REV
+  *surface, type=ELEMENT, name=ASSEMBLY_ANALISE-1-1_FASEI_WELL
+  *surface, type=NODE, name=ASSEMBLY_ANALISE-1-1_FASEI_SLAVE_CNS_
+  *contactpair, interaction=C_FASEI, type=SURFACETOSURFACE
+  *surfaceinteraction, name=C_FASEI
+  *surfacebehavior, pressure-overclosure=HARD
+  *contactpair, interaction=C_FASEI, type=SURFACETOSURFACE
+  *contactpair, interaction=C_FASEI, type=SURFACETOSURFACE
+  *surfaceinteraction, name=C_FASEI
+  *friction, sliptolerance=0.005
+  *surfacebehavior, pressure-overclosure=HARD
+  *initialconditions, type=STRESS, geostatic
+  *initialconditions, type=STRESS, geostatic
+  *initialconditions, type=STRESS, geostatic
+  *initialconditions, type=STRESS, geostatic
+  *surfaceinteraction, name=C_FASEI
+  *boundary
+  *boundary
+  *boundary
+  *boundary
+  *boundary
+  *boundary, op=NEW
+  *boundary, op=NEW
+  *boundary, op=NEW
+  *boundary, op=NEW
+  *boundary, op=NEW
+  *boundary, op=NEW
+  *boundary, op=NEW
+  *boundary, op=NEW
+  *boundary, op=NEW
+  *boundary
+  *boundary
+  *boundary
+  *boundary
+  *boundary
+  *contactpair, interaction=C_FASEI, type=SURFACETOSURFACE
+
+ ***WARNING: SECONDARY SURFACE ASSEMBLY_ANALISE-1-1_FASEI_SLAVE_CNS_ IS A 
+             NODE-BASED SURFACE USED WITH SURFACE TO SURFACE APPROACH.  IN 
+             ORDER TO OBTAIN IMPROVED STRESS ACCURACY WITH THIS APPROACH, AN 
+             ELEMENT-BASED SURFACE SHOULD BE USED INSTEAD.
+  *surfaceinteraction, name=C_FASEI
+  *contactpair, interaction=C_FASEI, type=SURFACETOSURFACE
+  *surface, type=ELEMENT, name=ASSEMBLY_ANALISE-1-1_FASEI_ANNULAR
+  *surface, type=ELEMENT, name=ASSEMBLY_ANALISE-1-1_FASEI_COMPLETED_WELL
+  *surface, type=ELEMENT, name=ASSEMBLY_ANALISE-1-1_FASEI_FLUIDO
+  *surface, type=ELEMENT, name=ASSEMBLY_ANALISE-1-1_FASEI_MASTER
+  *surface, type=ELEMENT, name=ASSEMBLY_ANALISE-1-1_FASEI_OPEN_WELL
+  *surface, type=ELEMENT, name=ASSEMBLY_ANALISE-1-1_FASEI_REV
+  *surface, type=ELEMENT, name=ASSEMBLY_ANALISE-1-1_FASEI_WELL
+  *surface, type=NODE, name=ASSEMBLY_ANALISE-1-1_FASEI_SLAVE_CNS_
+  *output, field
+  *output, history, frequency=0
+  *output, field, timepoints=TIMEPOINT
+  *output, history, frequency=0
+  *output, field, timepoints=TIMEPOINT
+  *output, history, frequency=0
+  *output, field, timepoints=TIMEPOINT
+  *output, history, frequency=0
+  *output, field, timepoints=TIMEPOINT
+  *output, history, frequency=0
+  *output, field, timepoints=TIMEPOINT
+  *output, history, frequency=0
+  *output, field, timepoints=TIMEPOINT
+  *output, history, frequency=0
+  *elementoutput, elset=ASSEMBLY_ANALISE-1-1_FASEI_REV, directions=YES
+  *elementoutput, elset=ASSEMBLY_ANALISE-1-1_ROCK_OUTPUT, directions=YES
+  *elementoutput, elset=ASSEMBLY_ANALISE-1-1_FASEI_REV, directions=YES
+  *elementoutput, elset=ASSEMBLY_ANALISE-1-1_ROCK_OUTPUT, directions=YES
+  *elementoutput, elset=ASSEMBLY_ANALISE-1-1_FASEI_REV, directions=YES
+  *elementoutput, elset=ASSEMBLY_ANALISE-1-1_ROCK_OUTPUT, directions=YES
+  *elementoutput, elset=ASSEMBLY_ANALISE-1-1_FASEI_REV, directions=YES
+  *elementoutput, elset=ASSEMBLY_ANALISE-1-1_ROCK_OUTPUT, directions=YES
+  *elementoutput, elset=ASSEMBLY_ANALISE-1-1_FASEI_REV, directions=YES
+  *elementoutput, elset=ASSEMBLY_ANALISE-1-1_ROCK_OUTPUT, directions=YES
+  *elementoutput, elset=ASSEMBLY_ANALISE-1-1_FASEI_REV, directions=YES
+  *elementoutput, elset=ASSEMBLY_ANALISE-1-1_ROCK_OUTPUT, directions=YES
+  *elementoutput, elset=ASSEMBLY_ANALISE-1-1_FASEI_REV, directions=YES
+  *elementoutput, elset=ASSEMBLY_ANALISE-1-1_ROCK_OUTPUT, directions=YES
+  *initialconditions, type=STRESS, geostatic
+  *initialconditions, type=STRESS, geostatic
+  *initialconditions, type=STRESS, geostatic
+  *initialconditions, type=STRESS, geostatic
+
+ ***WARNING: THE OPTION *TEMPERATURE IS USED BUT THE OPTION *INITIAL 
+             CONDITIONS,TYPE=TEMPERATURE IS NOT. THE INITIAL TEMPERATURE VALUES 
+             ARE ASSUMED TO BE ZERO.
+  *temperature
+  *temperature
+  *temperature
+  *temperature
+  *temperature
+  *temperature
+  *temperature
+  *temperature
+  *output, field
+  *output, history, frequency=0
+  *output, field, timepoints=TIMEPOINT
+  *output, history, frequency=0
+  *output, field, timepoints=TIMEPOINT
+  *output, history, frequency=0
+  *output, field, timepoints=TIMEPOINT
+  *output, history, frequency=0
+  *output, field, timepoints=TIMEPOINT
+  *output, history, frequency=0
+  *output, field, timepoints=TIMEPOINT
+  *output, history, frequency=0
+  *output, field, timepoints=TIMEPOINT
+  *output, history, frequency=0
+  *elementoutput, elset=ASSEMBLY_ANALISE-1-1_FASEI_REV, directions=YES
+  *elementoutput, elset=ASSEMBLY_ANALISE-1-1_ROCK_OUTPUT, directions=YES
+  *elementoutput, elset=ASSEMBLY_ANALISE-1-1_FASEI_REV, directions=YES
+  *elementoutput, elset=ASSEMBLY_ANALISE-1-1_ROCK_OUTPUT, directions=YES
+  *elementoutput, elset=ASSEMBLY_ANALISE-1-1_FASEI_REV, directions=YES
+  *elementoutput, elset=ASSEMBLY_ANALISE-1-1_ROCK_OUTPUT, directions=YES
+  *elementoutput, elset=ASSEMBLY_ANALISE-1-1_FASEI_REV, directions=YES
+  *elementoutput, elset=ASSEMBLY_ANALISE-1-1_ROCK_OUTPUT, directions=YES
+  *elementoutput, elset=ASSEMBLY_ANALISE-1-1_FASEI_REV, directions=YES
+  *elementoutput, elset=ASSEMBLY_ANALISE-1-1_ROCK_OUTPUT, directions=YES
+  *elementoutput, elset=ASSEMBLY_ANALISE-1-1_FASEI_REV, directions=YES
+  *elementoutput, elset=ASSEMBLY_ANALISE-1-1_ROCK_OUTPUT, directions=YES
+  *elementoutput, elset=ASSEMBLY_ANALISE-1-1_FASEI_REV, directions=YES
+  *elementoutput, elset=ASSEMBLY_ANALISE-1-1_ROCK_OUTPUT, directions=YES
+  *initialconditions, type=STRESS, geostatic
+  *initialconditions, type=STRESS, geostatic
+  *initialconditions, type=STRESS, geostatic
+  *initialconditions, type=STRESS, geostatic
+  *initialconditions, type=STRESS, geostatic
+
+ ***WARNING: BOTH LATERAL STRESS COEFFICIENTS ARE ZERO FOR THE *INITIAL 
+             CONDITIONS; TYPE=STRESS(GEOSTATIC) OPTION
+  *initialconditions, type=STRESS, geostatic
+  *initialconditions, type=STRESS, geostatic
+  *initialconditions, type=STRESS, geostatic
+  *output, field
+  *output, history, frequency=0
+  *output, field, timepoints=TIMEPOINT
+  *output, history, frequency=0
+  *output, field, timepoints=TIMEPOINT
+  *output, history, frequency=0
+  *output, field, timepoints=TIMEPOINT
+  *output, history, frequency=0
+  *output, field, timepoints=TIMEPOINT
+  *output, history, frequency=0
+  *output, field, timepoints=TIMEPOINT
+  *output, history, frequency=0
+  *output, field, timepoints=TIMEPOINT
+  *output, history, frequency=0
+  *elementoutput, elset=ASSEMBLY_ANALISE-1-1_FASEI_REV, directions=YES
+  *elementoutput, elset=ASSEMBLY_ANALISE-1-1_ROCK_OUTPUT, directions=YES
+  *elementoutput, elset=ASSEMBLY_ANALISE-1-1_FASEI_REV, directions=YES
+  *elementoutput, elset=ASSEMBLY_ANALISE-1-1_ROCK_OUTPUT, directions=YES
+  *elementoutput, elset=ASSEMBLY_ANALISE-1-1_FASEI_REV, directions=YES
+  *elementoutput, elset=ASSEMBLY_ANALISE-1-1_ROCK_OUTPUT, directions=YES
+  *elementoutput, elset=ASSEMBLY_ANALISE-1-1_FASEI_REV, directions=YES
+  *elementoutput, elset=ASSEMBLY_ANALISE-1-1_ROCK_OUTPUT, directions=YES
+  *elementoutput, elset=ASSEMBLY_ANALISE-1-1_FASEI_REV, directions=YES
+  *elementoutput, elset=ASSEMBLY_ANALISE-1-1_ROCK_OUTPUT, directions=YES
+  *elementoutput, elset=ASSEMBLY_ANALISE-1-1_FASEI_REV, directions=YES
+  *elementoutput, elset=ASSEMBLY_ANALISE-1-1_ROCK_OUTPUT, directions=YES
+  *elementoutput, elset=ASSEMBLY_ANALISE-1-1_FASEI_REV, directions=YES
+  *elementoutput, elset=ASSEMBLY_ANALISE-1-1_ROCK_OUTPUT, directions=YES
+  *geostatic
+  *geostatic
+  
+                               E L E M E N T   Q U A L I T Y  C H E C K S        
+  
+  
+ ***NOTES: DISTORTED ISOPARAMETRIC ELEMENTS: ANGLE BETWEEN ISOPARAMETRIC LINES 
+           IS LESS THAN 45 DEGREES OR GREATER THAN 135 DEGREES.
+  
+           TETRAHEDRAL QUALITY MEASURE: VOLUME OF TETRAHEDRON DIVIDED BY THE 
+           VOLUME OF EQUILATERAL TETRAHEDRON WITH SAME CIRCUMSPHERE RADIUS; 
+           0 FOR DEGENERATE TETRAHEDRON AND 1 FOR EQUILATERIAL TETRAHEDRON. IT 
+           IS RECOMMENDED THAT THE TETRAHEDRAL QUALITY MEASURE BE GREATER THAN 
+           0.02, THE MIN INTERIOR (DIHEDRAL) ANGLE BE GREATER THAN 10 DEGREES, 
+           AND THE MAX INTERIOR (DIHEDRAL) ANGLE BE LESS THAN 160 DEGREES. 
+  
+           MODIFIED TETRAHEDRAL QUALITY MEASURE: ANGLES BETWEEN THE TWO LINE 
+           SEGMENTS ON EACH EDGE; THE EDGES OF MODIFIED TETRAHEDRAL SHOULD BE 
+           AS STRAIGHT AS POSSIBLE. IT IS RECOMMENDED THAT THE ANGLE BETWEEN 
+           THE TWO LINE SEGMENTS ON EACH EDGE IS BETWEEN 160 AND 180 DEGREES. 
+  
+           TRIANGULAR QUALITY MEASURE: AREA OF TRIANGLE DIVIDED BY THE AREA OF 
+           EQUILATERAL TRIANGLE WITH SAME CIRCUMCIRCLE RADIUS; 0 FOR DEGENERATE 
+           TRIANGLE AND 1 FOR EQUILATERAL TRIANGLE. IT IS RECOMMENDED THAT THE
+           TRIANGULAR QUALITY MEASURE BE GREATER THAN 0.01, THE MIN INTERIOR 
+           ANGLE BE GREATER THAN 10 DEGREES, AND THE MAX INTERIOR ANGLE BE LESS 
+           THAN 160 DEGREES. 
+  
+           NODAL ADJUSTMENTS ARISING FROM CONTACT INTERACTIONS AND/OR TIE 
+           CONSTRAINTS CAN CAUSE SEVERE ELEMENT DISTORTION. IT MAY BE NECESSARY 
+           TO REMESH IN ORDER TO REDUCE THE AMOUNT OF ADJUSTMENT. 
+
+ ***WARNING: The aspect ratio for 66 elements exceeds 100 to 1. The elements 
+             have been identified in element set WarnElemAspectRatio.
+  
+ --------------------------------------------------------------------------------
+ Elements with large aspect ratio
+  
+        Element        Adjusted nodes 
+ --------------------- -------------- 
+         ANALISE-1-1.1       NO       
+         ANALISE-1-1.2       NO       
+         ANALISE-1-1.3       NO       
+         ANALISE-1-1.4       NO       
+         ANALISE-1-1.5       NO       
+         ANALISE-1-1.6       NO       
+         ANALISE-1-1.7       NO       
+         ANALISE-1-1.8       NO       
+         ANALISE-1-1.9       NO       
+        ANALISE-1-1.10       NO       
+        ANALISE-1-1.11       NO       
+        ANALISE-1-1.12       NO       
+        ANALISE-1-1.13       NO       
+        ANALISE-1-1.14       NO       
+        ANALISE-1-1.15       NO       
+        ANALISE-1-1.16       NO       
+        ANALISE-1-1.17       NO       
+        ANALISE-1-1.18       NO       
+        ANALISE-1-1.19       NO       
+        ANALISE-1-1.20       NO       
+        ANALISE-1-1.21       NO       
+        ANALISE-1-1.22       NO       
+        ANALISE-1-1.45       NO       
+        ANALISE-1-1.46       NO       
+        ANALISE-1-1.47       NO       
+        ANALISE-1-1.48       NO       
+        ANALISE-1-1.49       NO       
+        ANALISE-1-1.50       NO       
+        ANALISE-1-1.51       NO       
+        ANALISE-1-1.52       NO       
+        ANALISE-1-1.53       NO       
+        ANALISE-1-1.54       NO       
+        ANALISE-1-1.55       NO       
+        ANALISE-1-1.56       NO       
+        ANALISE-1-1.57       NO       
+        ANALISE-1-1.58       NO       
+        ANALISE-1-1.59       NO       
+        ANALISE-1-1.60       NO       
+        ANALISE-1-1.61       NO       
+        ANALISE-1-1.62       NO       
+        ANALISE-1-1.63       NO       
+        ANALISE-1-1.64       NO       
+        ANALISE-1-1.65       NO       
+        ANALISE-1-1.66       NO       
+        ANALISE-1-1.89       NO       
+        ANALISE-1-1.90       NO       
+        ANALISE-1-1.91       NO       
+        ANALISE-1-1.92       NO       
+        ANALISE-1-1.93       NO       
+        ANALISE-1-1.94       NO       
+        ANALISE-1-1.95       NO       
+        ANALISE-1-1.96       NO       
+        ANALISE-1-1.97       NO       
+        ANALISE-1-1.98       NO       
+        ANALISE-1-1.99       NO       
+       ANALISE-1-1.133       NO       
+       ANALISE-1-1.134       NO       
+       ANALISE-1-1.135       NO       
+       ANALISE-1-1.136       NO       
+       ANALISE-1-1.137       NO       
+       ANALISE-1-1.138       NO       
+       ANALISE-1-1.139       NO       
+       ANALISE-1-1.140       NO       
+       ANALISE-1-1.141       NO       
+       ANALISE-1-1.142       NO       
+       ANALISE-1-1.143       NO       
+  
+  
+  *timepoints, name=TIMEPOINT
+  *Step, name=Geostatic, nlgeom=YES
+  *output, field
+  *output, history, frequency=0
+  *Step, name=Transition, nlgeom=YES
+  *output, field, timepoints=TIMEPOINT
+  *output, history, frequency=0
+  *Step, name=TempDefine, nlgeom=YES
+  *output, field, timepoints=TIMEPOINT
+  *output, history, frequency=0
+  *Step, name=Perf_10_375, nlgeom=YES
+  *output, field, timepoints=TIMEPOINT
+  *output, history, frequency=0
+  *Step, name=Perf_10_375_Creep, nlgeom=YES, inc=1000000
+  *output, field, timepoints=TIMEPOINT
+  *output, history, frequency=0
+  *Step, name=Rev_9_875, nlgeom=YES
+  *output, field, timepoints=TIMEPOINT
+  *output, history, frequency=0
+  *Step, name=Rev_9_875_Creep, nlgeom=YES, inc=1000000
+  *output, field, timepoints=TIMEPOINT
+  *output, history, frequency=0
+  *Step, name=Geostatic, nlgeom=YES
+  *Step, name=Transition, nlgeom=YES
+  *Step, name=TempDefine, nlgeom=YES
+  *Step, name=Perf_10_375, nlgeom=YES
+  *Step, name=Perf_10_375_Creep, nlgeom=YES, inc=1000000
+  *Step, name=Rev_9_875, nlgeom=YES
+  *Step, name=Rev_9_875_Creep, nlgeom=YES, inc=1000000
+
+ ***WARNING: NODE SET ASSEMBLY_ANALISE-1-1_ANALISE-1-REFPT_ HAS NO MEMBERS AND 
+             WILL BE IGNORED.  NODES DEFINED IN THIS SET MAY HAVE BEEN DELETED 
+             BECAUSE THEY WERE NOT CONNECTED TO ANY ELEMENTS.
+
+ ***WARNING: NODE SET ASSEMBLY_ANALISE-1-1_REFPT HAS NO MEMBERS AND WILL BE 
+             IGNORED.  NODES DEFINED IN THIS SET MAY HAVE BEEN DELETED BECAUSE 
+             THEY WERE NOT CONNECTED TO ANY ELEMENTS.
+  *Step, name=Geostatic, nlgeom=YES
+  *geostatic
+  *dload, op=NEW
+
+ ***NOTE: ALL VALID ELEMENTS HAVE BEEN COLLECTED IN ELEMENT SET 
+          _Whole_Model_GRAV_Elset FOR APPLICATION OF LOAD TYPE GRAV.
+  *modelchange, type=CONTACTPAIR, remove
+  *modelchange, remove
+  *modelchange, remove
+  *output, field
+  *nodeoutput, nset=ASSEMBLY_ANALISE-1-1_FASEI_REV
+  *elementoutput, elset=ASSEMBLY_ANALISE-1-1_FASEI_REV, directions=YES
+  *nodeoutput, nset=ASSEMBLY_ANALISE-1-1_ROCK_OUTPUT
+  *elementoutput, elset=ASSEMBLY_ANALISE-1-1_ROCK_OUTPUT, directions=YES
+  *output, history, frequency=0
+  *endstep
+
+ ***WARNING: THE REQUEST FOR MISES OUTPUT WILL BE REPLACED BY A REQUEST FOR S 
+             OUTPUT
+  *Step, name=Transition, nlgeom=YES
+  *static
+
+ ***WARNING: A STATIC ANALYSIS WILL IGNORE MATERIAL DATA FOR CREEP OR SWELLING.
+  *dload, op=NEW
+
+ ***NOTE: ALL VALID ELEMENTS HAVE BEEN COLLECTED IN ELEMENT SET 
+          _Whole_Model_GRAV_Elset FOR APPLICATION OF LOAD TYPE GRAV.
+  *output, field, timepoints=TIMEPOINT
+  *nodeoutput, nset=ASSEMBLY_ANALISE-1-1_FASEI_REV
+  *elementoutput, elset=ASSEMBLY_ANALISE-1-1_FASEI_REV, directions=YES
+  *nodeoutput, nset=ASSEMBLY_ANALISE-1-1_ROCK_OUTPUT
+  *elementoutput, elset=ASSEMBLY_ANALISE-1-1_ROCK_OUTPUT, directions=YES
+  *output, history, frequency=0
+  *endstep
+
+ ***WARNING: OUTPUT AT EXACT, PREDEFINED TIME POINTS WAS REQUESTED IN THIS 
+             STEP. IN ORDER TO WRITE OUTPUT AT EXACT TIME POINTS SPECIFIED, 
+             Abaqus MIGHT USE TIME INCREMENTS SMALLER THAN THE MINIMUM TIME 
+             INCREMENT ALLOWED IN THE STEP. IN ADDITION, THE NUMBER OF 
+             INCREMENTS REQUIRED TO COMPLETE THE STEP WILL IN GENERAL INCREASE.
+
+ ***WARNING: THE REQUEST FOR MISES OUTPUT WILL BE REPLACED BY A REQUEST FOR S 
+             OUTPUT
+  *Step, name=TempDefine, nlgeom=YES
+  *static
+
+ ***WARNING: A STATIC ANALYSIS WILL IGNORE MATERIAL DATA FOR CREEP OR SWELLING.
+  *dload, op=NEW
+
+ ***NOTE: ALL VALID ELEMENTS HAVE BEEN COLLECTED IN ELEMENT SET 
+          _Whole_Model_GRAV_Elset FOR APPLICATION OF LOAD TYPE GRAV.
+  *temperature
+  *temperature
+  *temperature
+  *temperature
+  *temperature
+  *temperature
+  *temperature
+  *temperature
+  *output, field, timepoints=TIMEPOINT
+  *nodeoutput, nset=ASSEMBLY_ANALISE-1-1_FASEI_REV
+  *elementoutput, elset=ASSEMBLY_ANALISE-1-1_FASEI_REV, directions=YES
+  *nodeoutput, nset=ASSEMBLY_ANALISE-1-1_ROCK_OUTPUT
+  *elementoutput, elset=ASSEMBLY_ANALISE-1-1_ROCK_OUTPUT, directions=YES
+  *output, history, frequency=0
+  *endstep
+
+ ***WARNING: OUTPUT AT EXACT, PREDEFINED TIME POINTS WAS REQUESTED IN THIS 
+             STEP. IN ORDER TO WRITE OUTPUT AT EXACT TIME POINTS SPECIFIED, 
+             Abaqus MIGHT USE TIME INCREMENTS SMALLER THAN THE MINIMUM TIME 
+             INCREMENT ALLOWED IN THE STEP. IN ADDITION, THE NUMBER OF 
+             INCREMENTS REQUIRED TO COMPLETE THE STEP WILL IN GENERAL INCREASE.
+
+ ***WARNING: THE REQUEST FOR MISES OUTPUT WILL BE REPLACED BY A REQUEST FOR S 
+             OUTPUT
+  *Step, name=Perf_10_375, nlgeom=YES
+  *static
+
+ ***WARNING: A STATIC ANALYSIS WILL IGNORE MATERIAL DATA FOR CREEP OR SWELLING.
+  *boundary, op=NEW
+  *boundary, op=NEW
+  *boundary, op=NEW
+  *boundary, op=NEW
+  *boundary, op=NEW
+  *dload, op=NEW
+
+ ***NOTE: ALL VALID ELEMENTS HAVE BEEN COLLECTED IN ELEMENT SET 
+          _Whole_Model_GRAV_Elset FOR APPLICATION OF LOAD TYPE GRAV.
+  *dload, op=NEW
+  *output, field, timepoints=TIMEPOINT
+  *nodeoutput, nset=ASSEMBLY_ANALISE-1-1_FASEI_REV
+  *elementoutput, elset=ASSEMBLY_ANALISE-1-1_FASEI_REV, directions=YES
+  *nodeoutput, nset=ASSEMBLY_ANALISE-1-1_ROCK_OUTPUT
+  *elementoutput, elset=ASSEMBLY_ANALISE-1-1_ROCK_OUTPUT, directions=YES
+  *output, history, frequency=0
+  *endstep
+
+ ***WARNING: OUTPUT AT EXACT, PREDEFINED TIME POINTS WAS REQUESTED IN THIS 
+             STEP. IN ORDER TO WRITE OUTPUT AT EXACT TIME POINTS SPECIFIED, 
+             Abaqus MIGHT USE TIME INCREMENTS SMALLER THAN THE MINIMUM TIME 
+             INCREMENT ALLOWED IN THE STEP. IN ADDITION, THE NUMBER OF 
+             INCREMENTS REQUIRED TO COMPLETE THE STEP WILL IN GENERAL INCREASE.
+
+ ***WARNING: THE REQUEST FOR MISES OUTPUT WILL BE REPLACED BY A REQUEST FOR S 
+             OUTPUT
+  *Step, name=Perf_10_375_Creep, nlgeom=YES, inc=1000000
+  *visco, cetol=0.01
+  *dload, op=NEW
+
+ ***NOTE: ALL VALID ELEMENTS HAVE BEEN COLLECTED IN ELEMENT SET 
+          _Whole_Model_GRAV_Elset FOR APPLICATION OF LOAD TYPE GRAV.
+  *dload, op=NEW
+  *output, field, timepoints=TIMEPOINT
+  *nodeoutput, nset=ASSEMBLY_ANALISE-1-1_FASEI_REV
+  *elementoutput, elset=ASSEMBLY_ANALISE-1-1_FASEI_REV, directions=YES
+  *nodeoutput, nset=ASSEMBLY_ANALISE-1-1_ROCK_OUTPUT
+  *elementoutput, elset=ASSEMBLY_ANALISE-1-1_ROCK_OUTPUT, directions=YES
+  *output, history, frequency=0
+  *endstep
+
+ ***WARNING: OUTPUT AT EXACT, PREDEFINED TIME POINTS WAS REQUESTED IN THIS 
+             STEP. IN ORDER TO WRITE OUTPUT AT EXACT TIME POINTS SPECIFIED, 
+             Abaqus MIGHT USE TIME INCREMENTS SMALLER THAN THE MINIMUM TIME 
+             INCREMENT ALLOWED IN THE STEP. IN ADDITION, THE NUMBER OF 
+             INCREMENTS REQUIRED TO COMPLETE THE STEP WILL IN GENERAL INCREASE.
+
+ ***WARNING: THE REQUEST FOR MISES OUTPUT WILL BE REPLACED BY A REQUEST FOR S 
+             OUTPUT
+  *Step, name=Rev_9_875, nlgeom=YES
+  *static
+
+ ***WARNING: A STATIC ANALYSIS WILL IGNORE MATERIAL DATA FOR CREEP OR SWELLING.
+  *boundary, op=NEW
+  *boundary, op=NEW
+  *boundary, op=NEW
+  *boundary, op=NEW
+  *dload, op=NEW
+
+ ***NOTE: ALL VALID ELEMENTS HAVE BEEN COLLECTED IN ELEMENT SET 
+          _Whole_Model_GRAV_Elset FOR APPLICATION OF LOAD TYPE GRAV.
+  *dload, op=NEW
+  *dload, op=NEW
+  *dload, op=NEW
+  *modelchange, type=CONTACTPAIR, add
+  *modelchange, add
+  *output, field, timepoints=TIMEPOINT
+  *nodeoutput, nset=ASSEMBLY_ANALISE-1-1_FASEI_REV
+  *elementoutput, elset=ASSEMBLY_ANALISE-1-1_FASEI_REV, directions=YES
+  *nodeoutput, nset=ASSEMBLY_ANALISE-1-1_ROCK_OUTPUT
+  *elementoutput, elset=ASSEMBLY_ANALISE-1-1_ROCK_OUTPUT, directions=YES
+  *output, history, frequency=0
+  *endstep
+
+ ***WARNING: OUTPUT AT EXACT, PREDEFINED TIME POINTS WAS REQUESTED IN THIS 
+             STEP. IN ORDER TO WRITE OUTPUT AT EXACT TIME POINTS SPECIFIED, 
+             Abaqus MIGHT USE TIME INCREMENTS SMALLER THAN THE MINIMUM TIME 
+             INCREMENT ALLOWED IN THE STEP. IN ADDITION, THE NUMBER OF 
+             INCREMENTS REQUIRED TO COMPLETE THE STEP WILL IN GENERAL INCREASE.
+
+ ***WARNING: THE REQUEST FOR MISES OUTPUT WILL BE REPLACED BY A REQUEST FOR S 
+             OUTPUT
+  *Step, name=Rev_9_875_Creep, nlgeom=YES, inc=1000000
+  *visco, cetol=0.01
+  *dload, op=NEW
+
+ ***NOTE: ALL VALID ELEMENTS HAVE BEEN COLLECTED IN ELEMENT SET 
+          _Whole_Model_GRAV_Elset FOR APPLICATION OF LOAD TYPE GRAV.
+  *dload, op=NEW
+  *dload, op=NEW
+  *output, field, timepoints=TIMEPOINT
+  *nodeoutput, nset=ASSEMBLY_ANALISE-1-1_FASEI_REV
+  *elementoutput, elset=ASSEMBLY_ANALISE-1-1_FASEI_REV, directions=YES
+  *nodeoutput, nset=ASSEMBLY_ANALISE-1-1_ROCK_OUTPUT
+  *elementoutput, elset=ASSEMBLY_ANALISE-1-1_ROCK_OUTPUT, directions=YES
+  *output, history, frequency=0
+  *endstep
+
+ ***WARNING: OUTPUT AT EXACT, PREDEFINED TIME POINTS WAS REQUESTED IN THIS 
+             STEP. IN ORDER TO WRITE OUTPUT AT EXACT TIME POINTS SPECIFIED, 
+             Abaqus MIGHT USE TIME INCREMENTS SMALLER THAN THE MINIMUM TIME 
+             INCREMENT ALLOWED IN THE STEP. IN ADDITION, THE NUMBER OF 
+             INCREMENTS REQUIRED TO COMPLETE THE STEP WILL IN GENERAL INCREASE.
+
+ ***WARNING: THE REQUEST FOR MISES OUTPUT WILL BE REPLACED BY A REQUEST FOR S 
+             OUTPUT
+  *boundary
+  *boundary
+  *boundary
+  *boundary
+  *boundary
+  *Step, name=Geostatic, nlgeom=YES
+  *geostatic
+  *endstep
+  *Step, name=Transition, nlgeom=YES
+  *static
+  *endstep
+  *Step, name=TempDefine, nlgeom=YES
+  *static
+  *temperature
+  *temperature
+  *temperature
+  *temperature
+  *temperature
+  *temperature
+  *temperature
+  *temperature
+  *endstep
+  *Step, name=Perf_10_375, nlgeom=YES
+  *static
+  *boundary, op=NEW
+  *boundary, op=NEW
+  *boundary, op=NEW
+  *boundary, op=NEW
+  *boundary, op=NEW
+  *endstep
+  *Step, name=Perf_10_375_Creep, nlgeom=YES, inc=1000000
+  *visco, cetol=0.01
+  *endstep
+  *Step, name=Rev_9_875, nlgeom=YES
+  *static
+  *boundary, op=NEW
+  *boundary, op=NEW
+  *boundary, op=NEW
+  *boundary, op=NEW
+  *endstep
+  *Step, name=Rev_9_875_Creep, nlgeom=YES, inc=1000000
+  *visco, cetol=0.01
+  *endstep
+
+ ***WARNING: THE VALUE OF THE PARAMETER * M * IS GREATER THAN ZERO. LARGE 
+             VALUES OF THIS PARAMETER SHOULD BE USED WITH CAUTION SINCE THEY 
+             MIGHT LEAD TO CONVERGENCE DIFFICULTIES.
+
+
+
+                            P R O B L E M   S I Z E
+
+
+          NUMBER OF ELEMENTS IS                                   233
+          NUMBER OF ELEMENTS DEFINED BY THE USER AND *TIE         165
+          NUMBER OF INTERNAL ELEMENTS GENERATED FOR CONTACT        68
+          NUMBER OF NODES IS                                      340
+          NUMBER OF NODES DEFINED BY THE USER                     204
+          NUMBER OF INTERNAL NODES GENERATED BY THE PROGRAM       136
+          TOTAL NUMBER OF VARIABLES IN THE MODEL                  544
+          (DEGREES OF FREEDOM PLUS MAX NO. OF ANY LAGRANGE MULTIPLIER
+           VARIABLES. INCLUDE *PRINT,SOLVE=YES TO GET THE ACTUAL NUMBER.)
+
+
+
+                              END OF USER INPUT PROCESSING
+
+
+
+     JOB TIME SUMMARY
+       USER TIME (SEC)      =     0.20    
+       SYSTEM TIME (SEC)    =      0.0    
+       TOTAL CPU TIME (SEC) =     0.20    
+       WALLCLOCK TIME (SEC) =            0
+1
+
+   Abaqus 2024                                  Date 26-fev-2026   Time 11:12:30
+   For use by PONTIFICIA UNIVERSIDADE CATOLICA DO RIO DE JANEIRO under license from Dassault Systemes or its subsidiary.
+
+                                                                                               STEP    1  INCREMENT    1
+                                                                                          TIME COMPLETED IN THIS STEP   0.00    
+
+
+                        S T E P       1     G E O S T A T I C   S T R E S S   A N A L Y S I S
+
+
+                                                                                          
+
+          LARGE DISPLACEMENT THEORY WILL BE USED
+
+          UNSYMMETRIC MATRIX STORAGE AND SOLUTION WILL BE USED
+
+
+  THE TOTAL MASS ACCOUNTS FOR ELEMENT REMOVALS OR REACTIVATIONS IN THIS STEP
+
+
+
+                    TOTAL MASS OF MODEL
+
+                      1.3883664E+09
+
+
+                    LOCATION OF THE CENTER OF MASS OF THE MODEL
+
+                       0.000000          -2968.741    
+
+
+                    MOMENTS OF INERTIA ABOUT THE ORIGIN
+                           I(XX)               I(YY)               I(ZZ)
+
+                      1.2355721E+16      1.7433432E+11      1.2355721E+16
+
+
+                    PRODUCTS OF INERTIA ABOUT THE ORIGIN
+                           I(XY)               I(XZ)               I(YZ)
+
+                       0.000000           0.000000           0.000000    
+
+
+                    MOMENTS OF INERTIA ABOUT THE CENTER OF MASS
+                           I(XX)               I(YY)               I(ZZ)
+
+                      1.1946334E+14      1.7433432E+11      1.1946334E+14
+
+
+                    PRODUCTS OF INERTIA ABOUT THE CENTER OF MASS
+                           I(XY)               I(XZ)               I(YZ)
+
+                       0.000000           0.000000           0.000000    
+  
+                   M E M O R Y   E S T I M A T E
+  
+ PROCESS      FLOATING PT       MINIMUM MEMORY        MEMORY TO
+              OPERATIONS           REQUIRED          MINIMIZE I/O
+             PER ITERATION           (MB)               (MB)
+  
+     1          1.36E+05               17                 24
+  
+ NOTE:
+      (1) SINCE ABAQUS DOES NOT PRE-ALLOCATE MEMORY AND ONLY ALLOCATES MEMORY AS NEEDED DURING THE ANALYSIS,
+          THE MEMORY REQUIREMENT PRINTED HERE CAN ONLY BE VIEWED AS A GENERAL GUIDELINE BASED ON THE BEST
+          KNOWLEDGE AVAILABLE AT THE BEGINNING OF A STEP BEFORE THE SOLUTION PROCESS HAS BEGUN.
+      (2) THE ESTIMATE IS NORMALLY UPDATED AT THE BEGINNING OF EVERY STEP. IT IS THE MAXIMUM VALUE OF THE
+          ESTIMATE FROM THE CURRENT STEP TO THE LAST STEP OF THE ANALYSIS, WITH UNSYMMETRIC SOLUTION TAKEN
+          INTO ACCOUNT IF APPLICABLE. 
+      (3) SINCE THE ESTIMATE IS BASED ON THE ACTIVE DEGREES OF FREEDOM IN THE FIRST ITERATION OF THE 
+          CURRENT STEP, THE MEMORY ESTIMATE MIGHT BE SIGNIFICANTLY DIFFERENT THAN ACTUAL USAGE FOR 
+          PROBLEMS WITH SUBSTANTIAL CHANGES IN ACTIVE DEGREES OF FREEDOM BETWEEN STEPS (OR EVEN WITHIN
+          THE SAME STEP). EXAMPLES ARE: PROBLEMS WITH SIGNIFICANT CONTACT CHANGES, PROBLEMS WITH MODEL
+          CHANGE, PROBLEMS WITH BOTH STATIC STEP AND STEADY STATE DYNAMIC PROCEDURES WHERE ACOUSTIC 
+          ELEMENTS WILL ONLY BE ACTIVATED IN THE STEADY STATE DYNAMIC STEPS.
+      (4) FOR MULTI-PROCESS EXECUTION, THE ESTIMATED VALUE OF FLOATING POINT OPERATIONS FOR EACH PROCESS
+          IS BASED ON AN INITIAL SCHEDULING OF OPERATIONS AND MIGHT NOT REFLECT THE ACTUAL FLOATING 
+          POINT OPERATIONS COMPLETED ON EACH PROCESS. OPERATIONS ARE DYNAMICALLY BALANCED DURING EXECUTION, 
+          SO THE ACTUAL BALANCE OF OPERATIONS BETWEEN PROCESSES IS EXPECTED TO BE BETTER THAN THE ESTIMATE
+          PRINTED HERE.
+      (5) THE UPPER LIMIT OF MEMORY THAT CAN BE ALLOCATED BY ABAQUS WILL IN GENERAL DEPEND ON THE VALUE OF
+          THE "MEMORY" PARAMETER AND THE AMOUNT OF PHYSICAL MEMORY AVAILABLE ON THE MACHINE. PLEASE SEE
+          THE "ABAQUS ANALYSIS USER'S MANUAL" FOR MORE DETAILS. THE ACTUAL USAGE OF MEMORY AND OF DISK
+          SPACE FOR SCRATCH DATA WILL DEPEND ON THIS UPPER LIMIT AS WELL AS THE MEMORY REQUIRED TO MINIMIZE
+          I/O. IF THE MEMORY UPPER LIMIT IS GREATER THAN THE MEMORY REQUIRED TO MINIMIZE I/O, THEN THE ACTUAL
+          MEMORY USAGE WILL BE CLOSE TO THE ESTIMATED "MEMORY TO MINIMIZE I/O" VALUE, AND THE SCRATCH DISK
+          USAGE WILL BE CLOSE-TO-ZERO; OTHERWISE, THE ACTUAL MEMORY USED WILL BE CLOSE TO THE PREVIOUSLY
+          MENTIONED MEMORY LIMIT, AND THE SCRATCH DISK USAGE WILL BE ROUGHLY PROPORTIONAL TO THE DIFFERENCE
+          BETWEEN THE ESTIMATED "MEMORY TO MINIMIZE I/O" AND THE MEMORY UPPER LIMIT. HOWEVER ACCURATE
+          ESTIMATE OF THE SCRATCH DISK SPACE IS NOT POSSIBLE.
+      (6) USING "*RESTART, WRITE" CAN GENERATE A LARGE AMOUNT OF DATA WRITTEN IN THE WORK DIRECTORY.
+1
+
+   Abaqus 2024                                  Date 26-fev-2026   Time 11:12:30
+   For use by PONTIFICIA UNIVERSIDADE CATOLICA DO RIO DE JANEIRO under license from Dassault Systemes or its subsidiary.
+
+                                                                                               STEP    2  INCREMENT    1
+                                                                                          TIME COMPLETED IN THIS STEP   0.00    
+
+
+                        S T E P       2     S T A T I C   A N A L Y S I S
+
+
+                                                                                          
+
+     AUTOMATIC TIME CONTROL WITH -
+          A SUGGESTED INITIAL TIME INCREMENT OF                 1.00    
+          AND A TOTAL TIME PERIOD OF                            2.00    
+          THE MINIMUM TIME INCREMENT ALLOWED IS                2.000E-05
+          THE MAXIMUM TIME INCREMENT ALLOWED IS                 2.00    
+
+     LINEAR EQUATION SOLVER TYPE         DIRECT SPARSE
+
+          LARGE DISPLACEMENT THEORY WILL BE USED
+
+          UNSYMMETRIC MATRIX STORAGE AND SOLUTION WILL BE USED
+
+
+  THE TOTAL MASS ACCOUNTS FOR ELEMENT REMOVALS OR REACTIVATIONS IN THIS STEP
+
+   NOTE:  THE FOLLOWING CENTER OF MASS AND MOMENT OF INERTIA CALCULATIONS ARE BASED ON CURRENT POSITION
+
+
+
+                    TOTAL MASS OF MODEL
+
+                      1.3883664E+09
+
+
+                    LOCATION OF THE CENTER OF MASS OF THE MODEL
+
+                       0.000000          -2968.739    
+
+
+                    MOMENTS OF INERTIA ABOUT THE ORIGIN
+                           I(XX)               I(YY)               I(ZZ)
+
+                      1.2355709E+16      1.7433432E+11      1.2355709E+16
+
+
+                    PRODUCTS OF INERTIA ABOUT THE ORIGIN
+                           I(XY)               I(XZ)               I(YZ)
+
+                       0.000000           0.000000           0.000000    
+
+
+                    MOMENTS OF INERTIA ABOUT THE CENTER OF MASS
+                           I(XX)               I(YY)               I(ZZ)
+
+                      1.1946354E+14      1.7433432E+11      1.1946354E+14
+
+
+                    PRODUCTS OF INERTIA ABOUT THE CENTER OF MASS
+                           I(XY)               I(XZ)               I(YZ)
+
+                       0.000000           0.000000           0.000000    
+  
+                   M E M O R Y   E S T I M A T E
+  
+ PROCESS      FLOATING PT       MINIMUM MEMORY        MEMORY TO
+              OPERATIONS           REQUIRED          MINIMIZE I/O
+             PER ITERATION           (MB)               (MB)
+  
+     1          1.36E+05               17                 24
+  
+ NOTE:
+      (1) SINCE ABAQUS DOES NOT PRE-ALLOCATE MEMORY AND ONLY ALLOCATES MEMORY AS NEEDED DURING THE ANALYSIS,
+          THE MEMORY REQUIREMENT PRINTED HERE CAN ONLY BE VIEWED AS A GENERAL GUIDELINE BASED ON THE BEST
+          KNOWLEDGE AVAILABLE AT THE BEGINNING OF A STEP BEFORE THE SOLUTION PROCESS HAS BEGUN.
+      (2) THE ESTIMATE IS NORMALLY UPDATED AT THE BEGINNING OF EVERY STEP. IT IS THE MAXIMUM VALUE OF THE
+          ESTIMATE FROM THE CURRENT STEP TO THE LAST STEP OF THE ANALYSIS, WITH UNSYMMETRIC SOLUTION TAKEN
+          INTO ACCOUNT IF APPLICABLE. 
+      (3) SINCE THE ESTIMATE IS BASED ON THE ACTIVE DEGREES OF FREEDOM IN THE FIRST ITERATION OF THE 
+          CURRENT STEP, THE MEMORY ESTIMATE MIGHT BE SIGNIFICANTLY DIFFERENT THAN ACTUAL USAGE FOR 
+          PROBLEMS WITH SUBSTANTIAL CHANGES IN ACTIVE DEGREES OF FREEDOM BETWEEN STEPS (OR EVEN WITHIN
+          THE SAME STEP). EXAMPLES ARE: PROBLEMS WITH SIGNIFICANT CONTACT CHANGES, PROBLEMS WITH MODEL
+          CHANGE, PROBLEMS WITH BOTH STATIC STEP AND STEADY STATE DYNAMIC PROCEDURES WHERE ACOUSTIC 
+          ELEMENTS WILL ONLY BE ACTIVATED IN THE STEADY STATE DYNAMIC STEPS.
+      (4) FOR MULTI-PROCESS EXECUTION, THE ESTIMATED VALUE OF FLOATING POINT OPERATIONS FOR EACH PROCESS
+          IS BASED ON AN INITIAL SCHEDULING OF OPERATIONS AND MIGHT NOT REFLECT THE ACTUAL FLOATING 
+          POINT OPERATIONS COMPLETED ON EACH PROCESS. OPERATIONS ARE DYNAMICALLY BALANCED DURING EXECUTION, 
+          SO THE ACTUAL BALANCE OF OPERATIONS BETWEEN PROCESSES IS EXPECTED TO BE BETTER THAN THE ESTIMATE
+          PRINTED HERE.
+      (5) THE UPPER LIMIT OF MEMORY THAT CAN BE ALLOCATED BY ABAQUS WILL IN GENERAL DEPEND ON THE VALUE OF
+          THE "MEMORY" PARAMETER AND THE AMOUNT OF PHYSICAL MEMORY AVAILABLE ON THE MACHINE. PLEASE SEE
+          THE "ABAQUS ANALYSIS USER'S MANUAL" FOR MORE DETAILS. THE ACTUAL USAGE OF MEMORY AND OF DISK
+          SPACE FOR SCRATCH DATA WILL DEPEND ON THIS UPPER LIMIT AS WELL AS THE MEMORY REQUIRED TO MINIMIZE
+          I/O. IF THE MEMORY UPPER LIMIT IS GREATER THAN THE MEMORY REQUIRED TO MINIMIZE I/O, THEN THE ACTUAL
+          MEMORY USAGE WILL BE CLOSE TO THE ESTIMATED "MEMORY TO MINIMIZE I/O" VALUE, AND THE SCRATCH DISK
+          USAGE WILL BE CLOSE-TO-ZERO; OTHERWISE, THE ACTUAL MEMORY USED WILL BE CLOSE TO THE PREVIOUSLY
+          MENTIONED MEMORY LIMIT, AND THE SCRATCH DISK USAGE WILL BE ROUGHLY PROPORTIONAL TO THE DIFFERENCE
+          BETWEEN THE ESTIMATED "MEMORY TO MINIMIZE I/O" AND THE MEMORY UPPER LIMIT. HOWEVER ACCURATE
+          ESTIMATE OF THE SCRATCH DISK SPACE IS NOT POSSIBLE.
+      (6) USING "*RESTART, WRITE" CAN GENERATE A LARGE AMOUNT OF DATA WRITTEN IN THE WORK DIRECTORY.
+1
+
+   Abaqus 2024                                  Date 26-fev-2026   Time 11:12:30
+   For use by PONTIFICIA UNIVERSIDADE CATOLICA DO RIO DE JANEIRO under license from Dassault Systemes or its subsidiary.
+
+                                                                                               STEP    3  INCREMENT    1
+                                                                                          TIME COMPLETED IN THIS STEP   0.00    
+
+
+                        S T E P       3     S T A T I C   A N A L Y S I S
+
+
+                                                                                          
+
+     AUTOMATIC TIME CONTROL WITH -
+          A SUGGESTED INITIAL TIME INCREMENT OF                 1.00    
+          AND A TOTAL TIME PERIOD OF                            3.00    
+          THE MINIMUM TIME INCREMENT ALLOWED IS                3.000E-05
+          THE MAXIMUM TIME INCREMENT ALLOWED IS                 3.00    
+
+     LINEAR EQUATION SOLVER TYPE         DIRECT SPARSE
+
+          LARGE DISPLACEMENT THEORY WILL BE USED
+
+          UNSYMMETRIC MATRIX STORAGE AND SOLUTION WILL BE USED
+
+
+  THE TOTAL MASS ACCOUNTS FOR ELEMENT REMOVALS OR REACTIVATIONS IN THIS STEP
+
+   NOTE:  THE FOLLOWING CENTER OF MASS AND MOMENT OF INERTIA CALCULATIONS ARE BASED ON CURRENT POSITION
+
+
+
+                    TOTAL MASS OF MODEL
+
+                      1.3883664E+09
+
+
+                    LOCATION OF THE CENTER OF MASS OF THE MODEL
+
+                       0.000000          -2968.739    
+
+
+                    MOMENTS OF INERTIA ABOUT THE ORIGIN
+                           I(XX)               I(YY)               I(ZZ)
+
+                      1.2355709E+16      1.7433432E+11      1.2355709E+16
+
+
+                    PRODUCTS OF INERTIA ABOUT THE ORIGIN
+                           I(XY)               I(XZ)               I(YZ)
+
+                       0.000000           0.000000           0.000000    
+
+
+                    MOMENTS OF INERTIA ABOUT THE CENTER OF MASS
+                           I(XX)               I(YY)               I(ZZ)
+
+                      1.1946354E+14      1.7433432E+11      1.1946354E+14
+
+
+                    PRODUCTS OF INERTIA ABOUT THE CENTER OF MASS
+                           I(XY)               I(XZ)               I(YZ)
+
+                       0.000000           0.000000           0.000000    
+  
+                   M E M O R Y   E S T I M A T E
+  
+ PROCESS      FLOATING PT       MINIMUM MEMORY        MEMORY TO
+              OPERATIONS           REQUIRED          MINIMIZE I/O
+             PER ITERATION           (MB)               (MB)
+  
+     1          1.36E+05               17                 24
+  
+ NOTE:
+      (1) SINCE ABAQUS DOES NOT PRE-ALLOCATE MEMORY AND ONLY ALLOCATES MEMORY AS NEEDED DURING THE ANALYSIS,
+          THE MEMORY REQUIREMENT PRINTED HERE CAN ONLY BE VIEWED AS A GENERAL GUIDELINE BASED ON THE BEST
+          KNOWLEDGE AVAILABLE AT THE BEGINNING OF A STEP BEFORE THE SOLUTION PROCESS HAS BEGUN.
+      (2) THE ESTIMATE IS NORMALLY UPDATED AT THE BEGINNING OF EVERY STEP. IT IS THE MAXIMUM VALUE OF THE
+          ESTIMATE FROM THE CURRENT STEP TO THE LAST STEP OF THE ANALYSIS, WITH UNSYMMETRIC SOLUTION TAKEN
+          INTO ACCOUNT IF APPLICABLE. 
+      (3) SINCE THE ESTIMATE IS BASED ON THE ACTIVE DEGREES OF FREEDOM IN THE FIRST ITERATION OF THE 
+          CURRENT STEP, THE MEMORY ESTIMATE MIGHT BE SIGNIFICANTLY DIFFERENT THAN ACTUAL USAGE FOR 
+          PROBLEMS WITH SUBSTANTIAL CHANGES IN ACTIVE DEGREES OF FREEDOM BETWEEN STEPS (OR EVEN WITHIN
+          THE SAME STEP). EXAMPLES ARE: PROBLEMS WITH SIGNIFICANT CONTACT CHANGES, PROBLEMS WITH MODEL
+          CHANGE, PROBLEMS WITH BOTH STATIC STEP AND STEADY STATE DYNAMIC PROCEDURES WHERE ACOUSTIC 
+          ELEMENTS WILL ONLY BE ACTIVATED IN THE STEADY STATE DYNAMIC STEPS.
+      (4) FOR MULTI-PROCESS EXECUTION, THE ESTIMATED VALUE OF FLOATING POINT OPERATIONS FOR EACH PROCESS
+          IS BASED ON AN INITIAL SCHEDULING OF OPERATIONS AND MIGHT NOT REFLECT THE ACTUAL FLOATING 
+          POINT OPERATIONS COMPLETED ON EACH PROCESS. OPERATIONS ARE DYNAMICALLY BALANCED DURING EXECUTION, 
+          SO THE ACTUAL BALANCE OF OPERATIONS BETWEEN PROCESSES IS EXPECTED TO BE BETTER THAN THE ESTIMATE
+          PRINTED HERE.
+      (5) THE UPPER LIMIT OF MEMORY THAT CAN BE ALLOCATED BY ABAQUS WILL IN GENERAL DEPEND ON THE VALUE OF
+          THE "MEMORY" PARAMETER AND THE AMOUNT OF PHYSICAL MEMORY AVAILABLE ON THE MACHINE. PLEASE SEE
+          THE "ABAQUS ANALYSIS USER'S MANUAL" FOR MORE DETAILS. THE ACTUAL USAGE OF MEMORY AND OF DISK
+          SPACE FOR SCRATCH DATA WILL DEPEND ON THIS UPPER LIMIT AS WELL AS THE MEMORY REQUIRED TO MINIMIZE
+          I/O. IF THE MEMORY UPPER LIMIT IS GREATER THAN THE MEMORY REQUIRED TO MINIMIZE I/O, THEN THE ACTUAL
+          MEMORY USAGE WILL BE CLOSE TO THE ESTIMATED "MEMORY TO MINIMIZE I/O" VALUE, AND THE SCRATCH DISK
+          USAGE WILL BE CLOSE-TO-ZERO; OTHERWISE, THE ACTUAL MEMORY USED WILL BE CLOSE TO THE PREVIOUSLY
+          MENTIONED MEMORY LIMIT, AND THE SCRATCH DISK USAGE WILL BE ROUGHLY PROPORTIONAL TO THE DIFFERENCE
+          BETWEEN THE ESTIMATED "MEMORY TO MINIMIZE I/O" AND THE MEMORY UPPER LIMIT. HOWEVER ACCURATE
+          ESTIMATE OF THE SCRATCH DISK SPACE IS NOT POSSIBLE.
+      (6) USING "*RESTART, WRITE" CAN GENERATE A LARGE AMOUNT OF DATA WRITTEN IN THE WORK DIRECTORY.
+1
+
+   Abaqus 2024                                  Date 26-fev-2026   Time 11:12:31
+   For use by PONTIFICIA UNIVERSIDADE CATOLICA DO RIO DE JANEIRO under license from Dassault Systemes or its subsidiary.
+
+                                                                                               STEP    4  INCREMENT    1
+                                                                                          TIME COMPLETED IN THIS STEP   0.00    
+
+
+                        S T E P       4     S T A T I C   A N A L Y S I S
+
+
+                                                                                          
+
+     AUTOMATIC TIME CONTROL WITH -
+          A SUGGESTED INITIAL TIME INCREMENT OF                 1.00    
+          AND A TOTAL TIME PERIOD OF                            1.00    
+          THE MINIMUM TIME INCREMENT ALLOWED IS                1.000E-05
+          THE MAXIMUM TIME INCREMENT ALLOWED IS                 1.00    
+
+     LINEAR EQUATION SOLVER TYPE         DIRECT SPARSE
+
+          LARGE DISPLACEMENT THEORY WILL BE USED
+
+          UNSYMMETRIC MATRIX STORAGE AND SOLUTION WILL BE USED
+
+
+  THE TOTAL MASS ACCOUNTS FOR ELEMENT REMOVALS OR REACTIVATIONS IN THIS STEP
+
+   NOTE:  THE FOLLOWING CENTER OF MASS AND MOMENT OF INERTIA CALCULATIONS ARE BASED ON CURRENT POSITION
+
+
+
+                    TOTAL MASS OF MODEL
+
+                      1.3883664E+09
+
+
+                    LOCATION OF THE CENTER OF MASS OF THE MODEL
+
+                       0.000000          -2968.739    
+
+
+                    MOMENTS OF INERTIA ABOUT THE ORIGIN
+                           I(XX)               I(YY)               I(ZZ)
+
+                      1.2355709E+16      1.7433432E+11      1.2355709E+16
+
+
+                    PRODUCTS OF INERTIA ABOUT THE ORIGIN
+                           I(XY)               I(XZ)               I(YZ)
+
+                       0.000000           0.000000           0.000000    
+
+
+                    MOMENTS OF INERTIA ABOUT THE CENTER OF MASS
+                           I(XX)               I(YY)               I(ZZ)
+
+                      1.1946354E+14      1.7433432E+11      1.1946354E+14
+
+
+                    PRODUCTS OF INERTIA ABOUT THE CENTER OF MASS
+                           I(XY)               I(XZ)               I(YZ)
+
+                       0.000000           0.000000           0.000000    
+  
+                   M E M O R Y   E S T I M A T E
+  
+ PROCESS      FLOATING PT       MINIMUM MEMORY        MEMORY TO
+              OPERATIONS           REQUIRED          MINIMIZE I/O
+             PER ITERATION           (MB)               (MB)
+  
+     1          1.36E+05               17                 24
+  
+ NOTE:
+      (1) SINCE ABAQUS DOES NOT PRE-ALLOCATE MEMORY AND ONLY ALLOCATES MEMORY AS NEEDED DURING THE ANALYSIS,
+          THE MEMORY REQUIREMENT PRINTED HERE CAN ONLY BE VIEWED AS A GENERAL GUIDELINE BASED ON THE BEST
+          KNOWLEDGE AVAILABLE AT THE BEGINNING OF A STEP BEFORE THE SOLUTION PROCESS HAS BEGUN.
+      (2) THE ESTIMATE IS NORMALLY UPDATED AT THE BEGINNING OF EVERY STEP. IT IS THE MAXIMUM VALUE OF THE
+          ESTIMATE FROM THE CURRENT STEP TO THE LAST STEP OF THE ANALYSIS, WITH UNSYMMETRIC SOLUTION TAKEN
+          INTO ACCOUNT IF APPLICABLE. 
+      (3) SINCE THE ESTIMATE IS BASED ON THE ACTIVE DEGREES OF FREEDOM IN THE FIRST ITERATION OF THE 
+          CURRENT STEP, THE MEMORY ESTIMATE MIGHT BE SIGNIFICANTLY DIFFERENT THAN ACTUAL USAGE FOR 
+          PROBLEMS WITH SUBSTANTIAL CHANGES IN ACTIVE DEGREES OF FREEDOM BETWEEN STEPS (OR EVEN WITHIN
+          THE SAME STEP). EXAMPLES ARE: PROBLEMS WITH SIGNIFICANT CONTACT CHANGES, PROBLEMS WITH MODEL
+          CHANGE, PROBLEMS WITH BOTH STATIC STEP AND STEADY STATE DYNAMIC PROCEDURES WHERE ACOUSTIC 
+          ELEMENTS WILL ONLY BE ACTIVATED IN THE STEADY STATE DYNAMIC STEPS.
+      (4) FOR MULTI-PROCESS EXECUTION, THE ESTIMATED VALUE OF FLOATING POINT OPERATIONS FOR EACH PROCESS
+          IS BASED ON AN INITIAL SCHEDULING OF OPERATIONS AND MIGHT NOT REFLECT THE ACTUAL FLOATING 
+          POINT OPERATIONS COMPLETED ON EACH PROCESS. OPERATIONS ARE DYNAMICALLY BALANCED DURING EXECUTION, 
+          SO THE ACTUAL BALANCE OF OPERATIONS BETWEEN PROCESSES IS EXPECTED TO BE BETTER THAN THE ESTIMATE
+          PRINTED HERE.
+      (5) THE UPPER LIMIT OF MEMORY THAT CAN BE ALLOCATED BY ABAQUS WILL IN GENERAL DEPEND ON THE VALUE OF
+          THE "MEMORY" PARAMETER AND THE AMOUNT OF PHYSICAL MEMORY AVAILABLE ON THE MACHINE. PLEASE SEE
+          THE "ABAQUS ANALYSIS USER'S MANUAL" FOR MORE DETAILS. THE ACTUAL USAGE OF MEMORY AND OF DISK
+          SPACE FOR SCRATCH DATA WILL DEPEND ON THIS UPPER LIMIT AS WELL AS THE MEMORY REQUIRED TO MINIMIZE
+          I/O. IF THE MEMORY UPPER LIMIT IS GREATER THAN THE MEMORY REQUIRED TO MINIMIZE I/O, THEN THE ACTUAL
+          MEMORY USAGE WILL BE CLOSE TO THE ESTIMATED "MEMORY TO MINIMIZE I/O" VALUE, AND THE SCRATCH DISK
+          USAGE WILL BE CLOSE-TO-ZERO; OTHERWISE, THE ACTUAL MEMORY USED WILL BE CLOSE TO THE PREVIOUSLY
+          MENTIONED MEMORY LIMIT, AND THE SCRATCH DISK USAGE WILL BE ROUGHLY PROPORTIONAL TO THE DIFFERENCE
+          BETWEEN THE ESTIMATED "MEMORY TO MINIMIZE I/O" AND THE MEMORY UPPER LIMIT. HOWEVER ACCURATE
+          ESTIMATE OF THE SCRATCH DISK SPACE IS NOT POSSIBLE.
+      (6) USING "*RESTART, WRITE" CAN GENERATE A LARGE AMOUNT OF DATA WRITTEN IN THE WORK DIRECTORY.
+1
+
+   Abaqus 2024                                  Date 26-fev-2026   Time 11:12:31
+   For use by PONTIFICIA UNIVERSIDADE CATOLICA DO RIO DE JANEIRO under license from Dassault Systemes or its subsidiary.
+
+                                                                                               STEP    5  INCREMENT    1
+                                                                                          TIME COMPLETED IN THIS STEP   0.00    
+
+
+                        S T E P       5     V I S C O   A N A L Y S I S
+
+
+                                                                                          
+
+     AUTOMATIC TIME CONTROL WITH -
+          A SUGGESTED INITIAL TIME INCREMENT OF                 1.00    
+          AND A TOTAL TIME PERIOD OF                           1.728E+05
+          THE MINIMUM TIME INCREMENT ALLOWED IS                1.000E-15
+          THE MAXIMUM TIME INCREMENT ALLOWED IS                1.728E+05
+
+     THE SIZE OF THE TIME INCREMENT IS CONTROLLED BY -
+          THE PARAMETER  CETOL                                 1.000E-02
+
+                              IMPLICIT TIME INTEGRATION WILL BE USED
+
+          LARGE DISPLACEMENT THEORY WILL BE USED
+
+          UNSYMMETRIC MATRIX STORAGE AND SOLUTION WILL BE USED
+
+
+  THE TOTAL MASS ACCOUNTS FOR ELEMENT REMOVALS OR REACTIVATIONS IN THIS STEP
+
+   NOTE:  THE FOLLOWING CENTER OF MASS AND MOMENT OF INERTIA CALCULATIONS ARE BASED ON CURRENT POSITION
+
+
+
+                    TOTAL MASS OF MODEL
+
+                      1.3883664E+09
+
+
+                    LOCATION OF THE CENTER OF MASS OF THE MODEL
+
+                       0.000000          -2968.739    
+
+
+                    MOMENTS OF INERTIA ABOUT THE ORIGIN
+                           I(XX)               I(YY)               I(ZZ)
+
+                      1.2355709E+16      1.7433431E+11      1.2355709E+16
+
+
+                    PRODUCTS OF INERTIA ABOUT THE ORIGIN
+                           I(XY)               I(XZ)               I(YZ)
+
+                       0.000000           0.000000           0.000000    
+
+
+                    MOMENTS OF INERTIA ABOUT THE CENTER OF MASS
+                           I(XX)               I(YY)               I(ZZ)
+
+                      1.1946354E+14      1.7433431E+11      1.1946354E+14
+
+
+                    PRODUCTS OF INERTIA ABOUT THE CENTER OF MASS
+                           I(XY)               I(XZ)               I(YZ)
+
+                       0.000000           0.000000           0.000000    
+  
+                   M E M O R Y   E S T I M A T E
+  
+ PROCESS      FLOATING PT       MINIMUM MEMORY        MEMORY TO
+              OPERATIONS           REQUIRED          MINIMIZE I/O
+             PER ITERATION           (MB)               (MB)
+  
+     1          1.36E+05               17                 24
+  
+ NOTE:
+      (1) SINCE ABAQUS DOES NOT PRE-ALLOCATE MEMORY AND ONLY ALLOCATES MEMORY AS NEEDED DURING THE ANALYSIS,
+          THE MEMORY REQUIREMENT PRINTED HERE CAN ONLY BE VIEWED AS A GENERAL GUIDELINE BASED ON THE BEST
+          KNOWLEDGE AVAILABLE AT THE BEGINNING OF A STEP BEFORE THE SOLUTION PROCESS HAS BEGUN.
+      (2) THE ESTIMATE IS NORMALLY UPDATED AT THE BEGINNING OF EVERY STEP. IT IS THE MAXIMUM VALUE OF THE
+          ESTIMATE FROM THE CURRENT STEP TO THE LAST STEP OF THE ANALYSIS, WITH UNSYMMETRIC SOLUTION TAKEN
+          INTO ACCOUNT IF APPLICABLE. 
+      (3) SINCE THE ESTIMATE IS BASED ON THE ACTIVE DEGREES OF FREEDOM IN THE FIRST ITERATION OF THE 
+          CURRENT STEP, THE MEMORY ESTIMATE MIGHT BE SIGNIFICANTLY DIFFERENT THAN ACTUAL USAGE FOR 
+          PROBLEMS WITH SUBSTANTIAL CHANGES IN ACTIVE DEGREES OF FREEDOM BETWEEN STEPS (OR EVEN WITHIN
+          THE SAME STEP). EXAMPLES ARE: PROBLEMS WITH SIGNIFICANT CONTACT CHANGES, PROBLEMS WITH MODEL
+          CHANGE, PROBLEMS WITH BOTH STATIC STEP AND STEADY STATE DYNAMIC PROCEDURES WHERE ACOUSTIC 
+          ELEMENTS WILL ONLY BE ACTIVATED IN THE STEADY STATE DYNAMIC STEPS.
+      (4) FOR MULTI-PROCESS EXECUTION, THE ESTIMATED VALUE OF FLOATING POINT OPERATIONS FOR EACH PROCESS
+          IS BASED ON AN INITIAL SCHEDULING OF OPERATIONS AND MIGHT NOT REFLECT THE ACTUAL FLOATING 
+          POINT OPERATIONS COMPLETED ON EACH PROCESS. OPERATIONS ARE DYNAMICALLY BALANCED DURING EXECUTION, 
+          SO THE ACTUAL BALANCE OF OPERATIONS BETWEEN PROCESSES IS EXPECTED TO BE BETTER THAN THE ESTIMATE
+          PRINTED HERE.
+      (5) THE UPPER LIMIT OF MEMORY THAT CAN BE ALLOCATED BY ABAQUS WILL IN GENERAL DEPEND ON THE VALUE OF
+          THE "MEMORY" PARAMETER AND THE AMOUNT OF PHYSICAL MEMORY AVAILABLE ON THE MACHINE. PLEASE SEE
+          THE "ABAQUS ANALYSIS USER'S MANUAL" FOR MORE DETAILS. THE ACTUAL USAGE OF MEMORY AND OF DISK
+          SPACE FOR SCRATCH DATA WILL DEPEND ON THIS UPPER LIMIT AS WELL AS THE MEMORY REQUIRED TO MINIMIZE
+          I/O. IF THE MEMORY UPPER LIMIT IS GREATER THAN THE MEMORY REQUIRED TO MINIMIZE I/O, THEN THE ACTUAL
+          MEMORY USAGE WILL BE CLOSE TO THE ESTIMATED "MEMORY TO MINIMIZE I/O" VALUE, AND THE SCRATCH DISK
+          USAGE WILL BE CLOSE-TO-ZERO; OTHERWISE, THE ACTUAL MEMORY USED WILL BE CLOSE TO THE PREVIOUSLY
+          MENTIONED MEMORY LIMIT, AND THE SCRATCH DISK USAGE WILL BE ROUGHLY PROPORTIONAL TO THE DIFFERENCE
+          BETWEEN THE ESTIMATED "MEMORY TO MINIMIZE I/O" AND THE MEMORY UPPER LIMIT. HOWEVER ACCURATE
+          ESTIMATE OF THE SCRATCH DISK SPACE IS NOT POSSIBLE.
+      (6) USING "*RESTART, WRITE" CAN GENERATE A LARGE AMOUNT OF DATA WRITTEN IN THE WORK DIRECTORY.
+1
+
+   Abaqus 2024                                  Date 26-fev-2026   Time 11:12:31
+   For use by PONTIFICIA UNIVERSIDADE CATOLICA DO RIO DE JANEIRO under license from Dassault Systemes or its subsidiary.
+
+                                                                                               STEP    6  INCREMENT    1
+                                                                                          TIME COMPLETED IN THIS STEP   0.00    
+
+
+                        S T E P       6     S T A T I C   A N A L Y S I S
+
+
+                                                                                          
+
+     AUTOMATIC TIME CONTROL WITH -
+          A SUGGESTED INITIAL TIME INCREMENT OF                 1.00    
+          AND A TOTAL TIME PERIOD OF                            1.00    
+          THE MINIMUM TIME INCREMENT ALLOWED IS                1.000E-15
+          THE MAXIMUM TIME INCREMENT ALLOWED IS                 1.00    
+
+     LINEAR EQUATION SOLVER TYPE         DIRECT SPARSE
+
+          LARGE DISPLACEMENT THEORY WILL BE USED
+
+          UNSYMMETRIC MATRIX STORAGE AND SOLUTION WILL BE USED
+
+
+  THE TOTAL MASS ACCOUNTS FOR ELEMENT REMOVALS OR REACTIVATIONS IN THIS STEP
+
+   NOTE:  THE FOLLOWING CENTER OF MASS AND MOMENT OF INERTIA CALCULATIONS ARE BASED ON CURRENT POSITION
+
+
+
+                    TOTAL MASS OF MODEL
+
+                      1.3884655E+09
+
+
+                    LOCATION OF THE CENTER OF MASS OF THE MODEL
+
+                       0.000000          -2968.741    
+
+
+                    MOMENTS OF INERTIA ABOUT THE ORIGIN
+                           I(XX)               I(YY)               I(ZZ)
+
+                      1.2356610E+16      1.7433431E+11      1.2356610E+16
+
+
+                    PRODUCTS OF INERTIA ABOUT THE ORIGIN
+                           I(XY)               I(XZ)               I(YZ)
+
+                       0.000000           0.000000           0.000000    
+
+
+                    MOMENTS OF INERTIA ABOUT THE CENTER OF MASS
+                           I(XX)               I(YY)               I(ZZ)
+
+                      1.1947191E+14      1.7433431E+11      1.1947191E+14
+
+
+                    PRODUCTS OF INERTIA ABOUT THE CENTER OF MASS
+                           I(XY)               I(XZ)               I(YZ)
+
+                       0.000000           0.000000           0.000000    
+  
+                   M E M O R Y   E S T I M A T E
+  
+ PROCESS      FLOATING PT       MINIMUM MEMORY        MEMORY TO
+              OPERATIONS           REQUIRED          MINIMIZE I/O
+             PER ITERATION           (MB)               (MB)
+  
+     1          1.64E+05               17                 24
+  
+ NOTE:
+      (1) SINCE ABAQUS DOES NOT PRE-ALLOCATE MEMORY AND ONLY ALLOCATES MEMORY AS NEEDED DURING THE ANALYSIS,
+          THE MEMORY REQUIREMENT PRINTED HERE CAN ONLY BE VIEWED AS A GENERAL GUIDELINE BASED ON THE BEST
+          KNOWLEDGE AVAILABLE AT THE BEGINNING OF A STEP BEFORE THE SOLUTION PROCESS HAS BEGUN.
+      (2) THE ESTIMATE IS NORMALLY UPDATED AT THE BEGINNING OF EVERY STEP. IT IS THE MAXIMUM VALUE OF THE
+          ESTIMATE FROM THE CURRENT STEP TO THE LAST STEP OF THE ANALYSIS, WITH UNSYMMETRIC SOLUTION TAKEN
+          INTO ACCOUNT IF APPLICABLE. 
+      (3) SINCE THE ESTIMATE IS BASED ON THE ACTIVE DEGREES OF FREEDOM IN THE FIRST ITERATION OF THE 
+          CURRENT STEP, THE MEMORY ESTIMATE MIGHT BE SIGNIFICANTLY DIFFERENT THAN ACTUAL USAGE FOR 
+          PROBLEMS WITH SUBSTANTIAL CHANGES IN ACTIVE DEGREES OF FREEDOM BETWEEN STEPS (OR EVEN WITHIN
+          THE SAME STEP). EXAMPLES ARE: PROBLEMS WITH SIGNIFICANT CONTACT CHANGES, PROBLEMS WITH MODEL
+          CHANGE, PROBLEMS WITH BOTH STATIC STEP AND STEADY STATE DYNAMIC PROCEDURES WHERE ACOUSTIC 
+          ELEMENTS WILL ONLY BE ACTIVATED IN THE STEADY STATE DYNAMIC STEPS.
+      (4) FOR MULTI-PROCESS EXECUTION, THE ESTIMATED VALUE OF FLOATING POINT OPERATIONS FOR EACH PROCESS
+          IS BASED ON AN INITIAL SCHEDULING OF OPERATIONS AND MIGHT NOT REFLECT THE ACTUAL FLOATING 
+          POINT OPERATIONS COMPLETED ON EACH PROCESS. OPERATIONS ARE DYNAMICALLY BALANCED DURING EXECUTION, 
+          SO THE ACTUAL BALANCE OF OPERATIONS BETWEEN PROCESSES IS EXPECTED TO BE BETTER THAN THE ESTIMATE
+          PRINTED HERE.
+      (5) THE UPPER LIMIT OF MEMORY THAT CAN BE ALLOCATED BY ABAQUS WILL IN GENERAL DEPEND ON THE VALUE OF
+          THE "MEMORY" PARAMETER AND THE AMOUNT OF PHYSICAL MEMORY AVAILABLE ON THE MACHINE. PLEASE SEE
+          THE "ABAQUS ANALYSIS USER'S MANUAL" FOR MORE DETAILS. THE ACTUAL USAGE OF MEMORY AND OF DISK
+          SPACE FOR SCRATCH DATA WILL DEPEND ON THIS UPPER LIMIT AS WELL AS THE MEMORY REQUIRED TO MINIMIZE
+          I/O. IF THE MEMORY UPPER LIMIT IS GREATER THAN THE MEMORY REQUIRED TO MINIMIZE I/O, THEN THE ACTUAL
+          MEMORY USAGE WILL BE CLOSE TO THE ESTIMATED "MEMORY TO MINIMIZE I/O" VALUE, AND THE SCRATCH DISK
+          USAGE WILL BE CLOSE-TO-ZERO; OTHERWISE, THE ACTUAL MEMORY USED WILL BE CLOSE TO THE PREVIOUSLY
+          MENTIONED MEMORY LIMIT, AND THE SCRATCH DISK USAGE WILL BE ROUGHLY PROPORTIONAL TO THE DIFFERENCE
+          BETWEEN THE ESTIMATED "MEMORY TO MINIMIZE I/O" AND THE MEMORY UPPER LIMIT. HOWEVER ACCURATE
+          ESTIMATE OF THE SCRATCH DISK SPACE IS NOT POSSIBLE.
+      (6) USING "*RESTART, WRITE" CAN GENERATE A LARGE AMOUNT OF DATA WRITTEN IN THE WORK DIRECTORY.
+1
+
+   Abaqus 2024                                  Date 26-fev-2026   Time 11:12:31
+   For use by PONTIFICIA UNIVERSIDADE CATOLICA DO RIO DE JANEIRO under license from Dassault Systemes or its subsidiary.
+
+                                                                                               STEP    7  INCREMENT    1
+                                                                                          TIME COMPLETED IN THIS STEP   0.00    
+
+
+                        S T E P       7     V I S C O   A N A L Y S I S
+
+
+                                                                                          
+
+     AUTOMATIC TIME CONTROL WITH -
+          A SUGGESTED INITIAL TIME INCREMENT OF                 1.00    
+          AND A TOTAL TIME PERIOD OF                           9.459E+08
+          THE MINIMUM TIME INCREMENT ALLOWED IS                1.000E-15
+          THE MAXIMUM TIME INCREMENT ALLOWED IS                1.555E+07
+
+     THE SIZE OF THE TIME INCREMENT IS CONTROLLED BY -
+          THE PARAMETER  CETOL                                 1.000E-02
+
+                              IMPLICIT TIME INTEGRATION WILL BE USED
+
+          LARGE DISPLACEMENT THEORY WILL BE USED
+
+          UNSYMMETRIC MATRIX STORAGE AND SOLUTION WILL BE USED
+
+
+  THE TOTAL MASS ACCOUNTS FOR ELEMENT REMOVALS OR REACTIVATIONS IN THIS STEP
+
+   NOTE:  THE FOLLOWING CENTER OF MASS AND MOMENT OF INERTIA CALCULATIONS ARE BASED ON CURRENT POSITION
+
+
+
+                    TOTAL MASS OF MODEL
+
+                      1.3884655E+09
+
+
+                    LOCATION OF THE CENTER OF MASS OF THE MODEL
+
+                       0.000000          -2968.741    
+
+
+                    MOMENTS OF INERTIA ABOUT THE ORIGIN
+                           I(XX)               I(YY)               I(ZZ)
+
+                      1.2356610E+16      1.7433431E+11      1.2356610E+16
+
+
+                    PRODUCTS OF INERTIA ABOUT THE ORIGIN
+                           I(XY)               I(XZ)               I(YZ)
+
+                       0.000000           0.000000           0.000000    
+
+
+                    MOMENTS OF INERTIA ABOUT THE CENTER OF MASS
+                           I(XX)               I(YY)               I(ZZ)
+
+                      1.1947191E+14      1.7433431E+11      1.1947191E+14
+
+
+                    PRODUCTS OF INERTIA ABOUT THE CENTER OF MASS
+                           I(XY)               I(XZ)               I(YZ)
+
+                       0.000000           0.000000           0.000000    
+  
+                   M E M O R Y   E S T I M A T E
+  
+ PROCESS      FLOATING PT       MINIMUM MEMORY        MEMORY TO
+              OPERATIONS           REQUIRED          MINIMIZE I/O
+             PER ITERATION           (MB)               (MB)
+  
+     1          1.64E+05               17                 24
+  
+ NOTE:
+      (1) SINCE ABAQUS DOES NOT PRE-ALLOCATE MEMORY AND ONLY ALLOCATES MEMORY AS NEEDED DURING THE ANALYSIS,
+          THE MEMORY REQUIREMENT PRINTED HERE CAN ONLY BE VIEWED AS A GENERAL GUIDELINE BASED ON THE BEST
+          KNOWLEDGE AVAILABLE AT THE BEGINNING OF A STEP BEFORE THE SOLUTION PROCESS HAS BEGUN.
+      (2) THE ESTIMATE IS NORMALLY UPDATED AT THE BEGINNING OF EVERY STEP. IT IS THE MAXIMUM VALUE OF THE
+          ESTIMATE FROM THE CURRENT STEP TO THE LAST STEP OF THE ANALYSIS, WITH UNSYMMETRIC SOLUTION TAKEN
+          INTO ACCOUNT IF APPLICABLE. 
+      (3) SINCE THE ESTIMATE IS BASED ON THE ACTIVE DEGREES OF FREEDOM IN THE FIRST ITERATION OF THE 
+          CURRENT STEP, THE MEMORY ESTIMATE MIGHT BE SIGNIFICANTLY DIFFERENT THAN ACTUAL USAGE FOR 
+          PROBLEMS WITH SUBSTANTIAL CHANGES IN ACTIVE DEGREES OF FREEDOM BETWEEN STEPS (OR EVEN WITHIN
+          THE SAME STEP). EXAMPLES ARE: PROBLEMS WITH SIGNIFICANT CONTACT CHANGES, PROBLEMS WITH MODEL
+          CHANGE, PROBLEMS WITH BOTH STATIC STEP AND STEADY STATE DYNAMIC PROCEDURES WHERE ACOUSTIC 
+          ELEMENTS WILL ONLY BE ACTIVATED IN THE STEADY STATE DYNAMIC STEPS.
+      (4) FOR MULTI-PROCESS EXECUTION, THE ESTIMATED VALUE OF FLOATING POINT OPERATIONS FOR EACH PROCESS
+          IS BASED ON AN INITIAL SCHEDULING OF OPERATIONS AND MIGHT NOT REFLECT THE ACTUAL FLOATING 
+          POINT OPERATIONS COMPLETED ON EACH PROCESS. OPERATIONS ARE DYNAMICALLY BALANCED DURING EXECUTION, 
+          SO THE ACTUAL BALANCE OF OPERATIONS BETWEEN PROCESSES IS EXPECTED TO BE BETTER THAN THE ESTIMATE
+          PRINTED HERE.
+      (5) THE UPPER LIMIT OF MEMORY THAT CAN BE ALLOCATED BY ABAQUS WILL IN GENERAL DEPEND ON THE VALUE OF
+          THE "MEMORY" PARAMETER AND THE AMOUNT OF PHYSICAL MEMORY AVAILABLE ON THE MACHINE. PLEASE SEE
+          THE "ABAQUS ANALYSIS USER'S MANUAL" FOR MORE DETAILS. THE ACTUAL USAGE OF MEMORY AND OF DISK
+          SPACE FOR SCRATCH DATA WILL DEPEND ON THIS UPPER LIMIT AS WELL AS THE MEMORY REQUIRED TO MINIMIZE
+          I/O. IF THE MEMORY UPPER LIMIT IS GREATER THAN THE MEMORY REQUIRED TO MINIMIZE I/O, THEN THE ACTUAL
+          MEMORY USAGE WILL BE CLOSE TO THE ESTIMATED "MEMORY TO MINIMIZE I/O" VALUE, AND THE SCRATCH DISK
+          USAGE WILL BE CLOSE-TO-ZERO; OTHERWISE, THE ACTUAL MEMORY USED WILL BE CLOSE TO THE PREVIOUSLY
+          MENTIONED MEMORY LIMIT, AND THE SCRATCH DISK USAGE WILL BE ROUGHLY PROPORTIONAL TO THE DIFFERENCE
+          BETWEEN THE ESTIMATED "MEMORY TO MINIMIZE I/O" AND THE MEMORY UPPER LIMIT. HOWEVER ACCURATE
+          ESTIMATE OF THE SCRATCH DISK SPACE IS NOT POSSIBLE.
+      (6) USING "*RESTART, WRITE" CAN GENERATE A LARGE AMOUNT OF DATA WRITTEN IN THE WORK DIRECTORY.
+
+
+          THE ANALYSIS HAS BEEN COMPLETED
+
+
+
+                              ANALYSIS COMPLETE
+                              WITH     25 WARNING MESSAGES ON THE DAT FILE
+                              AND      41 WARNING MESSAGES ON THE MSG FILE
+
+
+
+     JOB TIME SUMMARY
+       USER TIME (SEC)      =      2.3    
+       SYSTEM TIME (SEC)    =     0.30    
+       TOTAL CPU TIME (SEC) =      2.6    
+       WALLCLOCK TIME (SEC) =            3

@@ -1,19 +1,19 @@
 from abaqus import mdb
 from abaqusConstants import *
 
-def CreateSetsPipe(name_model):
+def CreateSetsPipe(name_model, part_name="PIPE", phase_name="FASEI"):
     m = mdb.models[name_model]
-    p = m.parts['PIPE']
+    p = m.parts[part_name]
     f = p.faces
     e = p.edges
 
     # FASEI_REV, FASEI_REV_ABOVE_TOC
     all_faces = f[0:len(f)]
-    p.Set(faces=all_faces, name='FASEI_REV')
+    p.Set(faces=all_faces, name='%s_REV' % part_name)
     p.Set(faces=all_faces, name='FASEI_REV_ABOVE_TOC')
 
 
-    # FASEI_REV_BASE)    
+    # FASEI_REV_BASE    
     tol = 0.001
     e = p.edges
     all_coords = [v.pointOn[0][1] for v in p.vertices]
@@ -582,4 +582,3 @@ def CreateSetsAssembly(name_model):
         print(f"Set 'YSYM_TOP' criado com sucesso na altura Y = {y_topo}")
     else:
         print("Erro: Nenhuma aresta encontrada no topo (Y =", y_topo, ")")
-   

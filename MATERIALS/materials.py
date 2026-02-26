@@ -157,11 +157,12 @@ def AssignRockByDepth(modelName, partName, rock_layers):
         y_max = max(top, bottom)
 
         faces_to_assign = []
-
+        face_seq = part.faces[:0]
         for face in part.faces:
             y_coord = face.pointOn[0][1]  # Get the y-coordinate of a point on the face
             if y_min <= y_coord <= y_max:
                 faces_to_assign.append(face)
+                face_seq += part.faces[face.index:face.index+1]
 
         if faces_to_assign:
 
@@ -171,7 +172,9 @@ def AssignRockByDepth(modelName, partName, rock_layers):
             # region = part.Set(name=set_name, faces=part.faces.sequenceFromLabels([f.index for f in faces_to_assign])) # Worked home
 
             face_indices = [f.index for f in faces_to_assign]
-            region = part.Set(name=set_name, faces=part.faces[face_indices[0]:face_indices[0]+1])
+            region = part.Set(name=set_name, faces=part.faces[face_indices[0]:face_indices[0]+1]) # so funciona se tiver uma camada na profundidade
+            region = part.Set(name=set_name + "_MOD", 
+                              faces=face_seq)
 
             part.SectionAssignment(
                 region=region,

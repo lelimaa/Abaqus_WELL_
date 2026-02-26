@@ -4,8 +4,8 @@ from abaqusConstants import *
 # import os
 import sys 
 
-path_project = r'C:\Users\juani\Documents\Github\Abaqus_WELL_' 
-# path_project = r'C:\Users\hidalgo\Documents\GitHub\Abaqus_WELL_'
+# path_project = r'C:\Users\juani\Documents\Github\Abaqus_WELL_' 
+path_project = r'C:\Users\hidalgo\Documents\GitHub\Abaqus_WELL_'
 
 if path_project not in sys.path:
     sys.path.append(path_project)
@@ -21,7 +21,10 @@ if 'MyFirstModel' not in mdb.models:
     mdb.Model(name='MyFirstModel')
 
 # variables that have to be changed ####################################################
+# from preprocess import get_pipe_geometry
+# data = json_data
 
+# inner_radius_annular, thickness_pipe = get_pipe_geometry(data)
 inner_radius_pipe = 0.36829999999999996  # Updated by script
 thickness_pipe = 0.0127  # Updated by script
 inner_radius_annular = inner_radius_pipe + thickness_pipe
@@ -59,7 +62,7 @@ if __name__ == "__main__":
     layers_depths = [3550, 3900]
 
     data = {
-        "ROCK": {"inner_radius": example["rock_radius"],
+        "layer": {"inner_radius": example["rock_radius"],
                  "top_depth": example["top_depth"],
                  "base_depth": example["base_depth"],
                  "thickness": example["rock_wt"],
@@ -269,4 +272,5 @@ if __name__ == "__main__":
     CreateSetsPipe('MyFirstModel')
     CreateSetsFluid('MyFirstModel')
     CreateSetsRock('MyFirstModel')
+
     CreateSetsAssembly('MyFirstModel')

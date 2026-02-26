@@ -20,6 +20,33 @@ executeOnCaeStartup()
 # if path_project not in sys.path:
 #     sys.path.append(path_project)
 
+def AbstractAnnularPart(name_model, name_part, data):
+    inner_radius = data["inner_radius"]
+    base_depth = data["base_depth"]
+    top_depth = data["top_depth"]
+    thickness = data["thickness"]
+
+    # depth = base_depth - top_depth
+    # Crianção do Sketch - Geometria do Revestimento
+    sketch_name = '__profile__' + name_part
+    s = mdb.models[name_model].ConstrainedSketch(
+        name=sketch_name, sheetSize=10000.0)
+    s.sketchOptions.setValues(viewStyle=AXISYM)
+    s.setPrimaryObject(option=STANDALONE)
+
+    # Criação da Linha de Axisimetria
+    axis = s.ConstructionLine(point1=(0.0, -10000.0), point2=(0.0, 10000.0))
+    s.FixedConstraint(entity=axis)
+
+    # Construção da Geometria do Revestimento
+    s.rectangle(point1=(inner_radius, -(top_depth)),
+                point2=(inner_radius + thickness, -(base_depth)))
+
+    p = mdb.models[name_model].Part(
+        name=name_part, dimensionality=AXISYMMETRIC, type=DEFORMABLE_BODY)
+    p.BaseShell(sketch=s)
+    s.unsetPrimaryObject()
+    return p
 
 def Pipe(name_model, name_part, inner_radius, base_depth, top_depth, thickness):
 
@@ -71,7 +98,12 @@ def Fluid(name_model, name_part, inner_radius, base_depth, top_depth, thickness)
     return p
 
 
-def Rock(name_model, name_part, inner_radius, base_depth, top_depth, thickness):
+def Rock(name_model, name_part, data):
+    p = AbstractAnnularPart(name_model,
+                        name_part,
+                        data)
+    # funcoes especificas de rock
+    return p
 
     # base_depth = int(base_depth)
     # top_depth = int(top_depth)
@@ -142,7 +174,9 @@ def PartitionLayersByDepth(model_name, part_name, layer_depths):
 
 def CreateGeometry(name_model, name, data):
     print("Creating Geometry: ", name)
-
+    return AbstractAnnularPart(name_model,
+                         name,
+                         data)
     geometry = {
         "ROCK": Rock,
         "FLUID": Fluid,
@@ -155,8 +189,8 @@ def CreateGeometry(name_model, name, data):
                          name,
                          data["inner_radius"],
                          data["base_depth"],
-                         data["top_depth"],
-                         data["thickness"]
+                        data["top_depth"],
+                        data["thickness"]
                          )
     else:
         raise ValueError("Geometry type '%s' is not recognized." % name)
