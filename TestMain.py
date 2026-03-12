@@ -59,7 +59,9 @@ if __name__ == "__main__":
         "rock_wt": thickness_wellbore
     }
 
-    layers_depths = [3550, 3900]
+    # layers_depths = [3550, 3900]
+    layers_depths = [3600.0, 4000, 4150.0, 4250.0, 4400.0, 4500.0, 5000]
+
 
     data = {
         "layer": {"inner_radius": example["rock_radius"],
