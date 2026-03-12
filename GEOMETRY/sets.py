@@ -123,7 +123,7 @@ def CreateSetsFluid(name_model):
     p.Set(edges=top_edges, name='FASEI_FLUIDO_TOP')
 
     # FASEI_ANNULAR
-    all_faces = f[0:len(f)]
+    all_faces = f
     p.Set(faces=all_faces, name='FASEI_ANNULAR')
 
     # FASEI_ANNULAR_BASE
@@ -291,6 +291,8 @@ def CreateSetsRock(name_model):
             print(f"Set de Face '{nome_set}' criado em X={x_meio_face}, Y={y_meio_camada}")
 
 def CreateSetsAssembly(name_model):  
+
+
     m = mdb.models[name_model]  
     a = m.rootAssembly
     
@@ -582,4 +584,5 @@ def CreateSetsAssembly(name_model):
         print(f"Set 'YSYM_TOP' criado com sucesso na altura Y = {y_topo}")
     else:
         print("Erro: Nenhuma aresta encontrada no topo (Y =", y_topo, ")")
+
    
